@@ -35,6 +35,7 @@ module ALU(
 	parameter XNOR = 110;
 	parameter SGT = 111;
 	parameter NOTHING = 000;
+	
 	always@(posedge excute)begin
 		case(opcodein)
 			ADD: f=a+b;
