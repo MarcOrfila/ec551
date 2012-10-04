@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------
+Release 13.3 Trace  (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/share/Study/Xilinx/13.3/ISE_DS/ISE/bin/lin/unwrapped/trce -intstyle ise -v 3
+-s 3 -n 3 -fastpaths -xml display.twx display.ncd -o display.twr display.pcf
+
+Design file:              display.ncd
+Physical constraint file: display.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.20 2011-10-03)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk_500
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+reset_n     |    0.970(R)|      FAST  |   -0.460(R)|      SLOW  |clk_500_BUFGP     |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk_500 to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+ctl<0>      |         7.140(R)|      SLOW  |         3.651(R)|      FAST  |clk_500_BUFGP     |   0.000|
+ctl<1>      |         6.575(R)|      SLOW  |         3.376(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<1> |         8.520(R)|      SLOW  |         4.074(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<2> |         8.438(R)|      SLOW  |         4.011(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<3> |         8.554(R)|      SLOW  |         4.125(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<4> |         8.564(R)|      SLOW  |         3.977(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<5> |         8.437(R)|      SLOW  |         4.051(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<6> |         8.739(R)|      SLOW  |         3.958(R)|      FAST  |clk_500_BUFGP     |   0.000|
+segments<7> |         8.638(R)|      SLOW  |         3.941(R)|      FAST  |clk_500_BUFGP     |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk_500
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_500        |    0.898|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Wed Oct  3 17:02:14 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 140 MB
+
+
+

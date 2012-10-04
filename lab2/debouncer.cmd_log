@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.xst" -ofn "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.syr" 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.xst" -ofn "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.syr" 
