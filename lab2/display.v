@@ -24,6 +24,7 @@ module display(
 	 input reset_n,
 	 output [3:0] ctl,
     output [7:0] segments //segments[0] is the point
+	 , input [2:0] opcodesel
     );
 
 	reg [3:0] highdigit;
@@ -59,19 +60,19 @@ module display(
 		0: 
 		begin
 		tempctl[1]=0;tempctl[2]=0;tempctl[0]=1;
-		currentdigit=lowdigit;
+		currentdigit=(opcodesel==3'b110)?{3'b000,result[0]}:lowdigit;
 		end
 		
 		1: 
 		begin
 		tempctl[0]=0;tempctl[2]=0;tempctl[1]=1;
-		currentdigit=highdigit;
+		currentdigit=(opcodesel==3'b110)?{3'b000,result[1]}:highdigit;
 		end
 		
 		2:
 		begin
 		tempctl[0]=0;tempctl[1]=0;tempctl[2]=1;
-		currentdigit=sign;
+		currentdigit=(opcodesel==3'b110)?{3'b000,result[2]}:sign;
 		end
 		default:
 		begin

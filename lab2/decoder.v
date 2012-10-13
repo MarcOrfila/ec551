@@ -20,19 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 module decoder(
     input [2:0] opcodein,
-    output [2:0] opcodeout
+    output reg [2:0] opcodeout
     );
 
 	always@(opcodein) begin
 		case(opcodein)
-			011:opcodeout=3'b001;
-			010:opcodeout=3'b010;
-			001:opcodeout=3'b011;
-			110:opcodeout=3'b100;
-			101:opcodeout=3'b101;
-			111:opcodeout=3'b110;
-			100:opcodeout=3'b111;
-			default:opcodeout=000;
+			3'b011:opcodeout=3'b001;
+			3'b010:opcodeout=3'b010;
+			3'b001:opcodeout=3'b011;
+			3'b110:opcodeout=3'b100;
+			3'b101:opcodeout=3'b101;
+			3'b111:opcodeout=3'b110;
+			3'b100:opcodeout=3'b111;
+			default:opcodeout=3'b000;
 		endcase
 	end
 endmodule

@@ -23,26 +23,28 @@ module ALU(
     input [2:0] a,
     input [2:0] b,
 	 input execute,
-    output [5:0] f
-	 
+    output reg [5:0] f
+	 ,output reg [2:0] opcodesel
     );
-
-	parameter ADD = 001;
-	parameter SUB = 010;
-	parameter MUL = 011;
-	parameter SHR = 100;
-	parameter SHL = 101;
-	parameter XNOR = 110;
-	parameter SGT = 111;
-	parameter NOTHING = 000;
 	
-	always@(posedge excute)begin
+	parameter ADD = 3'b001;
+	parameter SUB = 3'b010;
+	parameter MUL = 3'b011;
+	parameter SHR = 3'b100;
+	parameter SHL = 3'b101;
+	parameter XNOR = 3'b110;
+	parameter SGT = 3'b111;
+	parameter NOTHING = 3'b000;
+	
+	
+	always@(posedge execute)begin
+		opcodesel=opcodein;
 		case(opcodein)
 			ADD: f=a+b;
 			SUB: f=a-b;
 			MUL: f=a*b;
-			SHR: f=a>>b;
-			SHL: f=a<<b;
+			SHR: f=a>>>b;
+			SHL: f=a<<<b;
 			XNOR: f=a~^b;
 			SGT: begin if(a>b)f=1;else f=0;end
 			NOTHING: f=0;

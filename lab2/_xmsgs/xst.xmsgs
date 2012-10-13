@@ -5,56 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 50: Result of <arg fmt="%d" index="1">3</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">2</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 59: Signal &lt;<arg fmt="%s" index="1">lowdigit</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 65: Signal &lt;<arg fmt="%s" index="1">highdigit</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 71: Signal &lt;<arg fmt="%s" index="1">result</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 90: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 91: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 100: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 101: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 102: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 103: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 104: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 105: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 106: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 107: case condition never applies
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="295" delta="old" >"/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 108: case condition never applies
-</msg>
-
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n0119</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-</msg>
-
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_tempctl</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-</msg>
-
 </messages>
 

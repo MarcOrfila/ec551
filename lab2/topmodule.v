@@ -27,15 +27,25 @@ module topmodule(
 	 input reset_n,
     output [7:0] display,
 	 output [3:0] displayctl
+	 ,output [5:0] ftb
+	 //,output clk_300hztb
+	 ,output [2:0] opcodetb
+	
     );
 
-	wire opcode;
-	wire clk100hz;
-	reg F;
-	
-	
+	wire [2:0] opcode,opcodesel;
+	wire clk_300hz;
+	wire [5:0] F;
+
+	assign ftb=F;
+	assign opcodetb=opcodesel;
+//	assign clk_300hztb=clk_300hz;
 //	debouncer debouncer1();
-//	clkdiv clkdiv1();
+	clkdiv clkdiv1(
+		.clk(clk),
+		.reset_n(reset_n),
+		.clk_300hz(clk_300hz)
+		);
 
 	decoder decoder1(
 		.opcodein(opcodein),
@@ -48,16 +58,19 @@ module topmodule(
 		.b(B),
 		.execute(execute),
 		.f(F)
+		,.opcodesel(opcodesel)
 		);
 
 
-//	LIFO lifo1();
+	LIFO lifo6_9();
 
 	display LED(
+		
 		.result(F),
 		.reset_n(reset_n),
-		.clk_in(clk100hz),
+		.clk_in(clk/*_300hz*/),
 		.ctl(displayctl),
 		.segments(display)
+		,.opcodesel(opcodesel)
 		);
 endmodule
