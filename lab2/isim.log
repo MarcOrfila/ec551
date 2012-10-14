@@ -1,5 +1,6 @@
 ISim log file
-Running: /home/hpw/Documents/EC551/LAB2/lab2/toptb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/hpw/Documents/EC551/LAB2/lab2/toptb_isim_beh.wdb 
+Running: /home/hpw/Documents/EC551/lab2/toptb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/hpw/Documents/EC551/lab2/toptb_isim_beh.wdb 
+INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
 ISim O.76xd (signature 0x8ddf5b5d)
 This is a Full version of ISim.
 Time resolution is 1 ps

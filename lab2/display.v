@@ -55,7 +55,7 @@ module display(
 			end
 	end
 	
-	always@(counter) begin // assign the period to the 3 LEDs
+	always@(counter,opcodesel) begin // assign the period to the 3 LEDs
 		case(counter) 
 		0: 
 		begin

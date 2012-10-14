@@ -1,0 +1,28 @@
+Command line:
+   lifotb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55558
+
+Sat Oct 13 19:31:40 2012
+
+
+ Elaboration Time: 0.06 sec
+
+ Current Memory Usage: 122.929 Meg
+
+ Total Signals          : 24
+ Total Nets             : 36
+ Total Signal Drivers   : 14
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 20
+ Total Traceable Variables  : 28
+ Total Scalar Nets and Variables : 194
+
+ Total Simulation Time: 0.43 sec
+
+ Current Memory Usage: 132.37 Meg
+
+Sat Oct 13 19:31:47 2012
+

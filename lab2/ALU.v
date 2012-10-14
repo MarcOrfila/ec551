@@ -25,6 +25,7 @@ module ALU(
 	 input execute,
     output reg [5:0] f
 	 ,output reg [2:0] opcodesel
+	 ,output write
     );
 	
 	parameter ADD = 3'b001;
@@ -36,6 +37,7 @@ module ALU(
 	parameter SGT = 3'b111;
 	parameter NOTHING = 3'b000;
 	
+	assign write=execute;
 	
 	always@(posedge execute)begin
 		opcodesel=opcodein;

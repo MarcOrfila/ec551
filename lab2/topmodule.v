@@ -23,23 +23,31 @@ module topmodule(
     input [2:0] B,
     input [2:0] opcodein,
 	 input execute,
+	 input read,
 	 input clk,
 	 input reset_n,
     output [7:0] display,
 	 output [3:0] displayctl
-	 ,output [5:0] ftb
+	 
+	 ,output [5:0] resulttbLIFOLED
 	 //,output clk_300hztb
-	 ,output [2:0] opcodetb
+	 ,output [2:0] opcodetbLIFOLED
+	 ,output [2:0] opcodetbALULIFO
+	 ,output [5:0] Ftb
 	
     );
 
-	wire [2:0] opcode,opcodesel;
+	wire [2:0] opcode,opcodeselALULIFO,opcodeselLIFOLED;
 	wire clk_300hz;
 	wire [5:0] F;
+	wire write;
+	wire [5:0] resultLIFOLED;
 
-	assign ftb=F;
-	assign opcodetb=opcodesel;
-//	assign clk_300hztb=clk_300hz;
+	assign resulttbLIFOLED=resultLIFOLED;
+	assign opcodetbLIFOLED=opcodeselLIFOLED;
+	assign opcodetbALULIFO=opcodeselALULIFO;
+	assign Ftb=F;
+	
 //	debouncer debouncer1();
 	clkdiv clkdiv1(
 		.clk(clk),
@@ -58,19 +66,31 @@ module topmodule(
 		.b(B),
 		.execute(execute),
 		.f(F)
-		,.opcodesel(opcodesel)
+		,.opcodesel(opcodeselALULIFO)
+		,.write(write)
 		);
 
 
-	LIFO lifo6_9();
+	lifo6_9 lifo(
+	  .reset_n(reset_n),
+     .write(write),
+     .read(read),
+     .F(F),
+	  .opcodeselin(opcodeselALULIFO),
+     .result(resultLIFOLED),
+	  .opcodeselout(opcodeselLIFOLED),
+     .full(),
+     .empty()
+	
+	);
 
 	display LED(
 		
-		.result(F),
+		.result(resultLIFOLED),
 		.reset_n(reset_n),
 		.clk_in(clk/*_300hz*/),
 		.ctl(displayctl),
 		.segments(display)
-		,.opcodesel(opcodesel)
+		,.opcodesel(opcodeselLIFOLED)
 		);
 endmodule
