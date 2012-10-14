@@ -36,7 +36,7 @@ module toptb;
 	wire [7:0] display;
 	wire [3:0] displayctl;
 	
-	wire [5:0] resulttbLIFOLED,Ftb;
+	wire [5:0] resulttbLIFOLED,FtbALULIFO;
 	wire [2:0] opcodetbALULIFO;
 	wire [2:0] opcodetbLIFOLED;
 	//wire clk_300hztb;
@@ -53,7 +53,7 @@ module toptb;
 		.displayctl(displayctl)
 		,.read(read)
 		
-		,.Ftb(Ftb)
+		,.FtbALULIFO(FtbALULIFO)
 		,.resulttbLIFOLED(resulttbLIFOLED)
 		,.opcodetbALULIFO(opcodetbALULIFO)
 		,.opcodetbLIFOLED(opcodetbLIFOLED)
@@ -76,34 +76,97 @@ module toptb;
 		reset_n=1;
 	end
 	
-		initial begin
-		forever begin
-		#5;
-			execute=1;
-		#5;
-			execute=0;
-			#58;
-		end
-	
-	end
-   
-initial begin
-read=0;
-#100;
-forever begin
-		#5;
-			read=1;
-		#5;
-			read=0;
-			#79;
-		end
-end
 
       always #4 clk=~clk;
-		always #30 A=A+1;
-		always #60 B=B+1;
-		always #120 opcodein=opcodein+1;
 		
+	initial begin
+		#100;
+		#10 A=3'b101;
+		#10 B=3'b110;
+		#10 opcodein=3'b001;
+		#10 read=1;
+		#5  read=0;
 		
+		#10 execute=1;
+		#5 execute=0;
+		#10 A=3'b010;
+		#10 B=3'b001;
+		#10 opcodein=3'b010;
+		#10 read=1;
+		#5 read=0;
+		
+		#10 execute=1;
+		#5 execute=0;
+		#10;
+		#10 read=1;
+		#5 read=0;
+		
+		#10 A=3'b100;
+		#10 B=3'b111;
+		#10 opcodein=3'b011;
+		#10 execute=1;
+		#5 execute=0;
+		
+		#10 A=3'b110;
+		#10 B=3'b101;
+		#10 opcodein=3'b100;
+		#10 execute=1;
+		#5 execute=0;
+		
+		#10 A=3'b100;
+		#10 B=3'b001;
+		#10 opcodein=3'b101;
+		#10 execute=1;
+		#5 execute=0;
+		
+		#10 A=3'b110;
+		#10 B=3'b011;
+		#10 opcodein=3'b110;
+		#10 execute=1;
+		#5 execute=0;
+		
+		#10 A=3'b100;
+		#10 B=3'b001;
+		#10 opcodein=3'b101;
+		#10 execute=1;
+		#5 execute=0;
+		
+		#10 A=3'b110;
+		#10 B=3'b011;
+		#10 opcodein=3'b110;
+		#10 execute=1;
+		#5 execute=0;
+		
+		#10 A=3'b100;
+		#10 B=3'b111;
+		#10 opcodein=3'b011;
+		#10 execute=1;
+		#5 execute=0;
+		#10;
+		#10 read=1;
+		#5 read=0;
+	
+		#10;
+		#10 read=1;
+		#5 read=0;
+		#10;
+		#10 read=1;
+		#5 read=0;
+		#10;
+		#10 read=1;
+		#5 read=0;
+		#10;
+		#10 read=1;
+		#5 read=0;
+		#10;
+		#10 read=1;
+		#5 read=0;
+	
+	
+	
+	end
+
+
+	
 endmodule
 

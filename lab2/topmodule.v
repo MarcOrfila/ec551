@@ -22,8 +22,8 @@ module topmodule(
     input [2:0] A,
     input [2:0] B,
     input [2:0] opcodein,
-	 input execute,
-	 input read,
+	 input executein,
+	 input readin,
 	 input clk,
 	 input reset_n,
     output [7:0] display,
@@ -33,7 +33,7 @@ module topmodule(
 	 //,output clk_300hztb
 	 ,output [2:0] opcodetbLIFOLED
 	 ,output [2:0] opcodetbALULIFO
-	 ,output [5:0] Ftb
+	 ,output [5:0] FtbALULIFO
 	
     );
 
@@ -42,13 +42,27 @@ module topmodule(
 	wire [5:0] F;
 	wire write;
 	wire [5:0] resultLIFOLED;
-
+	wire execute,read;
+	
 	assign resulttbLIFOLED=resultLIFOLED;
 	assign opcodetbLIFOLED=opcodeselLIFOLED;
 	assign opcodetbALULIFO=opcodeselALULIFO;
-	assign Ftb=F;
+	assign FtbALULIFO=F;
 	
-//	debouncer debouncer1();
+	debounce executedebouncer(
+	.clk(clk),
+	.reset_n(reset_n),
+	.noisy(executein),
+	.clean(execute)
+		);
+		
+	debounce readdebouncer(
+	.clk(clk),
+	.reset_n(reset_n),
+	.noisy(raedin),
+	.clean(read)
+		);
+		
 	clkdiv clkdiv1(
 		.clk(clk),
 		.reset_n(reset_n),
