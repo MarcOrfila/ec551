@@ -1,6 +1,9 @@
-set -tmpdir "/home/hpw/Documents/EC551/lab2/xst/projnav.tmp"
-set -xsthdpdir "/home/hpw/Documents/EC551/lab2/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn topmodule.prj
+-ofn topmodule
+-ofmt NGC
 -p xc6slx16-3-csg324
 -top topmodule
 -opt_mode Speed
@@ -47,4 +50,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn topmodule.prj

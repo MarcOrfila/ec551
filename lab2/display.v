@@ -44,7 +44,7 @@ module display(
 	assign ctl[2]=tempctl[2];
 	
 	assign segments[7:1]=tempsegments;
-	assign segments[0]=0;
+	assign segments[0]=1;
 	
 	
 	always@(posedge clk_in or negedge reset_n) begin  //divide the period
@@ -55,7 +55,7 @@ module display(
 			end
 	end
 	
-	always@(counter,opcodesel) begin // assign the period to the 3 LEDs
+	always@(counter,opcodesel,result,lowdigit,highdigit) begin // assign the period to the 3 LEDs
 		case(counter) 
 		0: 
 		begin
@@ -104,19 +104,19 @@ module display(
 
 	always@(currentdigit) begin //decode
 		case(currentdigit)
-			0: tempsegments=7'b1111110;
-			1: tempsegments=7'b0110000;
-			2: tempsegments=7'b1101101;
-			3: tempsegments=7'b1111001;
-			4: tempsegments=7'b0110011;
-			5: tempsegments=7'b1011011;
-			6: tempsegments=7'b1011111;
-			7: tempsegments=7'b1110000;
-			8: tempsegments=7'b1111111;
-			9: tempsegments=7'b1111011;
-			10:tempsegments=0;
-			11:tempsegments=7'b0000001;
-			default: tempsegments=7'b1001111;//error
+			0: tempsegments=7'b0000001;
+			1: tempsegments=7'b1001111;
+			2: tempsegments=7'b0010010;
+			3: tempsegments=7'b0000110;
+			4: tempsegments=7'b1001100;
+			5: tempsegments=7'b0100100;
+			6: tempsegments=7'b0100000;
+			7: tempsegments=7'b0001111;
+			8: tempsegments=7'b0000000;
+			9: tempsegments=7'b0000100;
+			10:tempsegments=1111111;
+			11:tempsegments=7'b1111110;
+			default: tempsegments=7'b0110000;//error
 		endcase
 	end
 endmodule

@@ -22,6 +22,7 @@ module lifo6_9(
     input reset_n,
     input write,
     input read,
+	 input clk,
     input [5:0] F,
 	 input [2:0] opcodeselin,
     output reg [5:0] result,
@@ -40,7 +41,7 @@ module lifo6_9(
 	assign full=(!reset_n)?0:((top==5)?1:0);
 	assign empty=(!reset_n)?1:((top==0)?1:0);
 	
-	always@(negedge reset_n or posedge write or posedge read)begin
+	always@(posedge clk or negedge reset_n)begin
 		if(!reset_n)begin
 			Fmem[0]<=0;
 			Fmem[1]<=0;
@@ -74,9 +75,10 @@ module lifo6_9(
 					if(top==5)begin
 						end 
 					else begin
-						Fmem[top+1]<=F;
-						Opmem[top+1]<=opcodeselin;
 						top<=top+1;
+						Fmem[top]<=F;
+						Opmem[top]<=opcodeselin;
+						
 						end
 				end
 				else begin end

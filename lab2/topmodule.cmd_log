@@ -6,3 +6,59 @@ xst -intstyle ise -ifn "/home/hpw/Documents/EC551/LAB2/lab2/topmodule.xst" -ofn 
 xst -intstyle ise -ifn "/home/hpw/Documents/EC551/LAB2/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/LAB2/lab2/topmodule.syr" 
 xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
 xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf -ucf topucf.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf -ucf topucf.ucf 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf -ucf topucf.ucf 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf -ucf topucf.ucf 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf -ucf topucf.ucf 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
+xst -intstyle ise -ifn "/home/hpw/Documents/EC551/lab2/topmodule.xst" -ofn "/home/hpw/Documents/EC551/lab2/topmodule.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf -ucf topucf.ucf 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 

@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module topmodule(
     input [2:0] A,
-    input [2:0] B,
-    input [2:0] opcodein,
+    input [2:0] Bopcode,
+    input mode,
 	 input executein,
 	 input readin,
 	 input clk,
@@ -36,7 +36,7 @@ module topmodule(
 	 ,output [5:0] FtbALULIFO
 	
     );
-
+	reg [2:0] opcodein,B;
 	wire [2:0] opcode,opcodeselALULIFO,opcodeselLIFOLED;
 	wire clk_300hz;
 	wire [5:0] F;
@@ -49,6 +49,18 @@ module topmodule(
 	assign opcodetbALULIFO=opcodeselALULIFO;
 	assign FtbALULIFO=F;
 	
+	always@(posedge clk_300hz or negedge reset_n)begin
+		
+		if(!reset_n)begin
+			opcodein<=0;B<=0;
+		end else if(mode)
+			opcodein<=Bopcode;
+		else B<=Bopcode;
+	end
+			
+	
+	
+	
 	debounce executedebouncer(
 	.clk(clk),
 	.reset_n(reset_n),
@@ -59,7 +71,7 @@ module topmodule(
 	debounce readdebouncer(
 	.clk(clk),
 	.reset_n(reset_n),
-	.noisy(raedin),
+	.noisy(readin),
 	.clean(read)
 		);
 		
@@ -94,7 +106,8 @@ module topmodule(
      .result(resultLIFOLED),
 	  .opcodeselout(opcodeselLIFOLED),
      .full(),
-     .empty()
+     .empty(),
+	  .clk(clk)
 	
 	);
 
@@ -102,7 +115,7 @@ module topmodule(
 		
 		.result(resultLIFOLED),
 		.reset_n(reset_n),
-		.clk_in(clk/*_300hz*/),
+		.clk_in(clk_300hz),
 		.ctl(displayctl),
 		.segments(display)
 		,.opcodesel(opcodeselLIFOLED)

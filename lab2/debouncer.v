@@ -17,7 +17,7 @@ module debounce (reset_n, clk, noisy, clean);
 
 
 
-   always @(posedge clk or posedge noisy) begin
+   always @(posedge clk or negedge reset_n) begin
      if (!reset_n) begin countstill <= 0; countpushed<=0; clean <= 0; still <= 0; pushed<=0;end
 	  else begin
 			if(noisy==1)begin
