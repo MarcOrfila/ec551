@@ -1,4 +1,3 @@
-verilog work "lifo6_9.v"
 verilog work "display.v"
 verilog work "decoder.v"
 verilog work "debouncer.v"

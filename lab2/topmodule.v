@@ -21,34 +21,29 @@
 module topmodule(
     input [2:0] A,
     input [2:0] Bopcode,
-    input mode,
+    input mode,				//mode 1:input from Bopcode goes to B. mode 2: input from Bcode goes to opcode. 
 	 input executein,
 	 input readin,
 	 input clk,
 	 input reset_n,
     output [7:0] display,
-	 output [3:0] displayctl
-	 
-	 ,output [5:0] resulttbLIFOLED
-	 //,output clk_300hztb
-	 ,output [2:0] opcodetbLIFOLED
-	 ,output [2:0] opcodetbALULIFO
-	 ,output [5:0] FtbALULIFO
-	
+	 output [3:0] displayctl	
     );
 	reg [2:0] opcodein,B;
-	wire [2:0] opcode,opcodeselALULIFO,opcodeselLIFOLED;
+	wire [2:0] opcodeDECODERALU,opcodeselALULIFO,opcodeselLIFOLED;
 	wire clk_300hz;
 	wire [5:0] F;
 	wire write;
 	wire [5:0] resultLIFOLED;
 	wire execute,read;
-	
+	/*
 	assign resulttbLIFOLED=resultLIFOLED;
 	assign opcodetbLIFOLED=opcodeselLIFOLED;
 	assign opcodetbALULIFO=opcodeselALULIFO;
 	assign FtbALULIFO=F;
-	
+*/
+
+// input B and opcode	
 	always@(posedge clk_300hz or negedge reset_n)begin
 		
 		if(!reset_n)begin
@@ -67,57 +62,58 @@ module topmodule(
 	.noisy(executein),
 	.clean(execute)
 		);
-		
+/*		
 	debounce readdebouncer(
 	.clk(clk),
 	.reset_n(reset_n),
 	.noisy(readin),
 	.clean(read)
 		);
-		
+	*/	
 	clkdiv clkdiv1(
 		.clk(clk),
 		.reset_n(reset_n),
 		.clk_300hz(clk_300hz)
 		);
+// begins
 
 	decoder decoder1(
 		.opcodein(opcodein),
-		.opcodeout(opcode)
+		.opcodeout(opcodeDECODERALU)
 		);
 		
 	ALU alu1(
-		.opcodein(opcode),
+		.opcodein(opcodeDECODERALU),
 		.a(A),
 		.b(B),
 		.execute(execute),
-		.f(F)
-		,.opcodesel(opcodeselALULIFO)
-		,.write(write)
+		.f(F),
+		.opcodesel(opcodeselALULIFO),
+		.write(write)
 		);
 
-
+/*
 	lifo6_9 lifo(
 	  .reset_n(reset_n),
      .write(write),
      .read(read),
      .F(F),
 	  .opcodeselin(opcodeselALULIFO),
+	  .clk(clk),
      .result(resultLIFOLED),
 	  .opcodeselout(opcodeselLIFOLED),
      .full(),
-     .empty(),
-	  .clk(clk)
-	
+     .empty(),	
 	);
-
+*/
 	display LED(
 		
-		.result(resultLIFOLED),
+		.result(F),
+		.opcodesel(opcodeselALULIFO),
 		.reset_n(reset_n),
 		.clk_in(clk_300hz),
+		
 		.ctl(displayctl),
 		.segments(display)
-		,.opcodesel(opcodeselLIFOLED)
 		);
 endmodule
