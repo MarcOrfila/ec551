@@ -22,9 +22,10 @@ module display(
     input [5:0] result,
 	 input clk_in,
 	 input reset_n,
+	 input [2:0] opcodesel,//if opcodesel is not 110(xnor) it displays decimal, else binary
 	 output reg [3:0] ctl,
     output reg [7:0] segments //segments[0] is the point
-	 , input [2:0] opcodesel//if opcodesel is not 110(xnor) it displays decimal, else binary
+	 
     );
 
 	reg [3:0] highdigit;
@@ -84,18 +85,14 @@ module display(
 		
 	end
 
-	always@(posedge clk_in or negedge reset_n) begin
-		if(!reset_n)begin				absresult<=0;highdigit<=0;lowdigit<=0;end
+	always@(result,reset_n) begin
+		if(!reset_n)begin				absresult=0;highdigit=0;lowdigit=0;end
 		else	begin
-			if(result[5]==1)			absresult<=-result;
-			else 							absresult<=result;
+			if(result[5]==1)			absresult=-result;
+			else 							absresult=result;
 			
-			highdigit<=absresult/10;
-											
-			if(highdigit==0)			highdigit<=10;
-			else 	begin end
-			
-			lowdigit<=absresult%10;
+			highdigit=(absresult/10==0)?10:absresult/10;			
+			lowdigit=absresult%10;
 		end
 	end
 

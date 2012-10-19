@@ -27,6 +27,7 @@ module displaytb;
 	// Inputs
 	reg [5:0] result;
 	reg clk_in;
+	reg [2:0]opcodesel;
 reg reset;
 	// Outputs
 	wire [3:0] ctl;
@@ -38,7 +39,8 @@ reg reset;
 		.reset_n(reset),
 		.clk_in(clk_in), 
 		.ctl(ctl), 
-		.segments(segments)
+		.segments(segments),
+		.opcodesel(opcodesel)
 	);
 
 	initial begin
@@ -46,6 +48,7 @@ reg reset;
 		result = -15;
 		clk_in = 0;
 		reset=0;
+		opcodesel=0;
 		// Wait 100 ns for global reset to finish
 		#100;
         reset=1;
@@ -56,5 +59,6 @@ reg reset;
 		
 		always #4 clk_in=~clk_in;
 		always #49 result=result+1;
+		always #85 opcodesel=opcodesel+1;
 endmodule
 
