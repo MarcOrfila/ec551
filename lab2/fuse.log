@@ -9,14 +9,13 @@ Analyzing Verilog file "/share/Study/Xilinx/13.3/ISE_DS/ISE//verilog/src/glbl.v"
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 36252 KB
-Fuse CPU Usage: 2130 ms
+Fuse CPU Usage: 2190 ms
 Compiling module display
 Compiling module displaytb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 3 Verilog Units
 Built simulation executable /home/hpw/Documents/EC551/LAB2/lab2/displaytb_isim_beh.exe
 Fuse Memory Usage: 75192 KB
-Fuse CPU Usage: 2150 ms
-GCC CPU Usage: 690 ms
+Fuse CPU Usage: 2220 ms
+GCC CPU Usage: 710 ms

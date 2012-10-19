@@ -77,11 +77,11 @@ module display(
 		endcase
 	end
 	
-	always@(posedge clk_in or negedge reset_n) begin
-		if(~reset_n) 					sign<=10;
+	always@(result,reset_n) begin
+		if(!reset_n) 					sign=10;
 		else 
-		if(result[5]==0)				sign<=10;
-		else 								sign<=11;
+		if(result[5]==0)				sign=10;
+		else 								sign=11;
 		
 	end
 
