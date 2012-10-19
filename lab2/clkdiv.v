@@ -28,7 +28,7 @@ module clkdiv(
 	
 	always@(posedge clk)begin
 		if(!reset_n)begin counter_300hz<=0;clk_300hz<=0; end else begin
-			counter_300hz<=(counter_300hz==150000)?0:counter_300hz+1;
+			counter_300hz<=(counter_300hz==150000)?1'b0:counter_300hz+1'b1;
 			clk_300hz<=(counter_300hz==150000)?(~clk_300hz):clk_300hz;
 		end
 	end

@@ -41,42 +41,57 @@ module display(
 	
 	
 	
-	
 	always@(posedge clk_in or negedge reset_n) begin  //divide the period
-			if(~reset_n)counter<=0;
+			if(~reset_n)counter<=2'b00;
 			else begin
-				if(counter==2)counter<=0;
-				else counter<=counter+1;
+				if(counter==2)counter<=2'b00;
+				else counter<=counter+1'b1;
 			end
 	end
 	
-	always@(counter,opcodesel,result,lowdigit,highdigit) begin // assign the period to the 3 LEDs
+always@(reset_n,counter,opcodesel,result,lowdigit,highdigit,sign) begin // assign the period to the 3 LEDs
+	if(!reset_n)begin				absresult=0;highdigit=0;lowdigit=0;currentdigit=0;ctl[3:0]=4'b0000;end
+	else	begin
+			if(result[5]==1)		absresult[5:0]=-result[5:0];
+			else 						absresult[5:0]=result[5:0];
+			
+		highdigit=(absresult/10==0)?10:absresult/10;			
+		lowdigit=absresult%10;
+	
+		ctl[3]=1'b0;
+		
 		case(counter) 
 		0: 
 		begin
-		ctl[3]=0;ctl[1]=0;ctl[2]=0;ctl[0]=1;
+		ctl[1]=0;ctl[2]=0;ctl[0]=1;
 		currentdigit=(opcodesel==3'b110)?{3'b000,result[0]}:lowdigit;
 		end
 		
 		1: 
 		begin
-		ctl[3]=0;ctl[0]=0;ctl[2]=0;ctl[1]=1;
+		ctl[0]=0;ctl[2]=0;ctl[1]=1;
 		currentdigit=(opcodesel==3'b110)?{3'b000,result[1]}:highdigit;
 		end
 		
 		2:
 		begin
-		ctl[0]=0;ctl[1]=0;ctl[2]=1;ctl[3]=0;
+		ctl[0]=0;ctl[1]=0;ctl[2]=1;
 		currentdigit=(opcodesel==3'b110)?{3'b000,result[2]}:sign;
 		end
+		3:
+		begin
+		ctl[0]=0;ctl[1]=0;ctl[2]=0;
+		currentdigit=10;
+		end
+
 		default:
 		begin
-		ctl[0]=0;ctl[1]=0;ctl[2]=0;ctl[3]=0;
+		ctl[0]=0;ctl[1]=0;ctl[2]=0;
 		currentdigit=10;
 		end
 		endcase
 	end
-	
+end	
 	always@(result,reset_n) begin
 		if(!reset_n) 					sign=10;
 		else 
@@ -85,16 +100,6 @@ module display(
 		
 	end
 
-	always@(result,reset_n) begin
-		if(!reset_n)begin				absresult=0;highdigit=0;lowdigit=0;end
-		else	begin
-			if(result[5]==1)			absresult=-result;
-			else 							absresult=result;
-			
-			highdigit=(absresult/10==0)?10:absresult/10;			
-			lowdigit=absresult%10;
-		end
-	end
 
 
 	always@(currentdigit) begin //decode

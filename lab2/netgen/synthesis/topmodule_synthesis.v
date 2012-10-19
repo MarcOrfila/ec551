@@ -7,14 +7,14 @@
 // \   \   \/     Version: O.76xd
 //  \   \         Application: netgen
 //  /   /         Filename: topmodule_synthesis.v
-// /___/   /\     Timestamp: Tue Oct 16 15:19:44 2012
+// /___/   /\     Timestamp: Fri Oct 19 01:02:24 2012
 // \   \  /  \ 
 //  \___\/\___\
 //             
 // Command	: -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
 // Device	: xc6slx16-3-csg324
 // Input file	: topmodule.ngc
-// Output file	: /home/hpw/Documents/EC551/lab2/netgen/synthesis/topmodule_synthesis.v
+// Output file	: /home/hpw/Documents/EC551/LAB2/lab2/netgen/synthesis/topmodule_synthesis.v
 // # of Modules	: 1
 // Design Name	: topmodule
 // Xilinx        : /share/Study/Xilinx/13.3/ISE_DS/ISE/
@@ -73,14 +73,14 @@ module topmodule (
   wire display_3_OBUF_44;
   wire display_2_OBUF_45;
   wire display_1_OBUF_46;
-  wire display_0_OBUF_47;
-  wire N1;
+  wire displayctl_3_OBUF_47;
+  wire display_0_OBUF_48;
   wire mode_inv;
   wire \decoder1/Mram_opcodeout ;
   wire \decoder1/Mram_opcodeout1 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42_107 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13_108 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT11 ;
   wire \alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<4> ;
   wire \alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<3> ;
@@ -152,10 +152,8 @@ module topmodule (
   wire \readdebouncer/Mcount_countstill ;
   wire \readdebouncer/noisy_inv ;
   wire \readdebouncer/_n0066_inv ;
-  wire \readdebouncer/_n0084_inv ;
-  wire \readdebouncer/_n0066 ;
-  wire \readdebouncer/pushed_288 ;
-  wire \readdebouncer/still_289 ;
+  wire \readdebouncer/pushed_286 ;
+  wire \readdebouncer/still_287 ;
   wire \executedebouncer/Mcount_countpushed25 ;
   wire \executedebouncer/Mcount_countpushed24 ;
   wire \executedebouncer/Mcount_countpushed23 ;
@@ -211,10 +209,8 @@ module topmodule (
   wire \executedebouncer/Mcount_countstill ;
   wire \executedebouncer/noisy_inv ;
   wire \executedebouncer/_n0066_inv ;
-  wire \executedebouncer/_n0084_inv ;
-  wire \executedebouncer/_n0066 ;
-  wire \executedebouncer/pushed_501 ;
-  wire \executedebouncer/still_502 ;
+  wire \executedebouncer/pushed_497 ;
+  wire \executedebouncer/still_498 ;
   wire \lifo/_n0129_inv ;
   wire \lifo/_n0139_inv ;
   wire \lifo/top[2]_X_6_o_wide_mux_7_OUT<0> ;
@@ -227,56 +223,49 @@ module topmodule (
   wire \lifo/top[2]_X_6_o_wide_mux_8_OUT<1> ;
   wire \lifo/top[2]_X_6_o_wide_mux_8_OUT<2> ;
   wire \lifo/_n0108 ;
-  wire \LED/result[5]_PWR_9_o_mod_23/Mmux_a[0]_a[5]_MUX_325_o132 ;
-  wire \LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_lut<3> ;
-  wire \LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_cy<1> ;
-  wire \LED/Msub_result[5]_unary_minus_19_OUT_cy<1> ;
-  wire \LED/result[5]_PWR_9_o_mod_23/BUS_0006_INV_134_o ;
-  wire \LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o_623 ;
+  wire \LED/Mmux_currentdigit<0>2212 ;
+  wire \LED/Mmux_currentdigit<0>214 ;
+  wire \LED/Mram_segments41_616 ;
+  wire \LED/Mcount_counter1 ;
+  wire \LED/Mcount_counter ;
   wire \LED/reset_n_inv ;
-  wire \LED/GND_8_o_GND_8_o_equal_22_o ;
-  wire \LED/result[5]_PWR_9_o_mux_22_OUT<1> ;
-  wire \LED/opcodesel[2]_PWR_9_o_equal_10_o ;
-  wire \LED/result[5]_PWR_9_o_mod_23_OUT<1> ;
-  wire \LED/result[5]_PWR_9_o_mod_23_OUT<2> ;
-  wire \LED/result[5]_PWR_9_o_mod_23_OUT<3> ;
-  wire \LED/highdigit[0] ;
-  wire \LED/highdigit[1] ;
-  wire \LED/highdigit[3] ;
-  wire \clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ;
-  wire \clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ;
+  wire \clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ;
+  wire \clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT3 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT32 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT33_651 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT33_629 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT4 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41_653 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT44_654 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41_631 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43_632 ;
   wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT2 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT21_656 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22_657 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT23_658 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_660 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT21_634 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22_635 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT23_636 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT6 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61_638 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_639 ;
   wire N01;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT1 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT19_665 ;
-  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT110 ;
-  wire \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_668 ;
-  wire \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_669 ;
-  wire \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_670 ;
-  wire \readdebouncer/_n00661_671 ;
-  wire \readdebouncer/_n00662_672 ;
-  wire \readdebouncer/_n00663_673 ;
-  wire \readdebouncer/_n00664_674 ;
-  wire \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_676 ;
-  wire \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_677 ;
-  wire \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_678 ;
-  wire \executedebouncer/_n00661_679 ;
-  wire \executedebouncer/_n00662_680 ;
-  wire \executedebouncer/_n00663_681 ;
-  wire \executedebouncer/_n00664_682 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT14_641 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15_642 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16_643 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT17_644 ;
+  wire \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT18 ;
+  wire \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_647 ;
+  wire \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_648 ;
+  wire \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_649 ;
+  wire \readdebouncer/_n00661_650 ;
+  wire \readdebouncer/_n00662_651 ;
+  wire \readdebouncer/_n00663_652 ;
+  wire \readdebouncer/_n00664_653 ;
+  wire \readdebouncer/_n00665_654 ;
+  wire \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_656 ;
+  wire \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_657 ;
+  wire \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_658 ;
+  wire \executedebouncer/_n00661_659 ;
+  wire \executedebouncer/_n00662_660 ;
+  wire \executedebouncer/_n00663_661 ;
+  wire \executedebouncer/_n00664_662 ;
+  wire \executedebouncer/_n00665_663 ;
   wire \lifo/mux621 ;
   wire \lifo/mux6111 ;
   wire \lifo/mux601 ;
@@ -286,120 +275,173 @@ module topmodule (
   wire \lifo/mux561 ;
   wire \lifo/mux551 ;
   wire \lifo/mux541 ;
+  wire \LED/Mmux_currentdigit<0>26_673 ;
+  wire \LED/Mmux_currentdigit<0>261_674 ;
+  wire \LED/Mmux_currentdigit<0>262_675 ;
+  wire \LED/Mmux_currentdigit<0>2 ;
+  wire \LED/Mmux_currentdigit<0>21_677 ;
+  wire \LED/Mmux_currentdigit<0>22 ;
+  wire \LED/Mmux_currentdigit<0>23_679 ;
+  wire \LED/Mmux_currentdigit<0>24_680 ;
   wire N2;
-  wire \LED/Mmux_currentdigit<0>1 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<1>_rt_735 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<2>_rt_736 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<3>_rt_737 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<4>_rt_738 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<5>_rt_739 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<6>_rt_740 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<7>_rt_741 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<8>_rt_742 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<9>_rt_743 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<10>_rt_744 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<11>_rt_745 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<12>_rt_746 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<13>_rt_747 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<14>_rt_748 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<15>_rt_749 ;
-  wire \clkdiv1/Mcount_counter_300hz_cy<16>_rt_750 ;
-  wire \clkdiv1/Mcount_counter_300hz_xor<17>_rt_751 ;
-  wire \readdebouncer/still_rstpot_752 ;
-  wire \readdebouncer/clean_rstpot_753 ;
-  wire \executedebouncer/still_rstpot_754 ;
-  wire \executedebouncer/clean_rstpot_755 ;
-  wire \clkdiv1/clk_300hz_rstpot1_756 ;
+  wire \LED/Mmux_currentdigit<0>222_682 ;
+  wire \LED/Mmux_currentdigit<0>223_683 ;
+  wire \LED/Mmux_currentdigit<0>224_684 ;
+  wire \LED/Mmux_currentdigit<0>225_685 ;
+  wire \LED/Mmux_currentdigit<0>228_686 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<1>_rt_728 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<2>_rt_729 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<3>_rt_730 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<4>_rt_731 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<5>_rt_732 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<6>_rt_733 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<7>_rt_734 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<8>_rt_735 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<9>_rt_736 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<10>_rt_737 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<11>_rt_738 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<12>_rt_739 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<13>_rt_740 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<14>_rt_741 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<15>_rt_742 ;
+  wire \clkdiv1/Mcount_counter_300hz_cy<16>_rt_743 ;
+  wire \clkdiv1/Mcount_counter_300hz_xor<17>_rt_744 ;
+  wire \readdebouncer/pushed_rstpot_745 ;
+  wire \readdebouncer/still_rstpot_746 ;
+  wire \readdebouncer/clean_rstpot_747 ;
+  wire \executedebouncer/pushed_rstpot_748 ;
+  wire \executedebouncer/still_rstpot_749 ;
+  wire \executedebouncer/clean_rstpot_750 ;
+  wire \clkdiv1/clk_300hz_rstpot1_751 ;
+  wire \readdebouncer/countstill_11_rstpot_752 ;
+  wire \readdebouncer/countstill_10_rstpot_753 ;
+  wire \readdebouncer/countstill_9_rstpot_754 ;
+  wire \readdebouncer/countstill_8_rstpot_755 ;
+  wire \readdebouncer/countstill_7_rstpot_756 ;
+  wire \readdebouncer/countstill_6_rstpot_757 ;
+  wire \readdebouncer/countstill_5_rstpot_758 ;
+  wire \readdebouncer/countstill_4_rstpot_759 ;
+  wire \readdebouncer/countstill_3_rstpot_760 ;
+  wire \readdebouncer/countstill_2_rstpot_761 ;
+  wire \readdebouncer/countstill_1_rstpot_762 ;
+  wire \readdebouncer/countstill_0_rstpot_763 ;
+  wire \executedebouncer/countstill_11_rstpot_764 ;
+  wire \executedebouncer/countstill_10_rstpot_765 ;
+  wire \executedebouncer/countstill_9_rstpot_766 ;
+  wire \executedebouncer/countstill_8_rstpot_767 ;
+  wire \executedebouncer/countstill_7_rstpot_768 ;
+  wire \executedebouncer/countstill_6_rstpot_769 ;
+  wire \executedebouncer/countstill_5_rstpot_770 ;
+  wire \executedebouncer/countstill_4_rstpot_771 ;
+  wire \executedebouncer/countstill_3_rstpot_772 ;
+  wire \executedebouncer/countstill_2_rstpot_773 ;
+  wire \executedebouncer/countstill_1_rstpot_774 ;
+  wire \executedebouncer/countstill_0_rstpot_775 ;
+  wire \readdebouncer/countstill_12_rstpot_776 ;
+  wire \executedebouncer/countstill_12_rstpot_777 ;
+  wire \readdebouncer/countstill_13_rstpot_778 ;
+  wire \executedebouncer/countstill_13_rstpot_779 ;
+  wire \readdebouncer/countstill_14_rstpot_780 ;
+  wire \executedebouncer/countstill_14_rstpot_781 ;
+  wire \readdebouncer/countstill_15_rstpot_782 ;
+  wire \executedebouncer/countstill_15_rstpot_783 ;
+  wire \readdebouncer/countstill_16_rstpot_784 ;
+  wire \executedebouncer/countstill_16_rstpot_785 ;
+  wire \readdebouncer/countstill_17_rstpot_786 ;
+  wire \executedebouncer/countstill_17_rstpot_787 ;
+  wire \readdebouncer/countstill_18_rstpot_788 ;
+  wire \executedebouncer/countstill_18_rstpot_789 ;
   wire N4;
   wire N6;
   wire N8;
-  wire N9;
-  wire N11;
+  wire N10;
   wire N12;
-  wire N14;
+  wire N13;
   wire N15;
-  wire N17;
+  wire N16;
   wire N18;
-  wire \readdebouncer/pushed_rstpot_767 ;
-  wire \executedebouncer/pushed_rstpot_768 ;
-  wire \clkdiv1/counter_300hz_0_rstpot_769 ;
-  wire N20;
+  wire N19;
+  wire N21;
   wire N22;
-  wire \lifo/top_0_1_772 ;
-  wire \lifo/_n0120_inv1_rstpot_773 ;
-  wire \lifo/Fmem_0_0_dpot_774 ;
-  wire \lifo/Fmem_0_1_dpot_775 ;
-  wire \lifo/Fmem_0_2_dpot_776 ;
-  wire \lifo/Fmem_0_3_dpot_777 ;
-  wire \lifo/Fmem_0_4_dpot_778 ;
-  wire \lifo/Fmem_0_5_dpot_779 ;
-  wire \lifo/Fmem_0_6_dpot_780 ;
-  wire \lifo/Fmem_0_7_dpot_781 ;
-  wire \lifo/Fmem_0_8_dpot_782 ;
-  wire \lifo/Fmem_0_9_dpot_783 ;
-  wire \lifo/Fmem_0_10_dpot_784 ;
-  wire \lifo/Fmem_0_11_dpot_785 ;
-  wire \lifo/Fmem_0_12_dpot_786 ;
-  wire \lifo/Fmem_0_13_dpot_787 ;
-  wire \lifo/Fmem_0_14_dpot_788 ;
-  wire \lifo/Fmem_0_15_dpot_789 ;
-  wire \lifo/Fmem_0_16_dpot_790 ;
-  wire \lifo/Fmem_0_17_dpot_791 ;
-  wire \lifo/Fmem_0_18_dpot_792 ;
-  wire \lifo/Fmem_0_19_dpot_793 ;
-  wire \lifo/Fmem_0_20_dpot_794 ;
-  wire \lifo/Fmem_0_21_dpot_795 ;
-  wire \lifo/Fmem_0_22_dpot_796 ;
-  wire \lifo/Fmem_0_23_dpot_797 ;
-  wire \lifo/Fmem_0_24_dpot_798 ;
-  wire \lifo/Fmem_0_25_dpot_799 ;
-  wire \lifo/Fmem_0_26_dpot_800 ;
-  wire \lifo/Fmem_0_27_dpot_801 ;
-  wire \lifo/Fmem_0_28_dpot_802 ;
-  wire \lifo/Fmem_0_29_dpot_803 ;
-  wire \lifo/Opmem_0_0_dpot_804 ;
-  wire \lifo/Opmem_0_1_dpot_805 ;
-  wire \lifo/Opmem_0_2_dpot_806 ;
-  wire \lifo/Opmem_0_3_dpot_807 ;
-  wire \lifo/Opmem_0_4_dpot_808 ;
-  wire \lifo/Opmem_0_5_dpot_809 ;
-  wire \lifo/Opmem_0_6_dpot_810 ;
-  wire \lifo/Opmem_0_7_dpot_811 ;
-  wire \lifo/Opmem_0_8_dpot_812 ;
-  wire \lifo/Opmem_0_9_dpot_813 ;
-  wire \lifo/Opmem_0_10_dpot_814 ;
-  wire \lifo/Opmem_0_11_dpot_815 ;
-  wire \lifo/Opmem_0_12_dpot_816 ;
-  wire \lifo/Opmem_0_13_dpot_817 ;
-  wire \lifo/Opmem_0_14_dpot_818 ;
-  wire \clkdiv1/counter_300hz_2_rstpot_819 ;
-  wire \clkdiv1/counter_300hz_1_rstpot_820 ;
-  wire \clkdiv1/counter_300hz_5_rstpot_821 ;
-  wire \clkdiv1/counter_300hz_3_rstpot_822 ;
-  wire \clkdiv1/counter_300hz_4_rstpot_823 ;
-  wire \clkdiv1/counter_300hz_8_rstpot_824 ;
-  wire \clkdiv1/counter_300hz_6_rstpot_825 ;
-  wire \clkdiv1/counter_300hz_7_rstpot_826 ;
-  wire \clkdiv1/counter_300hz_11_rstpot_827 ;
-  wire \clkdiv1/counter_300hz_9_rstpot_828 ;
-  wire \clkdiv1/counter_300hz_10_rstpot_829 ;
-  wire \clkdiv1/counter_300hz_14_rstpot_830 ;
-  wire \clkdiv1/counter_300hz_12_rstpot_831 ;
-  wire \clkdiv1/counter_300hz_13_rstpot_832 ;
-  wire \clkdiv1/counter_300hz_17_rstpot_833 ;
-  wire \clkdiv1/counter_300hz_15_rstpot_834 ;
-  wire \clkdiv1/counter_300hz_16_rstpot_835 ;
   wire N24;
-  wire N25;
-  wire \alu1/opcodesel_2_1_838 ;
-  wire \alu1/opcodesel_1_1_839 ;
-  wire \alu1/opcodesel_0_1_840 ;
-  wire \alu1/f_5_1_841 ;
-  wire \alu1/f_4_1_842 ;
-  wire \alu1/f_3_1_843 ;
-  wire \alu1/f_2_1_844 ;
-  wire \alu1/f_1_1_845 ;
-  wire \alu1/f_0_1_846 ;
+  wire N26;
+  wire N28;
+  wire \readdebouncer/_n0066_inv1_805 ;
+  wire \executedebouncer/_n0066_inv1_806 ;
+  wire \lifo/top_0_1_807 ;
+  wire \lifo/_n0120_inv1_rstpot_808 ;
+  wire \lifo/Fmem_0_0_dpot_809 ;
+  wire \lifo/Fmem_0_1_dpot_810 ;
+  wire \lifo/Fmem_0_2_dpot_811 ;
+  wire \lifo/Fmem_0_3_dpot_812 ;
+  wire \lifo/Fmem_0_4_dpot_813 ;
+  wire \lifo/Fmem_0_5_dpot_814 ;
+  wire \lifo/Fmem_0_6_dpot_815 ;
+  wire \lifo/Fmem_0_7_dpot_816 ;
+  wire \lifo/Fmem_0_8_dpot_817 ;
+  wire \lifo/Fmem_0_9_dpot_818 ;
+  wire \lifo/Fmem_0_10_dpot_819 ;
+  wire \lifo/Fmem_0_11_dpot_820 ;
+  wire \lifo/Fmem_0_12_dpot_821 ;
+  wire \lifo/Fmem_0_13_dpot_822 ;
+  wire \lifo/Fmem_0_14_dpot_823 ;
+  wire \lifo/Fmem_0_15_dpot_824 ;
+  wire \lifo/Fmem_0_16_dpot_825 ;
+  wire \lifo/Fmem_0_17_dpot_826 ;
+  wire \lifo/Fmem_0_18_dpot_827 ;
+  wire \lifo/Fmem_0_19_dpot_828 ;
+  wire \lifo/Fmem_0_20_dpot_829 ;
+  wire \lifo/Fmem_0_21_dpot_830 ;
+  wire \lifo/Fmem_0_22_dpot_831 ;
+  wire \lifo/Fmem_0_23_dpot_832 ;
+  wire \lifo/Fmem_0_24_dpot_833 ;
+  wire \lifo/Fmem_0_25_dpot_834 ;
+  wire \lifo/Fmem_0_26_dpot_835 ;
+  wire \lifo/Fmem_0_27_dpot_836 ;
+  wire \lifo/Fmem_0_28_dpot_837 ;
+  wire \lifo/Fmem_0_29_dpot_838 ;
+  wire \lifo/Opmem_0_0_dpot_839 ;
+  wire \lifo/Opmem_0_1_dpot_840 ;
+  wire \lifo/Opmem_0_2_dpot_841 ;
+  wire \lifo/Opmem_0_3_dpot_842 ;
+  wire \lifo/Opmem_0_4_dpot_843 ;
+  wire \lifo/Opmem_0_5_dpot_844 ;
+  wire \lifo/Opmem_0_6_dpot_845 ;
+  wire \lifo/Opmem_0_7_dpot_846 ;
+  wire \lifo/Opmem_0_8_dpot_847 ;
+  wire \lifo/Opmem_0_9_dpot_848 ;
+  wire \lifo/Opmem_0_10_dpot_849 ;
+  wire \lifo/Opmem_0_11_dpot_850 ;
+  wire \lifo/Opmem_0_12_dpot_851 ;
+  wire \lifo/Opmem_0_13_dpot_852 ;
+  wire \lifo/Opmem_0_14_dpot_853 ;
+  wire \clkdiv1/counter_300hz_2_rstpot_854 ;
+  wire \clkdiv1/counter_300hz_0_rstpot_855 ;
+  wire \clkdiv1/counter_300hz_1_rstpot_856 ;
+  wire \clkdiv1/counter_300hz_5_rstpot_857 ;
+  wire \clkdiv1/counter_300hz_3_rstpot_858 ;
+  wire \clkdiv1/counter_300hz_4_rstpot_859 ;
+  wire \clkdiv1/counter_300hz_8_rstpot_860 ;
+  wire \clkdiv1/counter_300hz_6_rstpot_861 ;
+  wire \clkdiv1/counter_300hz_7_rstpot_862 ;
+  wire \clkdiv1/counter_300hz_11_rstpot_863 ;
+  wire \clkdiv1/counter_300hz_9_rstpot_864 ;
+  wire \clkdiv1/counter_300hz_10_rstpot_865 ;
+  wire \clkdiv1/counter_300hz_14_rstpot_866 ;
+  wire \clkdiv1/counter_300hz_12_rstpot_867 ;
+  wire \clkdiv1/counter_300hz_13_rstpot_868 ;
+  wire \clkdiv1/counter_300hz_17_rstpot_869 ;
+  wire \clkdiv1/counter_300hz_15_rstpot_870 ;
+  wire \clkdiv1/counter_300hz_16_rstpot_871 ;
+  wire \alu1/opcodesel_2_1_872 ;
+  wire \alu1/opcodesel_1_1_873 ;
+  wire \alu1/opcodesel_0_1_874 ;
+  wire \alu1/f_5_1_875 ;
+  wire \alu1/f_4_1_876 ;
+  wire \alu1/f_3_1_877 ;
+  wire \alu1/f_2_1_878 ;
+  wire \alu1/f_1_1_879 ;
+  wire \alu1/f_0_1_880 ;
   wire [5 : 0] \alu1/f ;
   wire [2 : 0] \alu1/opcodesel ;
   wire [2 : 0] B;
@@ -428,19 +470,16 @@ module topmodule (
   wire [29 : 0] \lifo/Fmem_0 ;
   wire [2 : 0] \lifo/top ;
   wire [14 : 0] \lifo/Opmem_0 ;
-  wire [3 : 0] \LED/currentdigit ;
-  wire [0 : 0] \LED/n0045 ;
-  wire [3 : 0] \LED/lowdigit ;
-  wire [0 : 0] \LED/sign ;
+  wire [1 : 0] \LED/currentdigit ;
   wire [1 : 0] \LED/counter ;
   wire [17 : 17] \clkdiv1/GND_3_o_GND_3_o_equal_5_o ;
   wire [25 : 25] \readdebouncer/GND_2_o_GND_2_o_equal_4_o ;
   wire [25 : 25] \executedebouncer/GND_2_o_GND_2_o_equal_4_o ;
   GND   XST_GND (
-    .G(display_0_OBUF_47)
+    .G(displayctl_3_OBUF_47)
   );
   VCC   XST_VCC (
-    .P(N1)
+    .P(display_0_OBUF_48)
   );
   FDCE   opcodein_0 (
     .C(\clkdiv1/clk_300hz_27 ),
@@ -485,195 +524,195 @@ module topmodule (
     .Q(B[2])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<0>  (
-    .CI(display_0_OBUF_47),
-    .DI(N1),
+    .CI(displayctl_3_OBUF_47),
+    .DI(display_0_OBUF_48),
     .S(\clkdiv1/Mcount_counter_300hz_lut [0]),
     .O(\clkdiv1/Mcount_counter_300hz_cy [0])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<0>  (
-    .CI(display_0_OBUF_47),
+    .CI(displayctl_3_OBUF_47),
     .LI(\clkdiv1/Mcount_counter_300hz_lut [0]),
     .O(Result[0])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<1>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [0]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<1>_rt_735 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<1>_rt_728 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [1])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<1>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [0]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<1>_rt_735 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<1>_rt_728 ),
     .O(Result[1])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<2>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [1]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<2>_rt_736 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<2>_rt_729 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [2])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<2>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [1]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<2>_rt_736 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<2>_rt_729 ),
     .O(Result[2])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<3>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [2]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<3>_rt_737 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<3>_rt_730 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [3])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<3>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [2]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<3>_rt_737 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<3>_rt_730 ),
     .O(Result[3])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<4>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [3]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<4>_rt_738 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<4>_rt_731 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [4])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<4>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [3]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<4>_rt_738 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<4>_rt_731 ),
     .O(Result[4])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<5>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [4]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<5>_rt_739 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<5>_rt_732 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [5])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<5>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [4]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<5>_rt_739 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<5>_rt_732 ),
     .O(Result[5])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<6>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [5]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<6>_rt_740 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<6>_rt_733 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [6])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<6>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [5]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<6>_rt_740 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<6>_rt_733 ),
     .O(Result[6])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<7>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [6]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<7>_rt_741 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<7>_rt_734 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [7])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<7>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [6]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<7>_rt_741 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<7>_rt_734 ),
     .O(Result[7])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<8>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [7]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<8>_rt_742 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<8>_rt_735 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [8])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<8>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [7]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<8>_rt_742 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<8>_rt_735 ),
     .O(Result[8])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<9>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [8]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<9>_rt_743 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<9>_rt_736 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [9])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<9>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [8]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<9>_rt_743 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<9>_rt_736 ),
     .O(Result[9])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<10>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [9]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<10>_rt_744 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<10>_rt_737 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [10])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<10>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [9]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<10>_rt_744 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<10>_rt_737 ),
     .O(Result[10])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<11>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [10]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<11>_rt_745 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<11>_rt_738 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [11])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<11>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [10]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<11>_rt_745 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<11>_rt_738 ),
     .O(Result[11])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<12>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [11]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<12>_rt_746 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<12>_rt_739 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [12])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<12>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [11]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<12>_rt_746 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<12>_rt_739 ),
     .O(Result[12])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<13>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [12]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<13>_rt_747 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<13>_rt_740 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [13])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<13>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [12]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<13>_rt_747 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<13>_rt_740 ),
     .O(Result[13])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<14>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [13]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<14>_rt_748 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<14>_rt_741 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [14])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<14>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [13]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<14>_rt_748 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<14>_rt_741 ),
     .O(Result[14])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<15>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [14]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<15>_rt_749 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<15>_rt_742 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [15])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<15>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [14]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<15>_rt_749 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<15>_rt_742 ),
     .O(Result[15])
   );
   MUXCY   \clkdiv1/Mcount_counter_300hz_cy<16>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [15]),
-    .DI(display_0_OBUF_47),
-    .S(\clkdiv1/Mcount_counter_300hz_cy<16>_rt_750 ),
+    .DI(displayctl_3_OBUF_47),
+    .S(\clkdiv1/Mcount_counter_300hz_cy<16>_rt_743 ),
     .O(\clkdiv1/Mcount_counter_300hz_cy [16])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<16>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [15]),
-    .LI(\clkdiv1/Mcount_counter_300hz_cy<16>_rt_750 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_cy<16>_rt_743 ),
     .O(Result[16])
   );
   XORCY   \clkdiv1/Mcount_counter_300hz_xor<17>  (
     .CI(\clkdiv1/Mcount_counter_300hz_cy [16]),
-    .LI(\clkdiv1/Mcount_counter_300hz_xor<17>_rt_751 ),
+    .LI(\clkdiv1/Mcount_counter_300hz_xor<17>_rt_744 ),
     .O(Result[17])
   );
   FD   \alu1/f_5  (
@@ -769,139 +808,6 @@ module topmodule (
     .CLR(\LED/reset_n_inv ),
     .D(\readdebouncer/Mcount_countstill19 ),
     .Q(\readdebouncer/countstill [19])
-  );
-  FDCE   \readdebouncer/countstill_18  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill18 ),
-    .Q(\readdebouncer/countstill [18])
-  );
-  FDCE   \readdebouncer/countstill_17  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill17 ),
-    .Q(\readdebouncer/countstill [17])
-  );
-  FDCE   \readdebouncer/countstill_16  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill16 ),
-    .Q(\readdebouncer/countstill [16])
-  );
-  FDCE   \readdebouncer/countstill_15  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill15 ),
-    .Q(\readdebouncer/countstill [15])
-  );
-  FDCE   \readdebouncer/countstill_14  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill14 ),
-    .Q(\readdebouncer/countstill [14])
-  );
-  FDCE   \readdebouncer/countstill_13  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill13 ),
-    .Q(\readdebouncer/countstill [13])
-  );
-  FDCE   \readdebouncer/countstill_12  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill12 ),
-    .Q(\readdebouncer/countstill [12])
-  );
-  FDCE   \readdebouncer/countstill_11  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill11 ),
-    .Q(\readdebouncer/countstill [11])
-  );
-  FDCE   \readdebouncer/countstill_10  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill10 ),
-    .Q(\readdebouncer/countstill [10])
-  );
-  FDCE   \readdebouncer/countstill_9  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill9 ),
-    .Q(\readdebouncer/countstill [9])
-  );
-  FDCE   \readdebouncer/countstill_8  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill8 ),
-    .Q(\readdebouncer/countstill [8])
-  );
-  FDCE   \readdebouncer/countstill_7  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill7 ),
-    .Q(\readdebouncer/countstill [7])
-  );
-  FDCE   \readdebouncer/countstill_6  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill6 ),
-    .Q(\readdebouncer/countstill [6])
-  );
-  FDCE   \readdebouncer/countstill_5  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill5 ),
-    .Q(\readdebouncer/countstill [5])
-  );
-  FDCE   \readdebouncer/countstill_4  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill4 ),
-    .Q(\readdebouncer/countstill [4])
-  );
-  FDCE   \readdebouncer/countstill_3  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill3 ),
-    .Q(\readdebouncer/countstill [3])
-  );
-  FDCE   \readdebouncer/countstill_2  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill2 ),
-    .Q(\readdebouncer/countstill [2])
-  );
-  FDCE   \readdebouncer/countstill_1  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill1 ),
-    .Q(\readdebouncer/countstill [1])
-  );
-  FDCE   \readdebouncer/countstill_0  (
-    .C(clk_BUFGP_9),
-    .CE(\readdebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/Mcount_countstill ),
-    .Q(\readdebouncer/countstill [0])
   );
   FDCE   \readdebouncer/countpushed_25  (
     .C(clk_BUFGP_9),
@@ -1097,7 +1003,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<24>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [23]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [24]),
     .O(\readdebouncer/Mcount_countpushed_cy [24])
   );
@@ -1108,7 +1014,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<23>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [22]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [23]),
     .O(\readdebouncer/Mcount_countpushed_cy [23])
   );
@@ -1119,7 +1025,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<22>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [21]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [22]),
     .O(\readdebouncer/Mcount_countpushed_cy [22])
   );
@@ -1130,7 +1036,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<21>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [20]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [21]),
     .O(\readdebouncer/Mcount_countpushed_cy [21])
   );
@@ -1141,7 +1047,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<20>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [19]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [20]),
     .O(\readdebouncer/Mcount_countpushed_cy [20])
   );
@@ -1152,7 +1058,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<19>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [18]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [19]),
     .O(\readdebouncer/Mcount_countpushed_cy [19])
   );
@@ -1163,7 +1069,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<18>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [17]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [18]),
     .O(\readdebouncer/Mcount_countpushed_cy [18])
   );
@@ -1174,7 +1080,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<17>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [16]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [17]),
     .O(\readdebouncer/Mcount_countpushed_cy [17])
   );
@@ -1185,7 +1091,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<16>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [15]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [16]),
     .O(\readdebouncer/Mcount_countpushed_cy [16])
   );
@@ -1196,7 +1102,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<15>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [14]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [15]),
     .O(\readdebouncer/Mcount_countpushed_cy [15])
   );
@@ -1207,7 +1113,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<14>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [13]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [14]),
     .O(\readdebouncer/Mcount_countpushed_cy [14])
   );
@@ -1218,7 +1124,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<13>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [12]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [13]),
     .O(\readdebouncer/Mcount_countpushed_cy [13])
   );
@@ -1229,7 +1135,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<12>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [11]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [12]),
     .O(\readdebouncer/Mcount_countpushed_cy [12])
   );
@@ -1240,7 +1146,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<11>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [10]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [11]),
     .O(\readdebouncer/Mcount_countpushed_cy [11])
   );
@@ -1251,7 +1157,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<10>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [9]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [10]),
     .O(\readdebouncer/Mcount_countpushed_cy [10])
   );
@@ -1262,7 +1168,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<9>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [8]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [9]),
     .O(\readdebouncer/Mcount_countpushed_cy [9])
   );
@@ -1273,7 +1179,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<8>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [7]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [8]),
     .O(\readdebouncer/Mcount_countpushed_cy [8])
   );
@@ -1284,7 +1190,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<7>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [6]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [7]),
     .O(\readdebouncer/Mcount_countpushed_cy [7])
   );
@@ -1295,7 +1201,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<6>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [5]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [6]),
     .O(\readdebouncer/Mcount_countpushed_cy [6])
   );
@@ -1306,7 +1212,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<5>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [4]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [5]),
     .O(\readdebouncer/Mcount_countpushed_cy [5])
   );
@@ -1317,7 +1223,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<4>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [3]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [4]),
     .O(\readdebouncer/Mcount_countpushed_cy [4])
   );
@@ -1328,7 +1234,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<3>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [2]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [3]),
     .O(\readdebouncer/Mcount_countpushed_cy [3])
   );
@@ -1339,7 +1245,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<2>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [1]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [2]),
     .O(\readdebouncer/Mcount_countpushed_cy [2])
   );
@@ -1350,7 +1256,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<1>  (
     .CI(\readdebouncer/Mcount_countpushed_cy [0]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [1]),
     .O(\readdebouncer/Mcount_countpushed_cy [1])
   );
@@ -1361,7 +1267,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countpushed_cy<0>  (
     .CI(readin_IBUF_8),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countpushed_lut [0]),
     .O(\readdebouncer/Mcount_countpushed_cy [0])
   );
@@ -1375,7 +1281,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<25>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [25]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [25])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<24>  (
@@ -1385,7 +1291,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<24>  (
     .CI(\readdebouncer/Mcount_countstill_cy [23]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [24]),
     .O(\readdebouncer/Mcount_countstill_cy [24])
   );
@@ -1394,7 +1300,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<24>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [24]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [24])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<23>  (
@@ -1404,7 +1310,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<23>  (
     .CI(\readdebouncer/Mcount_countstill_cy [22]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [23]),
     .O(\readdebouncer/Mcount_countstill_cy [23])
   );
@@ -1413,7 +1319,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<23>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [23]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [23])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<22>  (
@@ -1423,7 +1329,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<22>  (
     .CI(\readdebouncer/Mcount_countstill_cy [21]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [22]),
     .O(\readdebouncer/Mcount_countstill_cy [22])
   );
@@ -1432,7 +1338,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<22>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [22]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [22])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<21>  (
@@ -1442,7 +1348,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<21>  (
     .CI(\readdebouncer/Mcount_countstill_cy [20]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [21]),
     .O(\readdebouncer/Mcount_countstill_cy [21])
   );
@@ -1451,7 +1357,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<21>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [21]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [21])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<20>  (
@@ -1461,7 +1367,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<20>  (
     .CI(\readdebouncer/Mcount_countstill_cy [19]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [20]),
     .O(\readdebouncer/Mcount_countstill_cy [20])
   );
@@ -1470,7 +1376,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<20>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [20]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [20])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<19>  (
@@ -1480,7 +1386,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<19>  (
     .CI(\readdebouncer/Mcount_countstill_cy [18]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [19]),
     .O(\readdebouncer/Mcount_countstill_cy [19])
   );
@@ -1489,7 +1395,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<19>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [19]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [19])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<18>  (
@@ -1499,7 +1405,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<18>  (
     .CI(\readdebouncer/Mcount_countstill_cy [17]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [18]),
     .O(\readdebouncer/Mcount_countstill_cy [18])
   );
@@ -1508,7 +1414,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<18>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [18]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [18])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<17>  (
@@ -1518,7 +1424,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<17>  (
     .CI(\readdebouncer/Mcount_countstill_cy [16]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [17]),
     .O(\readdebouncer/Mcount_countstill_cy [17])
   );
@@ -1527,7 +1433,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<17>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [17]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [17])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<16>  (
@@ -1537,7 +1443,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<16>  (
     .CI(\readdebouncer/Mcount_countstill_cy [15]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [16]),
     .O(\readdebouncer/Mcount_countstill_cy [16])
   );
@@ -1546,7 +1452,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<16>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [16]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [16])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<15>  (
@@ -1556,7 +1462,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<15>  (
     .CI(\readdebouncer/Mcount_countstill_cy [14]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [15]),
     .O(\readdebouncer/Mcount_countstill_cy [15])
   );
@@ -1565,7 +1471,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<15>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [15]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [15])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<14>  (
@@ -1575,7 +1481,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<14>  (
     .CI(\readdebouncer/Mcount_countstill_cy [13]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [14]),
     .O(\readdebouncer/Mcount_countstill_cy [14])
   );
@@ -1584,7 +1490,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<14>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [14]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [14])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<13>  (
@@ -1594,7 +1500,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<13>  (
     .CI(\readdebouncer/Mcount_countstill_cy [12]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [13]),
     .O(\readdebouncer/Mcount_countstill_cy [13])
   );
@@ -1603,7 +1509,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<13>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [13]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [13])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<12>  (
@@ -1613,7 +1519,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<12>  (
     .CI(\readdebouncer/Mcount_countstill_cy [11]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [12]),
     .O(\readdebouncer/Mcount_countstill_cy [12])
   );
@@ -1622,7 +1528,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<12>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [12]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [12])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<11>  (
@@ -1632,7 +1538,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<11>  (
     .CI(\readdebouncer/Mcount_countstill_cy [10]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [11]),
     .O(\readdebouncer/Mcount_countstill_cy [11])
   );
@@ -1641,7 +1547,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<11>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [11]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [11])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<10>  (
@@ -1651,7 +1557,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<10>  (
     .CI(\readdebouncer/Mcount_countstill_cy [9]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [10]),
     .O(\readdebouncer/Mcount_countstill_cy [10])
   );
@@ -1660,7 +1566,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<10>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [10]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [10])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<9>  (
@@ -1670,7 +1576,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<9>  (
     .CI(\readdebouncer/Mcount_countstill_cy [8]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [9]),
     .O(\readdebouncer/Mcount_countstill_cy [9])
   );
@@ -1679,7 +1585,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<9>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [9]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [9])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<8>  (
@@ -1689,7 +1595,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<8>  (
     .CI(\readdebouncer/Mcount_countstill_cy [7]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [8]),
     .O(\readdebouncer/Mcount_countstill_cy [8])
   );
@@ -1698,7 +1604,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<8>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [8]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [8])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<7>  (
@@ -1708,7 +1614,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<7>  (
     .CI(\readdebouncer/Mcount_countstill_cy [6]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [7]),
     .O(\readdebouncer/Mcount_countstill_cy [7])
   );
@@ -1717,7 +1623,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<7>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [7]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [7])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<6>  (
@@ -1727,7 +1633,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<6>  (
     .CI(\readdebouncer/Mcount_countstill_cy [5]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [6]),
     .O(\readdebouncer/Mcount_countstill_cy [6])
   );
@@ -1736,7 +1642,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<6>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [6]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [6])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<5>  (
@@ -1746,7 +1652,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<5>  (
     .CI(\readdebouncer/Mcount_countstill_cy [4]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [5]),
     .O(\readdebouncer/Mcount_countstill_cy [5])
   );
@@ -1755,7 +1661,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<5>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [5]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [5])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<4>  (
@@ -1765,7 +1671,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<4>  (
     .CI(\readdebouncer/Mcount_countstill_cy [3]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [4]),
     .O(\readdebouncer/Mcount_countstill_cy [4])
   );
@@ -1774,7 +1680,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<4>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [4]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [4])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<3>  (
@@ -1784,7 +1690,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<3>  (
     .CI(\readdebouncer/Mcount_countstill_cy [2]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [3]),
     .O(\readdebouncer/Mcount_countstill_cy [3])
   );
@@ -1793,7 +1699,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<3>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [3]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [3])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<2>  (
@@ -1803,7 +1709,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<2>  (
     .CI(\readdebouncer/Mcount_countstill_cy [1]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [2]),
     .O(\readdebouncer/Mcount_countstill_cy [2])
   );
@@ -1812,7 +1718,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<2>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [2]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [2])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<1>  (
@@ -1822,7 +1728,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<1>  (
     .CI(\readdebouncer/Mcount_countstill_cy [0]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [1]),
     .O(\readdebouncer/Mcount_countstill_cy [1])
   );
@@ -1831,7 +1737,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<1>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [1]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [1])
   );
   XORCY   \readdebouncer/Mcount_countstill_xor<0>  (
@@ -1841,7 +1747,7 @@ module topmodule (
   );
   MUXCY   \readdebouncer/Mcount_countstill_cy<0>  (
     .CI(\readdebouncer/noisy_inv ),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\readdebouncer/Mcount_countstill_lut [0]),
     .O(\readdebouncer/Mcount_countstill_cy [0])
   );
@@ -1850,7 +1756,7 @@ module topmodule (
   \readdebouncer/Mcount_countstill_lut<0>  (
     .I0(readin_IBUF_8),
     .I1(\readdebouncer/countstill [0]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\readdebouncer/Mcount_countstill_lut [0])
   );
   FDCE   \executedebouncer/countstill_25  (
@@ -1901,139 +1807,6 @@ module topmodule (
     .CLR(\LED/reset_n_inv ),
     .D(\executedebouncer/Mcount_countstill19 ),
     .Q(\executedebouncer/countstill [19])
-  );
-  FDCE   \executedebouncer/countstill_18  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill18 ),
-    .Q(\executedebouncer/countstill [18])
-  );
-  FDCE   \executedebouncer/countstill_17  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill17 ),
-    .Q(\executedebouncer/countstill [17])
-  );
-  FDCE   \executedebouncer/countstill_16  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill16 ),
-    .Q(\executedebouncer/countstill [16])
-  );
-  FDCE   \executedebouncer/countstill_15  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill15 ),
-    .Q(\executedebouncer/countstill [15])
-  );
-  FDCE   \executedebouncer/countstill_14  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill14 ),
-    .Q(\executedebouncer/countstill [14])
-  );
-  FDCE   \executedebouncer/countstill_13  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill13 ),
-    .Q(\executedebouncer/countstill [13])
-  );
-  FDCE   \executedebouncer/countstill_12  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill12 ),
-    .Q(\executedebouncer/countstill [12])
-  );
-  FDCE   \executedebouncer/countstill_11  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill11 ),
-    .Q(\executedebouncer/countstill [11])
-  );
-  FDCE   \executedebouncer/countstill_10  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill10 ),
-    .Q(\executedebouncer/countstill [10])
-  );
-  FDCE   \executedebouncer/countstill_9  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill9 ),
-    .Q(\executedebouncer/countstill [9])
-  );
-  FDCE   \executedebouncer/countstill_8  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill8 ),
-    .Q(\executedebouncer/countstill [8])
-  );
-  FDCE   \executedebouncer/countstill_7  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill7 ),
-    .Q(\executedebouncer/countstill [7])
-  );
-  FDCE   \executedebouncer/countstill_6  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill6 ),
-    .Q(\executedebouncer/countstill [6])
-  );
-  FDCE   \executedebouncer/countstill_5  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill5 ),
-    .Q(\executedebouncer/countstill [5])
-  );
-  FDCE   \executedebouncer/countstill_4  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill4 ),
-    .Q(\executedebouncer/countstill [4])
-  );
-  FDCE   \executedebouncer/countstill_3  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill3 ),
-    .Q(\executedebouncer/countstill [3])
-  );
-  FDCE   \executedebouncer/countstill_2  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill2 ),
-    .Q(\executedebouncer/countstill [2])
-  );
-  FDCE   \executedebouncer/countstill_1  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill1 ),
-    .Q(\executedebouncer/countstill [1])
-  );
-  FDCE   \executedebouncer/countstill_0  (
-    .C(clk_BUFGP_9),
-    .CE(\executedebouncer/_n0066_inv ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/Mcount_countstill ),
-    .Q(\executedebouncer/countstill [0])
   );
   FDCE   \executedebouncer/countpushed_25  (
     .C(clk_BUFGP_9),
@@ -2229,7 +2002,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<24>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [23]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [24]),
     .O(\executedebouncer/Mcount_countpushed_cy [24])
   );
@@ -2240,7 +2013,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<23>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [22]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [23]),
     .O(\executedebouncer/Mcount_countpushed_cy [23])
   );
@@ -2251,7 +2024,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<22>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [21]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [22]),
     .O(\executedebouncer/Mcount_countpushed_cy [22])
   );
@@ -2262,7 +2035,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<21>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [20]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [21]),
     .O(\executedebouncer/Mcount_countpushed_cy [21])
   );
@@ -2273,7 +2046,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<20>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [19]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [20]),
     .O(\executedebouncer/Mcount_countpushed_cy [20])
   );
@@ -2284,7 +2057,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<19>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [18]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [19]),
     .O(\executedebouncer/Mcount_countpushed_cy [19])
   );
@@ -2295,7 +2068,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<18>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [17]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [18]),
     .O(\executedebouncer/Mcount_countpushed_cy [18])
   );
@@ -2306,7 +2079,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<17>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [16]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [17]),
     .O(\executedebouncer/Mcount_countpushed_cy [17])
   );
@@ -2317,7 +2090,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<16>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [15]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [16]),
     .O(\executedebouncer/Mcount_countpushed_cy [16])
   );
@@ -2328,7 +2101,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<15>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [14]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [15]),
     .O(\executedebouncer/Mcount_countpushed_cy [15])
   );
@@ -2339,7 +2112,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<14>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [13]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [14]),
     .O(\executedebouncer/Mcount_countpushed_cy [14])
   );
@@ -2350,7 +2123,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<13>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [12]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [13]),
     .O(\executedebouncer/Mcount_countpushed_cy [13])
   );
@@ -2361,7 +2134,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<12>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [11]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [12]),
     .O(\executedebouncer/Mcount_countpushed_cy [12])
   );
@@ -2372,7 +2145,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<11>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [10]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [11]),
     .O(\executedebouncer/Mcount_countpushed_cy [11])
   );
@@ -2383,7 +2156,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<10>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [9]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [10]),
     .O(\executedebouncer/Mcount_countpushed_cy [10])
   );
@@ -2394,7 +2167,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<9>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [8]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [9]),
     .O(\executedebouncer/Mcount_countpushed_cy [9])
   );
@@ -2405,7 +2178,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<8>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [7]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [8]),
     .O(\executedebouncer/Mcount_countpushed_cy [8])
   );
@@ -2416,7 +2189,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<7>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [6]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [7]),
     .O(\executedebouncer/Mcount_countpushed_cy [7])
   );
@@ -2427,7 +2200,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<6>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [5]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [6]),
     .O(\executedebouncer/Mcount_countpushed_cy [6])
   );
@@ -2438,7 +2211,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<5>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [4]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [5]),
     .O(\executedebouncer/Mcount_countpushed_cy [5])
   );
@@ -2449,7 +2222,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<4>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [3]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [4]),
     .O(\executedebouncer/Mcount_countpushed_cy [4])
   );
@@ -2460,7 +2233,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<3>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [2]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [3]),
     .O(\executedebouncer/Mcount_countpushed_cy [3])
   );
@@ -2471,7 +2244,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<2>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [1]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [2]),
     .O(\executedebouncer/Mcount_countpushed_cy [2])
   );
@@ -2482,7 +2255,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<1>  (
     .CI(\executedebouncer/Mcount_countpushed_cy [0]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [1]),
     .O(\executedebouncer/Mcount_countpushed_cy [1])
   );
@@ -2493,7 +2266,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countpushed_cy<0>  (
     .CI(executein_IBUF_7),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countpushed_lut [0]),
     .O(\executedebouncer/Mcount_countpushed_cy [0])
   );
@@ -2507,7 +2280,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<25>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [25]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [25])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<24>  (
@@ -2517,7 +2290,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<24>  (
     .CI(\executedebouncer/Mcount_countstill_cy [23]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [24]),
     .O(\executedebouncer/Mcount_countstill_cy [24])
   );
@@ -2526,7 +2299,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<24>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [24]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [24])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<23>  (
@@ -2536,7 +2309,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<23>  (
     .CI(\executedebouncer/Mcount_countstill_cy [22]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [23]),
     .O(\executedebouncer/Mcount_countstill_cy [23])
   );
@@ -2545,7 +2318,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<23>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [23]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [23])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<22>  (
@@ -2555,7 +2328,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<22>  (
     .CI(\executedebouncer/Mcount_countstill_cy [21]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [22]),
     .O(\executedebouncer/Mcount_countstill_cy [22])
   );
@@ -2564,7 +2337,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<22>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [22]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [22])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<21>  (
@@ -2574,7 +2347,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<21>  (
     .CI(\executedebouncer/Mcount_countstill_cy [20]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [21]),
     .O(\executedebouncer/Mcount_countstill_cy [21])
   );
@@ -2583,7 +2356,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<21>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [21]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [21])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<20>  (
@@ -2593,7 +2366,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<20>  (
     .CI(\executedebouncer/Mcount_countstill_cy [19]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [20]),
     .O(\executedebouncer/Mcount_countstill_cy [20])
   );
@@ -2602,7 +2375,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<20>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [20]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [20])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<19>  (
@@ -2612,7 +2385,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<19>  (
     .CI(\executedebouncer/Mcount_countstill_cy [18]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [19]),
     .O(\executedebouncer/Mcount_countstill_cy [19])
   );
@@ -2621,7 +2394,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<19>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [19]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [19])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<18>  (
@@ -2631,7 +2404,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<18>  (
     .CI(\executedebouncer/Mcount_countstill_cy [17]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [18]),
     .O(\executedebouncer/Mcount_countstill_cy [18])
   );
@@ -2640,7 +2413,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<18>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [18]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [18])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<17>  (
@@ -2650,7 +2423,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<17>  (
     .CI(\executedebouncer/Mcount_countstill_cy [16]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [17]),
     .O(\executedebouncer/Mcount_countstill_cy [17])
   );
@@ -2659,7 +2432,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<17>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [17]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [17])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<16>  (
@@ -2669,7 +2442,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<16>  (
     .CI(\executedebouncer/Mcount_countstill_cy [15]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [16]),
     .O(\executedebouncer/Mcount_countstill_cy [16])
   );
@@ -2678,7 +2451,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<16>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [16]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [16])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<15>  (
@@ -2688,7 +2461,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<15>  (
     .CI(\executedebouncer/Mcount_countstill_cy [14]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [15]),
     .O(\executedebouncer/Mcount_countstill_cy [15])
   );
@@ -2697,7 +2470,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<15>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [15]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [15])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<14>  (
@@ -2707,7 +2480,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<14>  (
     .CI(\executedebouncer/Mcount_countstill_cy [13]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [14]),
     .O(\executedebouncer/Mcount_countstill_cy [14])
   );
@@ -2716,7 +2489,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<14>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [14]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [14])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<13>  (
@@ -2726,7 +2499,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<13>  (
     .CI(\executedebouncer/Mcount_countstill_cy [12]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [13]),
     .O(\executedebouncer/Mcount_countstill_cy [13])
   );
@@ -2735,7 +2508,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<13>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [13]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [13])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<12>  (
@@ -2745,7 +2518,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<12>  (
     .CI(\executedebouncer/Mcount_countstill_cy [11]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [12]),
     .O(\executedebouncer/Mcount_countstill_cy [12])
   );
@@ -2754,7 +2527,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<12>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [12]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [12])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<11>  (
@@ -2764,7 +2537,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<11>  (
     .CI(\executedebouncer/Mcount_countstill_cy [10]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [11]),
     .O(\executedebouncer/Mcount_countstill_cy [11])
   );
@@ -2773,7 +2546,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<11>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [11]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [11])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<10>  (
@@ -2783,7 +2556,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<10>  (
     .CI(\executedebouncer/Mcount_countstill_cy [9]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [10]),
     .O(\executedebouncer/Mcount_countstill_cy [10])
   );
@@ -2792,7 +2565,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<10>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [10]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [10])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<9>  (
@@ -2802,7 +2575,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<9>  (
     .CI(\executedebouncer/Mcount_countstill_cy [8]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [9]),
     .O(\executedebouncer/Mcount_countstill_cy [9])
   );
@@ -2811,7 +2584,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<9>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [9]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [9])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<8>  (
@@ -2821,7 +2594,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<8>  (
     .CI(\executedebouncer/Mcount_countstill_cy [7]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [8]),
     .O(\executedebouncer/Mcount_countstill_cy [8])
   );
@@ -2830,7 +2603,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<8>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [8]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [8])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<7>  (
@@ -2840,7 +2613,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<7>  (
     .CI(\executedebouncer/Mcount_countstill_cy [6]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [7]),
     .O(\executedebouncer/Mcount_countstill_cy [7])
   );
@@ -2849,7 +2622,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<7>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [7]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [7])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<6>  (
@@ -2859,7 +2632,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<6>  (
     .CI(\executedebouncer/Mcount_countstill_cy [5]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [6]),
     .O(\executedebouncer/Mcount_countstill_cy [6])
   );
@@ -2868,7 +2641,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<6>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [6]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [6])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<5>  (
@@ -2878,7 +2651,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<5>  (
     .CI(\executedebouncer/Mcount_countstill_cy [4]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [5]),
     .O(\executedebouncer/Mcount_countstill_cy [5])
   );
@@ -2887,7 +2660,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<5>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [5]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [5])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<4>  (
@@ -2897,7 +2670,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<4>  (
     .CI(\executedebouncer/Mcount_countstill_cy [3]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [4]),
     .O(\executedebouncer/Mcount_countstill_cy [4])
   );
@@ -2906,7 +2679,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<4>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [4]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [4])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<3>  (
@@ -2916,7 +2689,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<3>  (
     .CI(\executedebouncer/Mcount_countstill_cy [2]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [3]),
     .O(\executedebouncer/Mcount_countstill_cy [3])
   );
@@ -2925,7 +2698,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<3>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [3]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [3])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<2>  (
@@ -2935,7 +2708,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<2>  (
     .CI(\executedebouncer/Mcount_countstill_cy [1]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [2]),
     .O(\executedebouncer/Mcount_countstill_cy [2])
   );
@@ -2944,7 +2717,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<2>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [2]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [2])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<1>  (
@@ -2954,7 +2727,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<1>  (
     .CI(\executedebouncer/Mcount_countstill_cy [0]),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [1]),
     .O(\executedebouncer/Mcount_countstill_cy [1])
   );
@@ -2963,7 +2736,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<1>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [1]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [1])
   );
   XORCY   \executedebouncer/Mcount_countstill_xor<0>  (
@@ -2973,7 +2746,7 @@ module topmodule (
   );
   MUXCY   \executedebouncer/Mcount_countstill_cy<0>  (
     .CI(\executedebouncer/noisy_inv ),
-    .DI(display_0_OBUF_47),
+    .DI(displayctl_3_OBUF_47),
     .S(\executedebouncer/Mcount_countstill_lut [0]),
     .O(\executedebouncer/Mcount_countstill_cy [0])
   );
@@ -2982,7 +2755,7 @@ module topmodule (
   \executedebouncer/Mcount_countstill_lut<0>  (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countstill [0]),
-    .I2(display_0_OBUF_47),
+    .I2(displayctl_3_OBUF_47),
     .O(\executedebouncer/Mcount_countstill_lut [0])
   );
   FDCE   \lifo/top_2  (
@@ -3073,369 +2846,328 @@ module topmodule (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_14_dpot_818 ),
+    .D(\lifo/Opmem_0_14_dpot_853 ),
     .Q(\lifo/Opmem_0 [14])
   );
   FDCE   \lifo/Opmem_0_13  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_13_dpot_817 ),
+    .D(\lifo/Opmem_0_13_dpot_852 ),
     .Q(\lifo/Opmem_0 [13])
   );
   FDCE   \lifo/Opmem_0_12  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_12_dpot_816 ),
+    .D(\lifo/Opmem_0_12_dpot_851 ),
     .Q(\lifo/Opmem_0 [12])
   );
   FDCE   \lifo/Opmem_0_11  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_11_dpot_815 ),
+    .D(\lifo/Opmem_0_11_dpot_850 ),
     .Q(\lifo/Opmem_0 [11])
   );
   FDCE   \lifo/Opmem_0_10  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_10_dpot_814 ),
+    .D(\lifo/Opmem_0_10_dpot_849 ),
     .Q(\lifo/Opmem_0 [10])
   );
   FDCE   \lifo/Opmem_0_9  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_9_dpot_813 ),
+    .D(\lifo/Opmem_0_9_dpot_848 ),
     .Q(\lifo/Opmem_0 [9])
   );
   FDCE   \lifo/Opmem_0_8  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_8_dpot_812 ),
+    .D(\lifo/Opmem_0_8_dpot_847 ),
     .Q(\lifo/Opmem_0 [8])
   );
   FDCE   \lifo/Opmem_0_7  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_7_dpot_811 ),
+    .D(\lifo/Opmem_0_7_dpot_846 ),
     .Q(\lifo/Opmem_0 [7])
   );
   FDCE   \lifo/Opmem_0_6  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_6_dpot_810 ),
+    .D(\lifo/Opmem_0_6_dpot_845 ),
     .Q(\lifo/Opmem_0 [6])
   );
   FDCE   \lifo/Opmem_0_5  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_5_dpot_809 ),
+    .D(\lifo/Opmem_0_5_dpot_844 ),
     .Q(\lifo/Opmem_0 [5])
   );
   FDCE   \lifo/Opmem_0_4  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_4_dpot_808 ),
+    .D(\lifo/Opmem_0_4_dpot_843 ),
     .Q(\lifo/Opmem_0 [4])
   );
   FDCE   \lifo/Opmem_0_3  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_3_dpot_807 ),
+    .D(\lifo/Opmem_0_3_dpot_842 ),
     .Q(\lifo/Opmem_0 [3])
   );
   FDCE   \lifo/Opmem_0_2  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_2_dpot_806 ),
+    .D(\lifo/Opmem_0_2_dpot_841 ),
     .Q(\lifo/Opmem_0 [2])
   );
   FDCE   \lifo/Opmem_0_1  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_1_dpot_805 ),
+    .D(\lifo/Opmem_0_1_dpot_840 ),
     .Q(\lifo/Opmem_0 [1])
   );
   FDCE   \lifo/Opmem_0_0  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Opmem_0_0_dpot_804 ),
+    .D(\lifo/Opmem_0_0_dpot_839 ),
     .Q(\lifo/Opmem_0 [0])
   );
   FDCE   \lifo/Fmem_0_29  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_29_dpot_803 ),
+    .D(\lifo/Fmem_0_29_dpot_838 ),
     .Q(\lifo/Fmem_0 [29])
   );
   FDCE   \lifo/Fmem_0_28  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_28_dpot_802 ),
+    .D(\lifo/Fmem_0_28_dpot_837 ),
     .Q(\lifo/Fmem_0 [28])
   );
   FDCE   \lifo/Fmem_0_27  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_27_dpot_801 ),
+    .D(\lifo/Fmem_0_27_dpot_836 ),
     .Q(\lifo/Fmem_0 [27])
   );
   FDCE   \lifo/Fmem_0_26  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_26_dpot_800 ),
+    .D(\lifo/Fmem_0_26_dpot_835 ),
     .Q(\lifo/Fmem_0 [26])
   );
   FDCE   \lifo/Fmem_0_25  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_25_dpot_799 ),
+    .D(\lifo/Fmem_0_25_dpot_834 ),
     .Q(\lifo/Fmem_0 [25])
   );
   FDCE   \lifo/Fmem_0_24  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_24_dpot_798 ),
+    .D(\lifo/Fmem_0_24_dpot_833 ),
     .Q(\lifo/Fmem_0 [24])
   );
   FDCE   \lifo/Fmem_0_23  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_23_dpot_797 ),
+    .D(\lifo/Fmem_0_23_dpot_832 ),
     .Q(\lifo/Fmem_0 [23])
   );
   FDCE   \lifo/Fmem_0_22  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_22_dpot_796 ),
+    .D(\lifo/Fmem_0_22_dpot_831 ),
     .Q(\lifo/Fmem_0 [22])
   );
   FDCE   \lifo/Fmem_0_21  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_21_dpot_795 ),
+    .D(\lifo/Fmem_0_21_dpot_830 ),
     .Q(\lifo/Fmem_0 [21])
   );
   FDCE   \lifo/Fmem_0_20  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_20_dpot_794 ),
+    .D(\lifo/Fmem_0_20_dpot_829 ),
     .Q(\lifo/Fmem_0 [20])
   );
   FDCE   \lifo/Fmem_0_19  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_19_dpot_793 ),
+    .D(\lifo/Fmem_0_19_dpot_828 ),
     .Q(\lifo/Fmem_0 [19])
   );
   FDCE   \lifo/Fmem_0_18  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_18_dpot_792 ),
+    .D(\lifo/Fmem_0_18_dpot_827 ),
     .Q(\lifo/Fmem_0 [18])
   );
   FDCE   \lifo/Fmem_0_17  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_17_dpot_791 ),
+    .D(\lifo/Fmem_0_17_dpot_826 ),
     .Q(\lifo/Fmem_0 [17])
   );
   FDCE   \lifo/Fmem_0_16  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_16_dpot_790 ),
+    .D(\lifo/Fmem_0_16_dpot_825 ),
     .Q(\lifo/Fmem_0 [16])
   );
   FDCE   \lifo/Fmem_0_15  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_15_dpot_789 ),
+    .D(\lifo/Fmem_0_15_dpot_824 ),
     .Q(\lifo/Fmem_0 [15])
   );
   FDCE   \lifo/Fmem_0_14  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_14_dpot_788 ),
+    .D(\lifo/Fmem_0_14_dpot_823 ),
     .Q(\lifo/Fmem_0 [14])
   );
   FDCE   \lifo/Fmem_0_13  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_13_dpot_787 ),
+    .D(\lifo/Fmem_0_13_dpot_822 ),
     .Q(\lifo/Fmem_0 [13])
   );
   FDCE   \lifo/Fmem_0_12  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_12_dpot_786 ),
+    .D(\lifo/Fmem_0_12_dpot_821 ),
     .Q(\lifo/Fmem_0 [12])
   );
   FDCE   \lifo/Fmem_0_11  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_11_dpot_785 ),
+    .D(\lifo/Fmem_0_11_dpot_820 ),
     .Q(\lifo/Fmem_0 [11])
   );
   FDCE   \lifo/Fmem_0_10  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_10_dpot_784 ),
+    .D(\lifo/Fmem_0_10_dpot_819 ),
     .Q(\lifo/Fmem_0 [10])
   );
   FDCE   \lifo/Fmem_0_9  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_9_dpot_783 ),
+    .D(\lifo/Fmem_0_9_dpot_818 ),
     .Q(\lifo/Fmem_0 [9])
   );
   FDCE   \lifo/Fmem_0_8  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_8_dpot_782 ),
+    .D(\lifo/Fmem_0_8_dpot_817 ),
     .Q(\lifo/Fmem_0 [8])
   );
   FDCE   \lifo/Fmem_0_7  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_7_dpot_781 ),
+    .D(\lifo/Fmem_0_7_dpot_816 ),
     .Q(\lifo/Fmem_0 [7])
   );
   FDCE   \lifo/Fmem_0_6  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_6_dpot_780 ),
+    .D(\lifo/Fmem_0_6_dpot_815 ),
     .Q(\lifo/Fmem_0 [6])
   );
   FDCE   \lifo/Fmem_0_5  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_5_dpot_779 ),
+    .D(\lifo/Fmem_0_5_dpot_814 ),
     .Q(\lifo/Fmem_0 [5])
   );
   FDCE   \lifo/Fmem_0_4  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_4_dpot_778 ),
+    .D(\lifo/Fmem_0_4_dpot_813 ),
     .Q(\lifo/Fmem_0 [4])
   );
   FDCE   \lifo/Fmem_0_3  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_3_dpot_777 ),
+    .D(\lifo/Fmem_0_3_dpot_812 ),
     .Q(\lifo/Fmem_0 [3])
   );
   FDCE   \lifo/Fmem_0_2  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_2_dpot_776 ),
+    .D(\lifo/Fmem_0_2_dpot_811 ),
     .Q(\lifo/Fmem_0 [2])
   );
   FDCE   \lifo/Fmem_0_1  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_1_dpot_775 ),
+    .D(\lifo/Fmem_0_1_dpot_810 ),
     .Q(\lifo/Fmem_0 [1])
   );
   FDCE   \lifo/Fmem_0_0  (
     .C(clk_BUFGP_9),
     .CE(\executedebouncer/clean_25 ),
     .CLR(\LED/reset_n_inv ),
-    .D(\lifo/Fmem_0_0_dpot_774 ),
+    .D(\lifo/Fmem_0_0_dpot_809 ),
     .Q(\lifo/Fmem_0 [0])
   );
   FDC   \LED/counter_1  (
     .C(\clkdiv1/clk_300hz_27 ),
     .CLR(\LED/reset_n_inv ),
-    .D(displayctl_1_OBUF_38),
+    .D(\LED/Mcount_counter1 ),
     .Q(\LED/counter [1])
   );
   FDC   \LED/counter_0  (
     .C(\clkdiv1/clk_300hz_27 ),
     .CLR(\LED/reset_n_inv ),
-    .D(displayctl_0_OBUF_39),
+    .D(\LED/Mcount_counter ),
     .Q(\LED/counter [0])
-  );
-  FD   \LED/highdigit_3  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\LED/GND_8_o_GND_8_o_equal_22_o ),
-    .Q(\LED/highdigit[3] )
-  );
-  FD   \LED/highdigit_1  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\LED/result[5]_PWR_9_o_mux_22_OUT<1> ),
-    .Q(\LED/highdigit[1] )
-  );
-  FD   \LED/highdigit_0  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\LED/n0045 [0]),
-    .Q(\LED/highdigit[0] )
-  );
-  FD   \LED/lowdigit_3  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\LED/result[5]_PWR_9_o_mod_23_OUT<3> ),
-    .Q(\LED/lowdigit [3])
-  );
-  FD   \LED/lowdigit_2  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\LED/result[5]_PWR_9_o_mod_23_OUT<2> ),
-    .Q(\LED/lowdigit [2])
-  );
-  FD   \LED/lowdigit_1  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\LED/result[5]_PWR_9_o_mod_23_OUT<1> ),
-    .Q(\LED/lowdigit [1])
-  );
-  FD   \LED/lowdigit_0  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .D(\lifo/result [0]),
-    .Q(\LED/lowdigit [0])
-  );
-  FDC   \LED/sign_0  (
-    .C(\clkdiv1/clk_300hz_27 ),
-    .CLR(\LED/reset_n_inv ),
-    .D(\lifo/result [5]),
-    .Q(\LED/sign [0])
   );
   LUT3 #(
     .INIT ( 8'h4E ))
@@ -3514,175 +3246,59 @@ module topmodule (
     .I1(\readdebouncer/clean_26 ),
     .O(\lifo/_n0139_inv )
   );
-  LUT5 #(
-    .INIT ( 32'h66666CC6 ))
-  \LED/result[5]_PWR_9_o_mod_23/Mmux_o41  (
-    .I0(\LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o_623 ),
-    .I1(\LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_lut<3> ),
-    .I2(\LED/result[5]_PWR_9_o_mod_23/Mmux_a[0]_a[5]_MUX_325_o132 ),
-    .I3(\LED/result[5]_PWR_9_o_mod_23/BUS_0006_INV_134_o ),
-    .I4(\LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_cy<1> ),
-    .O(\LED/result[5]_PWR_9_o_mod_23_OUT<3> )
-  );
-  LUT4 #(
-    .INIT ( 16'hDC15 ))
-  \LED/tempsegments<5>1  (
-    .I0(\LED/currentdigit [0]),
-    .I1(\LED/currentdigit [3]),
-    .I2(\LED/currentdigit [1]),
-    .I3(\LED/currentdigit [2]),
-    .O(display_3_OBUF_44)
-  );
-  LUT4 #(
-    .INIT ( 16'hD6E7 ))
-  \LED/tempsegments<4>1  (
-    .I0(\LED/currentdigit [1]),
-    .I1(\LED/currentdigit [3]),
-    .I2(\LED/currentdigit [2]),
-    .I3(\LED/currentdigit [0]),
-    .O(display_4_OBUF_43)
-  );
-  LUT6 #(
-    .INIT ( 64'h159189A8559191A8 ))
-  \LED/n0045<0>1  (
-    .I0(\lifo/result [3]),
-    .I1(\lifo/result [2]),
-    .I2(\lifo/result [1]),
-    .I3(\lifo/result [5]),
-    .I4(\lifo/result [4]),
-    .I5(\lifo/result [0]),
-    .O(\LED/n0045 [0])
-  );
-  LUT6 #(
-    .INIT ( 64'h8888889991111111 ))
-  \LED/GND_8_o_GND_8_o_equal_22_o<3>1  (
-    .I0(\lifo/result [4]),
-    .I1(\lifo/result [5]),
-    .I2(\lifo/result [0]),
-    .I3(\lifo/result [1]),
-    .I4(\lifo/result [2]),
-    .I5(\lifo/result [3]),
-    .O(\LED/GND_8_o_GND_8_o_equal_22_o )
-  );
-  LUT6 #(
-    .INIT ( 64'hFFFFFFFF62666644 ))
-  \LED/Mmux_result[5]_PWR_9_o_mux_22_OUT21  (
-    .I0(\lifo/result [4]),
-    .I1(\lifo/result [5]),
-    .I2(\LED/Msub_result[5]_unary_minus_19_OUT_cy<1> ),
-    .I3(\lifo/result [2]),
-    .I4(\lifo/result [3]),
-    .I5(\LED/GND_8_o_GND_8_o_equal_22_o ),
-    .O(\LED/result[5]_PWR_9_o_mux_22_OUT<1> )
-  );
-  LUT4 #(
-    .INIT ( 16'hFB7C ))
-  \LED/tempsegments<7>1  (
-    .I0(\LED/currentdigit [0]),
-    .I1(\LED/currentdigit [1]),
-    .I2(\LED/currentdigit [2]),
-    .I3(\LED/currentdigit [3]),
-    .O(display_1_OBUF_46)
-  );
-  LUT4 #(
-    .INIT ( 16'hD4DD ))
-  \LED/tempsegments<6>1  (
-    .I0(\LED/currentdigit [1]),
-    .I1(\LED/currentdigit [2]),
-    .I2(\LED/currentdigit [3]),
-    .I3(\LED/currentdigit [0]),
-    .O(display_2_OBUF_45)
-  );
-  LUT4 #(
-    .INIT ( 16'hBBED ))
-  \LED/tempsegments<1>1  (
-    .I0(\LED/currentdigit [2]),
-    .I1(\LED/currentdigit [1]),
-    .I2(\LED/currentdigit [0]),
-    .I3(\LED/currentdigit [3]),
-    .O(display_7_OBUF_40)
-  );
-  LUT4 #(
-    .INIT ( 16'h545F ))
-  \LED/tempsegments<3>1  (
-    .I0(\LED/currentdigit [3]),
-    .I1(\LED/currentdigit [0]),
-    .I2(\LED/currentdigit [2]),
-    .I3(\LED/currentdigit [1]),
-    .O(display_5_OBUF_42)
+  LUT3 #(
+    .INIT ( 8'h24 ))
+  \LED/Mmux_currentdigit<0>22121  (
+    .I0(\lifo/result [2]),
+    .I1(\lifo/result [4]),
+    .I2(\lifo/result [3]),
+    .O(\LED/Mmux_currentdigit<0>2212 )
   );
   LUT3 #(
-    .INIT ( 8'h6A ))
-  \LED/Mmux_result[5]_result[5]_mux_19_OUT21  (
-    .I0(\lifo/result [1]),
-    .I1(\lifo/result [0]),
-    .I2(\lifo/result [5]),
-    .O(\LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_cy<1> )
-  );
-  LUT4 #(
-    .INIT ( 16'h5317 ))
-  \LED/tempsegments<2>1  (
-    .I0(\LED/currentdigit [3]),
-    .I1(\LED/currentdigit [2]),
-    .I2(\LED/currentdigit [1]),
-    .I3(\LED/currentdigit [0]),
-    .O(display_6_OBUF_41)
-  );
-  LUT5 #(
-    .INIT ( 32'hD5C5D4C4 ))
-  \LED/Mmux_currentdigit<1>11  (
-    .I0(\LED/opcodesel[2]_PWR_9_o_equal_10_o ),
-    .I1(\LED/counter [1]),
-    .I2(\LED/counter [0]),
-    .I3(\LED/highdigit[1] ),
-    .I4(\LED/lowdigit [1]),
-    .O(\LED/currentdigit [1])
-  );
-  LUT5 #(
-    .INIT ( 32'hD5C5D4C4 ))
-  \LED/Mmux_currentdigit<3>11  (
-    .I0(\LED/opcodesel[2]_PWR_9_o_equal_10_o ),
-    .I1(\LED/counter [1]),
-    .I2(\LED/counter [0]),
-    .I3(\LED/highdigit[3] ),
-    .I4(\LED/lowdigit [3]),
-    .O(\LED/currentdigit [3])
-  );
-  LUT2 #(
-    .INIT ( 4'h1 ))
-  \LED/tempctl<0>1  (
-    .I0(\LED/counter [0]),
-    .I1(\LED/counter [1]),
-    .O(displayctl_0_OBUF_39)
+    .INIT ( 8'hF7 ))
+  \LED/Mmux_currentdigit<0>2141  (
+    .I0(\lifo/opcodeselout [2]),
+    .I1(\lifo/opcodeselout [1]),
+    .I2(\lifo/opcodeselout [0]),
+    .O(\LED/Mmux_currentdigit<0>214 )
   );
   LUT2 #(
     .INIT ( 4'h2 ))
-  \LED/tempctl<1>1  (
+  \LED/Mcount_counter_xor<1>11  (
     .I0(\LED/counter [0]),
     .I1(\LED/counter [1]),
-    .O(displayctl_1_OBUF_38)
+    .O(\LED/Mcount_counter1 )
   );
-  LUT2 #(
-    .INIT ( 4'h1 ))
-  \LED/Msub_result[5]_unary_minus_19_OUT_cy<1>11  (
-    .I0(\lifo/result [1]),
-    .I1(\lifo/result [0]),
-    .O(\LED/Msub_result[5]_unary_minus_19_OUT_cy<1> )
-  );
-  LUT2 #(
-    .INIT ( 4'h2 ))
-  \LED/tempctl<2>1  (
-    .I0(\LED/counter [1]),
+  LUT3 #(
+    .INIT ( 8'h02 ))
+  \LED/Mmux_ctl11  (
+    .I0(reset_n_IBUF_10),
     .I1(\LED/counter [0]),
-    .O(displayctl_2_OBUF_37)
+    .I2(\LED/counter [1]),
+    .O(displayctl_0_OBUF_39)
   );
   LUT3 #(
     .INIT ( 8'h20 ))
-  \LED/opcodesel[2]_PWR_9_o_equal_10_o<2>1  (
-    .I0(\lifo/opcodeselout [1]),
-    .I1(\lifo/opcodeselout [0]),
-    .I2(\lifo/opcodeselout [2]),
-    .O(\LED/opcodesel[2]_PWR_9_o_equal_10_o )
+  \LED/Mmux_ctl21  (
+    .I0(\LED/counter [0]),
+    .I1(\LED/counter [1]),
+    .I2(reset_n_IBUF_10),
+    .O(displayctl_1_OBUF_38)
+  );
+  LUT3 #(
+    .INIT ( 8'h20 ))
+  \LED/Mmux_ctl31  (
+    .I0(\LED/counter [1]),
+    .I1(\LED/counter [0]),
+    .I2(reset_n_IBUF_10),
+    .O(displayctl_2_OBUF_37)
+  );
+  LUT2 #(
+    .INIT ( 4'h1 ))
+  \LED/Mcount_counter_xor<0>11  (
+    .I0(\LED/counter [0]),
+    .I1(\LED/counter [1]),
+    .O(\LED/Mcount_counter )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
@@ -3704,7 +3320,7 @@ module topmodule (
     .I3(\clkdiv1/counter_300hz [3]),
     .I4(\clkdiv1/counter_300hz [5]),
     .I5(\clkdiv1/counter_300hz [4]),
-    .O(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 )
+    .O(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
@@ -3715,7 +3331,7 @@ module topmodule (
     .I3(\clkdiv1/counter_300hz [13]),
     .I4(\clkdiv1/counter_300hz [15]),
     .I5(\clkdiv1/counter_300hz [16]),
-    .O(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 )
+    .O(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 )
   );
   LUT6 #(
     .INIT ( 64'h8282228288882888 ))
@@ -3737,29 +3353,28 @@ module topmodule (
     .I3(A_0_IBUF_2),
     .I4(A_1_IBUF_1),
     .I5(A_2_IBUF_0),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT33_651 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT33_629 )
+  );
+  LUT5 #(
+    .INIT ( 32'hEC64A820 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41  (
+    .I0(B[0]),
+    .I1(B[1]),
+    .I2(A_2_IBUF_0),
+    .I3(A_0_IBUF_2),
+    .I4(A_1_IBUF_1),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT4 )
   );
   LUT6 #(
-    .INIT ( 64'hA8A0282088800800 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT44  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT1 ),
-    .I1(B[0]),
-    .I2(B[1]),
-    .I3(A_2_IBUF_0),
-    .I4(A_0_IBUF_2),
-    .I5(A_1_IBUF_1),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT44_654 )
-  );
-  LUT6 #(
-    .INIT ( 64'hFFFFFFFFFFFFFF28 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT45  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ),
-    .I1(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<2> ),
-    .I2(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<3> ),
-    .I3(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42_107 ),
-    .I4(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT44_654 ),
-    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41_653 ),
-    .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<3> )
+    .INIT ( 64'hFFFFAAEAAAEAAAEA ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42_107 ),
+    .I1(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT4 ),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT11 ),
+    .I3(B[2]),
+    .I4(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13_108 ),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41_631 ),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43_632 )
   );
   LUT6 #(
     .INIT ( 64'h0002020020222220 ))
@@ -3775,50 +3390,61 @@ module topmodule (
   LUT6 #(
     .INIT ( 64'hAAA22A2288800800 ))
   \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT24  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22_657 ),
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22_635 ),
     .I1(B[0]),
     .I2(\decoder1/Mram_opcodeout ),
     .I3(A_2_IBUF_0),
     .I4(A_0_IBUF_2),
     .I5(A_1_IBUF_1),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT23_658 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT23_636 )
   );
   LUT5 #(
     .INIT ( 32'hFFFFFFF8 ))
   \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT25  (
     .I0(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<1> ),
-    .I1(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ),
-    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT21_656 ),
-    .I3(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT23_658 ),
+    .I1(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT21_634 ),
+    .I3(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT23_636 ),
     .I4(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT2 ),
     .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<1> )
   );
   LUT6 #(
     .INIT ( 64'h4040400000400000 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT63  (
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61  (
     .I0(B[1]),
     .I1(B[2]),
     .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT11 ),
     .I3(B[0]),
     .I4(A_1_IBUF_1),
     .I5(A_0_IBUF_2),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_660 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT6 )
   );
   LUT6 #(
-    .INIT ( 64'hFFFEFEFEFEFEFEFE ))
+    .INIT ( 64'h7520202020202020 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62  (
+    .I0(B[2]),
+    .I1(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<4> ),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ),
+    .I3(B[1]),
+    .I4(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT11 ),
+    .I5(B[0]),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61_638 )
+  );
+  LUT6 #(
+    .INIT ( 64'hFFFFFFF8FFF8FFF8 ))
   \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT64  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42_107 ),
-    .I1(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_660 ),
-    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61 ),
-    .I3(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<3> ),
-    .I4(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<4> ),
-    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ),
+    .I0(A_2_IBUF_0),
+    .I1(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61_638 ),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42_107 ),
+    .I3(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT6 ),
+    .I4(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<3> ),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_639 ),
     .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<5> )
   );
   LUT6 #(
     .INIT ( 64'hFFFFFFFFFF282828 ))
   \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT5  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ),
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ),
     .I1(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<3> ),
     .I2(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<4> ),
     .I3(N01),
@@ -3828,25 +3454,36 @@ module topmodule (
   );
   LUT6 #(
     .INIT ( 64'h22B222B2B2BB22B2 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT14  (
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13  (
     .I0(A_2_IBUF_0),
     .I1(B[2]),
     .I2(A_1_IBUF_1),
     .I3(B[1]),
     .I4(A_0_IBUF_2),
     .I5(B[0]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15_642 )
   );
   LUT6 #(
     .INIT ( 64'h2A0A280822022000 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT18  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT19_665 ),
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16_643 ),
     .I1(B[0]),
     .I2(B[1]),
     .I3(A_2_IBUF_0),
     .I4(A_0_IBUF_2),
     .I5(A_1_IBUF_1),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT110 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT17_644 )
+  );
+  LUT6 #(
+    .INIT ( 64'hFBBBBBBBEAAAAAAA ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT17  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT14_641 ),
+    .I1(\decoder1/Mram_opcodeout ),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15_642 ),
+    .I3(\decoder1/Mram_opcodeout1 ),
+    .I4(opcodein[2]),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT18 ),
+    .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<0> )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
@@ -3868,7 +3505,7 @@ module topmodule (
     .I3(\readdebouncer/countpushed [13]),
     .I4(\readdebouncer/countpushed [17]),
     .I5(\readdebouncer/countpushed [15]),
-    .O(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_668 )
+    .O(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_647 )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
@@ -3879,7 +3516,7 @@ module topmodule (
     .I3(\readdebouncer/countpushed [2]),
     .I4(\readdebouncer/countpushed [5]),
     .I5(\readdebouncer/countpushed [4]),
-    .O(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_669 )
+    .O(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_648 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
@@ -3890,7 +3527,7 @@ module topmodule (
     .I3(\readdebouncer/countpushed [10]),
     .I4(\readdebouncer/countpushed [11]),
     .I5(\readdebouncer/countpushed [16]),
-    .O(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_670 )
+    .O(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_649 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
@@ -3901,36 +3538,47 @@ module topmodule (
     .I3(\readdebouncer/countstill [10]),
     .I4(\readdebouncer/countstill [11]),
     .I5(\readdebouncer/countstill [16]),
-    .O(\readdebouncer/_n00661_671 )
+    .O(\readdebouncer/_n00661_650 )
   );
-  LUT2 #(
-    .INIT ( 4'h1 ))
+  LUT3 #(
+    .INIT ( 8'h10 ))
   \readdebouncer/_n00662  (
     .I0(\readdebouncer/countstill [24]),
     .I1(\readdebouncer/countstill [18]),
-    .O(\readdebouncer/_n00662_672 )
+    .I2(\readdebouncer/_n00661_650 ),
+    .O(\readdebouncer/_n00662_651 )
+  );
+  LUT5 #(
+    .INIT ( 32'h40000000 ))
+  \readdebouncer/_n00663  (
+    .I0(readin_IBUF_8),
+    .I1(\readdebouncer/countstill [22]),
+    .I2(\readdebouncer/countstill [23]),
+    .I3(\readdebouncer/countstill [21]),
+    .I4(\readdebouncer/countstill [25]),
+    .O(\readdebouncer/_n00663_652 )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
-  \readdebouncer/_n00663  (
+  \readdebouncer/_n00664  (
     .I0(\readdebouncer/countstill [12]),
     .I1(\readdebouncer/countstill [7]),
     .I2(\readdebouncer/countstill [14]),
     .I3(\readdebouncer/countstill [13]),
     .I4(\readdebouncer/countstill [17]),
     .I5(\readdebouncer/countstill [15]),
-    .O(\readdebouncer/_n00663_673 )
+    .O(\readdebouncer/_n00664_653 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
-  \readdebouncer/_n00664  (
+  \readdebouncer/_n00665  (
     .I0(\readdebouncer/countstill [1]),
     .I1(\readdebouncer/countstill [0]),
     .I2(\readdebouncer/countstill [2]),
     .I3(\readdebouncer/countstill [3]),
     .I4(\readdebouncer/countstill [4]),
     .I5(\readdebouncer/countstill [5]),
-    .O(\readdebouncer/_n00664_674 )
+    .O(\readdebouncer/_n00665_654 )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
@@ -3952,7 +3600,7 @@ module topmodule (
     .I3(\executedebouncer/countpushed [13]),
     .I4(\executedebouncer/countpushed [17]),
     .I5(\executedebouncer/countpushed [15]),
-    .O(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_676 )
+    .O(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_656 )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
@@ -3963,7 +3611,7 @@ module topmodule (
     .I3(\executedebouncer/countpushed [2]),
     .I4(\executedebouncer/countpushed [5]),
     .I5(\executedebouncer/countpushed [4]),
-    .O(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_677 )
+    .O(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_657 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
@@ -3974,7 +3622,7 @@ module topmodule (
     .I3(\executedebouncer/countpushed [10]),
     .I4(\executedebouncer/countpushed [11]),
     .I5(\executedebouncer/countpushed [16]),
-    .O(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_678 )
+    .O(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_658 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
@@ -3985,36 +3633,47 @@ module topmodule (
     .I3(\executedebouncer/countstill [10]),
     .I4(\executedebouncer/countstill [11]),
     .I5(\executedebouncer/countstill [16]),
-    .O(\executedebouncer/_n00661_679 )
+    .O(\executedebouncer/_n00661_659 )
   );
-  LUT2 #(
-    .INIT ( 4'h1 ))
+  LUT3 #(
+    .INIT ( 8'h10 ))
   \executedebouncer/_n00662  (
     .I0(\executedebouncer/countstill [24]),
     .I1(\executedebouncer/countstill [18]),
-    .O(\executedebouncer/_n00662_680 )
+    .I2(\executedebouncer/_n00661_659 ),
+    .O(\executedebouncer/_n00662_660 )
+  );
+  LUT5 #(
+    .INIT ( 32'h40000000 ))
+  \executedebouncer/_n00663  (
+    .I0(executein_IBUF_7),
+    .I1(\executedebouncer/countstill [22]),
+    .I2(\executedebouncer/countstill [23]),
+    .I3(\executedebouncer/countstill [21]),
+    .I4(\executedebouncer/countstill [25]),
+    .O(\executedebouncer/_n00663_661 )
   );
   LUT6 #(
     .INIT ( 64'h8000000000000000 ))
-  \executedebouncer/_n00663  (
+  \executedebouncer/_n00664  (
     .I0(\executedebouncer/countstill [12]),
     .I1(\executedebouncer/countstill [7]),
     .I2(\executedebouncer/countstill [14]),
     .I3(\executedebouncer/countstill [13]),
     .I4(\executedebouncer/countstill [17]),
     .I5(\executedebouncer/countstill [15]),
-    .O(\executedebouncer/_n00663_681 )
+    .O(\executedebouncer/_n00664_662 )
   );
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
-  \executedebouncer/_n00664  (
+  \executedebouncer/_n00665  (
     .I0(\executedebouncer/countstill [1]),
     .I1(\executedebouncer/countstill [0]),
     .I2(\executedebouncer/countstill [2]),
     .I3(\executedebouncer/countstill [3]),
     .I4(\executedebouncer/countstill [4]),
     .I5(\executedebouncer/countstill [5]),
-    .O(\executedebouncer/_n00664_682 )
+    .O(\executedebouncer/_n00665_663 )
   );
   LUT6 #(
     .INIT ( 64'hF0F0FF00CCCCAAAA ))
@@ -4197,37 +3856,163 @@ module topmodule (
     .O(\lifo/top[2]_X_6_o_wide_mux_8_OUT<0> )
   );
   LUT6 #(
-    .INIT ( 64'hFFFFFFFF04200404 ))
-  \LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o  (
-    .I0(\lifo/result [2]),
-    .I1(\lifo/result [4]),
-    .I2(\lifo/result [3]),
-    .I3(\LED/Msub_result[5]_unary_minus_19_OUT_cy<1> ),
-    .I4(\lifo/result [5]),
-    .I5(N2),
-    .O(\LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o_623 )
+    .INIT ( 64'hA888888820441108 ))
+  \LED/Mmux_currentdigit<0>261  (
+    .I0(\lifo/result [5]),
+    .I1(\lifo/result [3]),
+    .I2(\lifo/result [0]),
+    .I3(\lifo/result [1]),
+    .I4(\lifo/result [2]),
+    .I5(\LED/counter [0]),
+    .O(\LED/Mmux_currentdigit<0>26_673 )
   );
   LUT6 #(
-    .INIT ( 64'hFD75B931EC64A820 ))
-  \LED/Mmux_currentdigit<0>11  (
-    .I0(\LED/counter [1]),
-    .I1(\LED/opcodesel[2]_PWR_9_o_equal_10_o ),
-    .I2(\LED/sign [0]),
-    .I3(\lifo/result [2]),
-    .I4(\lifo/result [0]),
-    .I5(\LED/lowdigit [0]),
-    .O(\LED/Mmux_currentdigit<0>1 )
-  );
-  LUT6 #(
-    .INIT ( 64'h7775575522200200 ))
-  \LED/Mmux_currentdigit<0>12  (
+    .INIT ( 64'h0026432240220362 ))
+  \LED/Mmux_currentdigit<0>262  (
     .I0(\LED/counter [0]),
-    .I1(\LED/counter [1]),
-    .I2(\LED/opcodesel[2]_PWR_9_o_equal_10_o ),
-    .I3(\LED/highdigit[0] ),
+    .I1(\lifo/result [5]),
+    .I2(\lifo/result [2]),
+    .I3(\lifo/result [3]),
     .I4(\lifo/result [1]),
-    .I5(\LED/Mmux_currentdigit<0>1 ),
+    .I5(\lifo/result [0]),
+    .O(\LED/Mmux_currentdigit<0>261_674 )
+  );
+  LUT6 #(
+    .INIT ( 64'hFFA8FF08AAA8AA08 ))
+  \LED/Mmux_currentdigit<0>263  (
+    .I0(\LED/Mmux_currentdigit<0>214 ),
+    .I1(\LED/Mmux_currentdigit<0>261_674 ),
+    .I2(\lifo/result [4]),
+    .I3(\LED/counter [1]),
+    .I4(\LED/Mmux_currentdigit<0>26_673 ),
+    .I5(\LED/counter [0]),
+    .O(\LED/Mmux_currentdigit<0>262_675 )
+  );
+  LUT5 #(
+    .INIT ( 32'h22200200 ))
+  \LED/Mmux_currentdigit<0>21  (
+    .I0(\LED/counter [1]),
+    .I1(\LED/counter [0]),
+    .I2(\LED/Mmux_currentdigit<0>214 ),
+    .I3(\lifo/result [2]),
+    .I4(\lifo/result [5]),
+    .O(\LED/Mmux_currentdigit<0>2 )
+  );
+  LUT5 #(
+    .INIT ( 32'h22B2B2B2 ))
+  \LED/Mmux_currentdigit<0>23  (
+    .I0(\lifo/result [4]),
+    .I1(\lifo/result [2]),
+    .I2(\lifo/result [5]),
+    .I3(\lifo/result [0]),
+    .I4(\lifo/result [1]),
+    .O(\LED/Mmux_currentdigit<0>21_677 )
+  );
+  LUT5 #(
+    .INIT ( 32'h088E088C ))
+  \LED/Mmux_currentdigit<0>24  (
+    .I0(\lifo/result [2]),
+    .I1(\lifo/result [1]),
+    .I2(\lifo/result [5]),
+    .I3(\lifo/result [4]),
+    .I4(\LED/Mmux_currentdigit<0>214 ),
+    .O(\LED/Mmux_currentdigit<0>22 )
+  );
+  LUT6 #(
+    .INIT ( 64'hAAA8AA0808A80808 ))
+  \LED/Mmux_currentdigit<0>25  (
+    .I0(\LED/counter [0]),
+    .I1(\lifo/result [1]),
+    .I2(\LED/Mmux_currentdigit<0>214 ),
+    .I3(\lifo/result [3]),
+    .I4(\LED/Mmux_currentdigit<0>21_677 ),
+    .I5(\LED/Mmux_currentdigit<0>22 ),
+    .O(\LED/Mmux_currentdigit<0>23_679 )
+  );
+  LUT6 #(
+    .INIT ( 64'h2A22222222222222 ))
+  \LED/Mmux_currentdigit<0>26  (
+    .I0(\lifo/result [0]),
+    .I1(\LED/counter [0]),
+    .I2(\lifo/result [4]),
+    .I3(\lifo/result [3]),
+    .I4(\LED/Mmux_currentdigit<0>214 ),
+    .I5(\lifo/result [2]),
+    .O(\LED/Mmux_currentdigit<0>24_680 )
+  );
+  LUT5 #(
+    .INIT ( 32'hAAAA2220 ))
+  \LED/Mmux_currentdigit<0>27  (
+    .I0(reset_n_IBUF_10),
+    .I1(\LED/counter [1]),
+    .I2(\LED/Mmux_currentdigit<0>24_680 ),
+    .I3(\LED/Mmux_currentdigit<0>23_679 ),
+    .I4(\LED/Mmux_currentdigit<0>2 ),
     .O(\LED/currentdigit [0])
+  );
+  LUT6 #(
+    .INIT ( 64'h99BBD99BDD996DD9 ))
+  \LED/Mram_segments41_SW0  (
+    .I0(\lifo/result [4]),
+    .I1(\lifo/result [2]),
+    .I2(\lifo/result [5]),
+    .I3(\lifo/result [3]),
+    .I4(\lifo/result [0]),
+    .I5(\lifo/result [1]),
+    .O(N2)
+  );
+  LUT5 #(
+    .INIT ( 32'hFFEFFFFF ))
+  \LED/Mram_segments41  (
+    .I0(\LED/counter [1]),
+    .I1(N2),
+    .I2(\LED/Mmux_currentdigit<0>214 ),
+    .I3(\LED/counter [0]),
+    .I4(reset_n_IBUF_10),
+    .O(\LED/Mram_segments41_616 )
+  );
+  LUT6 #(
+    .INIT ( 64'h1B110B00B515B00B ))
+  \LED/Mmux_currentdigit<0>222  (
+    .I0(\lifo/result [4]),
+    .I1(\lifo/result [2]),
+    .I2(\lifo/result [1]),
+    .I3(\lifo/result [3]),
+    .I4(\LED/counter [0]),
+    .I5(\lifo/result [0]),
+    .O(\LED/Mmux_currentdigit<0>222_682 )
+  );
+  LUT6 #(
+    .INIT ( 64'hAAAAAAAA20000000 ))
+  \LED/Mmux_currentdigit<0>223  (
+    .I0(\lifo/result [5]),
+    .I1(\LED/counter [0]),
+    .I2(\lifo/result [0]),
+    .I3(\lifo/result [1]),
+    .I4(\LED/Mmux_currentdigit<0>2212 ),
+    .I5(\LED/Mmux_currentdigit<0>222_682 ),
+    .O(\LED/Mmux_currentdigit<0>223_683 )
+  );
+  LUT6 #(
+    .INIT ( 64'hFFFFFFFF8080808A ))
+  \LED/Mmux_currentdigit<0>224  (
+    .I0(\LED/counter [0]),
+    .I1(\lifo/result [3]),
+    .I2(\lifo/result [4]),
+    .I3(\lifo/result [2]),
+    .I4(\lifo/result [1]),
+    .I5(\LED/counter [1]),
+    .O(\LED/Mmux_currentdigit<0>224_684 )
+  );
+  LUT5 #(
+    .INIT ( 32'hB232F6BA ))
+  \LED/Mmux_currentdigit<0>225  (
+    .I0(\lifo/result [1]),
+    .I1(\lifo/result [5]),
+    .I2(\LED/counter [0]),
+    .I3(\lifo/result [0]),
+    .I4(\lifo/result [4]),
+    .O(\LED/Mmux_currentdigit<0>225_685 )
   );
   IBUF   A_2_IBUF (
     .I(A[2]),
@@ -4298,11 +4083,11 @@ module topmodule (
     .O(display[1])
   );
   OBUF   display_0_OBUF (
-    .I(display_0_OBUF_47),
+    .I(display_0_OBUF_48),
     .O(display[0])
   );
   OBUF   displayctl_3_OBUF (
-    .I(display_0_OBUF_47),
+    .I(displayctl_3_OBUF_47),
     .O(displayctl[3])
   );
   OBUF   displayctl_2_OBUF (
@@ -4354,412 +4139,905 @@ module topmodule (
     .O(opcodetbLIFOLED[0])
   );
   OBUF   opcodetbALULIFO_2_OBUF (
-    .I(\alu1/opcodesel_2_1_838 ),
+    .I(\alu1/opcodesel_2_1_872 ),
     .O(opcodetbALULIFO[2])
   );
   OBUF   opcodetbALULIFO_1_OBUF (
-    .I(\alu1/opcodesel_1_1_839 ),
+    .I(\alu1/opcodesel_1_1_873 ),
     .O(opcodetbALULIFO[1])
   );
   OBUF   opcodetbALULIFO_0_OBUF (
-    .I(\alu1/opcodesel_0_1_840 ),
+    .I(\alu1/opcodesel_0_1_874 ),
     .O(opcodetbALULIFO[0])
   );
   OBUF   FtbALULIFO_5_OBUF (
-    .I(\alu1/f_5_1_841 ),
+    .I(\alu1/f_5_1_875 ),
     .O(FtbALULIFO[5])
   );
   OBUF   FtbALULIFO_4_OBUF (
-    .I(\alu1/f_4_1_842 ),
+    .I(\alu1/f_4_1_876 ),
     .O(FtbALULIFO[4])
   );
   OBUF   FtbALULIFO_3_OBUF (
-    .I(\alu1/f_3_1_843 ),
+    .I(\alu1/f_3_1_877 ),
     .O(FtbALULIFO[3])
   );
   OBUF   FtbALULIFO_2_OBUF (
-    .I(\alu1/f_2_1_844 ),
+    .I(\alu1/f_2_1_878 ),
     .O(FtbALULIFO[2])
   );
   OBUF   FtbALULIFO_1_OBUF (
-    .I(\alu1/f_1_1_845 ),
+    .I(\alu1/f_1_1_879 ),
     .O(FtbALULIFO[1])
   );
   OBUF   FtbALULIFO_0_OBUF (
-    .I(\alu1/f_0_1_846 ),
+    .I(\alu1/f_0_1_880 ),
     .O(FtbALULIFO[0])
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<1>_rt  (
     .I0(\clkdiv1/counter_300hz [1]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<1>_rt_735 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<1>_rt_728 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<2>_rt  (
     .I0(\clkdiv1/counter_300hz [2]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<2>_rt_736 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<2>_rt_729 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<3>_rt  (
     .I0(\clkdiv1/counter_300hz [3]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<3>_rt_737 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<3>_rt_730 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<4>_rt  (
     .I0(\clkdiv1/counter_300hz [4]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<4>_rt_738 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<4>_rt_731 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<5>_rt  (
     .I0(\clkdiv1/counter_300hz [5]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<5>_rt_739 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<5>_rt_732 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<6>_rt  (
     .I0(\clkdiv1/counter_300hz [6]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<6>_rt_740 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<6>_rt_733 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<7>_rt  (
     .I0(\clkdiv1/counter_300hz [7]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<7>_rt_741 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<7>_rt_734 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<8>_rt  (
     .I0(\clkdiv1/counter_300hz [8]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<8>_rt_742 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<8>_rt_735 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<9>_rt  (
     .I0(\clkdiv1/counter_300hz [9]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<9>_rt_743 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<9>_rt_736 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<10>_rt  (
     .I0(\clkdiv1/counter_300hz [10]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<10>_rt_744 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<10>_rt_737 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<11>_rt  (
     .I0(\clkdiv1/counter_300hz [11]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<11>_rt_745 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<11>_rt_738 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<12>_rt  (
     .I0(\clkdiv1/counter_300hz [12]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<12>_rt_746 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<12>_rt_739 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<13>_rt  (
     .I0(\clkdiv1/counter_300hz [13]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<13>_rt_747 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<13>_rt_740 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<14>_rt  (
     .I0(\clkdiv1/counter_300hz [14]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<14>_rt_748 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<14>_rt_741 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<15>_rt  (
     .I0(\clkdiv1/counter_300hz [15]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<15>_rt_749 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<15>_rt_742 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_cy<16>_rt  (
     .I0(\clkdiv1/counter_300hz [16]),
-    .O(\clkdiv1/Mcount_counter_300hz_cy<16>_rt_750 )
+    .O(\clkdiv1/Mcount_counter_300hz_cy<16>_rt_743 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \clkdiv1/Mcount_counter_300hz_xor<17>_rt  (
     .I0(\clkdiv1/counter_300hz [17]),
-    .O(\clkdiv1/Mcount_counter_300hz_xor<17>_rt_751 )
-  );
-  LUT3 #(
-    .INIT ( 8'hAC ))
-  \readdebouncer/still_rstpot  (
-    .I0(N1),
-    .I1(\readdebouncer/still_289 ),
-    .I2(\readdebouncer/_n0066 ),
-    .O(\readdebouncer/still_rstpot_752 )
-  );
-  FDC   \readdebouncer/still  (
-    .C(clk_BUFGP_9),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/still_rstpot_752 ),
-    .Q(\readdebouncer/still_289 )
-  );
-  FDC   \readdebouncer/clean  (
-    .C(clk_BUFGP_9),
-    .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/clean_rstpot_753 ),
-    .Q(\readdebouncer/clean_26 )
-  );
-  LUT3 #(
-    .INIT ( 8'hAC ))
-  \executedebouncer/still_rstpot  (
-    .I0(N1),
-    .I1(\executedebouncer/still_502 ),
-    .I2(\executedebouncer/_n0066 ),
-    .O(\executedebouncer/still_rstpot_754 )
-  );
-  FDC   \executedebouncer/still  (
-    .C(clk_BUFGP_9),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/still_rstpot_754 ),
-    .Q(\executedebouncer/still_502 )
-  );
-  FDC   \executedebouncer/clean  (
-    .C(clk_BUFGP_9),
-    .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/clean_rstpot_755 ),
-    .Q(\executedebouncer/clean_25 )
-  );
-  FD   \clkdiv1/clk_300hz  (
-    .C(clk_BUFGP_9),
-    .D(\clkdiv1/clk_300hz_rstpot1_756 ),
-    .Q(\clkdiv1/clk_300hz_27 )
-  );
-  LUT6 #(
-    .INIT ( 64'hBFFFFFFFFFFFFFFF ))
-  \readdebouncer/_n00667_SW0  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/countstill [19]),
-    .I2(\readdebouncer/countstill [20]),
-    .I3(\readdebouncer/countstill [21]),
-    .I4(\readdebouncer/countstill [22]),
-    .I5(\readdebouncer/countstill [23]),
-    .O(N4)
-  );
-  LUT6 #(
-    .INIT ( 64'h0800000000000000 ))
-  \readdebouncer/_n00667  (
-    .I0(\readdebouncer/countstill [25]),
-    .I1(\readdebouncer/_n00662_672 ),
-    .I2(N4),
-    .I3(\readdebouncer/_n00661_671 ),
-    .I4(\readdebouncer/_n00663_673 ),
-    .I5(\readdebouncer/_n00664_674 ),
-    .O(\readdebouncer/_n0066 )
-  );
-  LUT6 #(
-    .INIT ( 64'hBFFFFFFFFFFFFFFF ))
-  \executedebouncer/_n00667_SW0  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/countstill [19]),
-    .I2(\executedebouncer/countstill [20]),
-    .I3(\executedebouncer/countstill [21]),
-    .I4(\executedebouncer/countstill [22]),
-    .I5(\executedebouncer/countstill [23]),
-    .O(N6)
-  );
-  LUT6 #(
-    .INIT ( 64'h0800000000000000 ))
-  \executedebouncer/_n00667  (
-    .I0(\executedebouncer/countstill [25]),
-    .I1(\executedebouncer/_n00662_680 ),
-    .I2(N6),
-    .I3(\executedebouncer/_n00661_679 ),
-    .I4(\executedebouncer/_n00663_681 ),
-    .I5(\executedebouncer/_n00664_682 ),
-    .O(\executedebouncer/_n0066 )
-  );
-  LUT3 #(
-    .INIT ( 8'hD5 ))
-  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW0  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/pushed_501 ),
-    .I2(\executedebouncer/still_502 ),
-    .O(N8)
-  );
-  LUT5 #(
-    .INIT ( 32'hFF575555 ))
-  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW1  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/countpushed [24]),
-    .I2(\executedebouncer/countpushed [18]),
-    .I3(\executedebouncer/pushed_501 ),
-    .I4(\executedebouncer/still_502 ),
-    .O(N9)
-  );
-  LUT6 #(
-    .INIT ( 64'hCAAAAAAAAAAAAAAA ))
-  \executedebouncer/_n0084_inv1  (
-    .I0(N8),
-    .I1(N9),
-    .I2(\executedebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
-    .I3(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_676 ),
-    .I4(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_677 ),
-    .I5(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_678 ),
-    .O(\executedebouncer/_n0084_inv )
-  );
-  LUT3 #(
-    .INIT ( 8'hA2 ))
-  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW2  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/still_502 ),
-    .I2(\executedebouncer/pushed_501 ),
-    .O(N11)
-  );
-  LUT5 #(
-    .INIT ( 32'hAA02AAAA ))
-  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW3  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/countpushed [18]),
-    .I2(\executedebouncer/countpushed [24]),
-    .I3(\executedebouncer/pushed_501 ),
-    .I4(\executedebouncer/still_502 ),
-    .O(N12)
-  );
-  LUT6 #(
-    .INIT ( 64'h3555555555555555 ))
-  \executedebouncer/_n0063_inv1  (
-    .I0(N11),
-    .I1(N12),
-    .I2(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_678 ),
-    .I3(\executedebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
-    .I4(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_676 ),
-    .I5(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_677 ),
-    .O(\executedebouncer/_n0063_inv )
-  );
-  LUT3 #(
-    .INIT ( 8'hD5 ))
-  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW0  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/pushed_288 ),
-    .I2(\readdebouncer/still_289 ),
-    .O(N14)
-  );
-  LUT5 #(
-    .INIT ( 32'hFF575555 ))
-  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW1  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/countpushed [24]),
-    .I2(\readdebouncer/countpushed [18]),
-    .I3(\readdebouncer/pushed_288 ),
-    .I4(\readdebouncer/still_289 ),
-    .O(N15)
-  );
-  LUT6 #(
-    .INIT ( 64'hCAAAAAAAAAAAAAAA ))
-  \readdebouncer/_n0084_inv1  (
-    .I0(N14),
-    .I1(N15),
-    .I2(\readdebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
-    .I3(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_668 ),
-    .I4(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_669 ),
-    .I5(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_670 ),
-    .O(\readdebouncer/_n0084_inv )
-  );
-  LUT3 #(
-    .INIT ( 8'hA2 ))
-  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW2  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/still_289 ),
-    .I2(\readdebouncer/pushed_288 ),
-    .O(N17)
-  );
-  LUT5 #(
-    .INIT ( 32'hAA02AAAA ))
-  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW3  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/countpushed [18]),
-    .I2(\readdebouncer/countpushed [24]),
-    .I3(\readdebouncer/pushed_288 ),
-    .I4(\readdebouncer/still_289 ),
-    .O(N18)
-  );
-  LUT6 #(
-    .INIT ( 64'h3555555555555555 ))
-  \readdebouncer/_n0063_inv1  (
-    .I0(N17),
-    .I1(N18),
-    .I2(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_670 ),
-    .I3(\readdebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
-    .I4(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_668 ),
-    .I5(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_669 ),
-    .O(\readdebouncer/_n0063_inv )
+    .O(\clkdiv1/Mcount_counter_300hz_xor<17>_rt_744 )
   );
   FDC   \readdebouncer/pushed  (
     .C(clk_BUFGP_9),
     .CLR(\LED/reset_n_inv ),
-    .D(\readdebouncer/pushed_rstpot_767 ),
-    .Q(\readdebouncer/pushed_288 )
+    .D(\readdebouncer/pushed_rstpot_745 ),
+    .Q(\readdebouncer/pushed_286 )
+  );
+  FDC   \readdebouncer/still  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/still_rstpot_746 ),
+    .Q(\readdebouncer/still_287 )
+  );
+  FDC   \readdebouncer/clean  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/clean_rstpot_747 ),
+    .Q(\readdebouncer/clean_26 )
   );
   FDC   \executedebouncer/pushed  (
     .C(clk_BUFGP_9),
     .CLR(\LED/reset_n_inv ),
-    .D(\executedebouncer/pushed_rstpot_768 ),
-    .Q(\executedebouncer/pushed_501 )
+    .D(\executedebouncer/pushed_rstpot_748 ),
+    .Q(\executedebouncer/pushed_497 )
   );
-  FD   \clkdiv1/counter_300hz_0  (
+  FDC   \executedebouncer/still  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_0_rstpot_769 ),
-    .Q(\clkdiv1/counter_300hz [0])
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/still_rstpot_749 ),
+    .Q(\executedebouncer/still_498 )
+  );
+  FDC   \executedebouncer/clean  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/clean_rstpot_750 ),
+    .Q(\executedebouncer/clean_25 )
+  );
+  FD   \clkdiv1/clk_300hz  (
+    .C(clk_BUFGP_9),
+    .D(\clkdiv1/clk_300hz_rstpot1_751 ),
+    .Q(\clkdiv1/clk_300hz_27 )
   );
   LUT3 #(
-    .INIT ( 8'h2C ))
-  \readdebouncer/pushed_rstpot  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/pushed_288 ),
-    .I2(\readdebouncer/_n0084_inv ),
-    .O(\readdebouncer/pushed_rstpot_767 )
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_11_rstpot  (
+    .I0(\readdebouncer/countstill [11]),
+    .I1(\readdebouncer/Mcount_countstill11 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_11_rstpot_752 )
+  );
+  FDC   \readdebouncer/countstill_11  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_11_rstpot_752 ),
+    .Q(\readdebouncer/countstill [11])
   );
   LUT3 #(
-    .INIT ( 8'h2C ))
-  \executedebouncer/pushed_rstpot  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/pushed_501 ),
-    .I2(\executedebouncer/_n0084_inv ),
-    .O(\executedebouncer/pushed_rstpot_768 )
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_10_rstpot  (
+    .I0(\readdebouncer/countstill [10]),
+    .I1(\readdebouncer/Mcount_countstill10 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_10_rstpot_753 )
+  );
+  FDC   \readdebouncer/countstill_10  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_10_rstpot_753 ),
+    .Q(\readdebouncer/countstill [10])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_9_rstpot  (
+    .I0(\readdebouncer/countstill [9]),
+    .I1(\readdebouncer/Mcount_countstill9 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_9_rstpot_754 )
+  );
+  FDC   \readdebouncer/countstill_9  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_9_rstpot_754 ),
+    .Q(\readdebouncer/countstill [9])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_8_rstpot  (
+    .I0(\readdebouncer/countstill [8]),
+    .I1(\readdebouncer/Mcount_countstill8 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_8_rstpot_755 )
+  );
+  FDC   \readdebouncer/countstill_8  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_8_rstpot_755 ),
+    .Q(\readdebouncer/countstill [8])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_7_rstpot  (
+    .I0(\readdebouncer/countstill [7]),
+    .I1(\readdebouncer/Mcount_countstill7 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_7_rstpot_756 )
+  );
+  FDC   \readdebouncer/countstill_7  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_7_rstpot_756 ),
+    .Q(\readdebouncer/countstill [7])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_6_rstpot  (
+    .I0(\readdebouncer/countstill [6]),
+    .I1(\readdebouncer/Mcount_countstill6 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_6_rstpot_757 )
+  );
+  FDC   \readdebouncer/countstill_6  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_6_rstpot_757 ),
+    .Q(\readdebouncer/countstill [6])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_5_rstpot  (
+    .I0(\readdebouncer/countstill [5]),
+    .I1(\readdebouncer/Mcount_countstill5 ),
+    .I2(\readdebouncer/_n0066_inv ),
+    .O(\readdebouncer/countstill_5_rstpot_758 )
+  );
+  FDC   \readdebouncer/countstill_5  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_5_rstpot_758 ),
+    .Q(\readdebouncer/countstill [5])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_4_rstpot  (
+    .I0(\readdebouncer/countstill [4]),
+    .I1(\readdebouncer/Mcount_countstill4 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_4_rstpot_759 )
+  );
+  FDC   \readdebouncer/countstill_4  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_4_rstpot_759 ),
+    .Q(\readdebouncer/countstill [4])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_3_rstpot  (
+    .I0(\readdebouncer/countstill [3]),
+    .I1(\readdebouncer/Mcount_countstill3 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_3_rstpot_760 )
+  );
+  FDC   \readdebouncer/countstill_3  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_3_rstpot_760 ),
+    .Q(\readdebouncer/countstill [3])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_2_rstpot  (
+    .I0(\readdebouncer/countstill [2]),
+    .I1(\readdebouncer/Mcount_countstill2 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_2_rstpot_761 )
+  );
+  FDC   \readdebouncer/countstill_2  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_2_rstpot_761 ),
+    .Q(\readdebouncer/countstill [2])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_1_rstpot  (
+    .I0(\readdebouncer/countstill [1]),
+    .I1(\readdebouncer/Mcount_countstill1 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_1_rstpot_762 )
+  );
+  FDC   \readdebouncer/countstill_1  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_1_rstpot_762 ),
+    .Q(\readdebouncer/countstill [1])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_0_rstpot  (
+    .I0(\readdebouncer/countstill [0]),
+    .I1(\readdebouncer/Mcount_countstill ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_0_rstpot_763 )
+  );
+  FDC   \readdebouncer/countstill_0  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_0_rstpot_763 ),
+    .Q(\readdebouncer/countstill [0])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_11_rstpot  (
+    .I0(\executedebouncer/countstill [11]),
+    .I1(\executedebouncer/Mcount_countstill11 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_11_rstpot_764 )
+  );
+  FDC   \executedebouncer/countstill_11  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_11_rstpot_764 ),
+    .Q(\executedebouncer/countstill [11])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_10_rstpot  (
+    .I0(\executedebouncer/countstill [10]),
+    .I1(\executedebouncer/Mcount_countstill10 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_10_rstpot_765 )
+  );
+  FDC   \executedebouncer/countstill_10  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_10_rstpot_765 ),
+    .Q(\executedebouncer/countstill [10])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_9_rstpot  (
+    .I0(\executedebouncer/countstill [9]),
+    .I1(\executedebouncer/Mcount_countstill9 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_9_rstpot_766 )
+  );
+  FDC   \executedebouncer/countstill_9  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_9_rstpot_766 ),
+    .Q(\executedebouncer/countstill [9])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_8_rstpot  (
+    .I0(\executedebouncer/countstill [8]),
+    .I1(\executedebouncer/Mcount_countstill8 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_8_rstpot_767 )
+  );
+  FDC   \executedebouncer/countstill_8  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_8_rstpot_767 ),
+    .Q(\executedebouncer/countstill [8])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_7_rstpot  (
+    .I0(\executedebouncer/countstill [7]),
+    .I1(\executedebouncer/Mcount_countstill7 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_7_rstpot_768 )
+  );
+  FDC   \executedebouncer/countstill_7  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_7_rstpot_768 ),
+    .Q(\executedebouncer/countstill [7])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_6_rstpot  (
+    .I0(\executedebouncer/countstill [6]),
+    .I1(\executedebouncer/Mcount_countstill6 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_6_rstpot_769 )
+  );
+  FDC   \executedebouncer/countstill_6  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_6_rstpot_769 ),
+    .Q(\executedebouncer/countstill [6])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_5_rstpot  (
+    .I0(\executedebouncer/countstill [5]),
+    .I1(\executedebouncer/Mcount_countstill5 ),
+    .I2(\executedebouncer/_n0066_inv ),
+    .O(\executedebouncer/countstill_5_rstpot_770 )
+  );
+  FDC   \executedebouncer/countstill_5  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_5_rstpot_770 ),
+    .Q(\executedebouncer/countstill [5])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_4_rstpot  (
+    .I0(\executedebouncer/countstill [4]),
+    .I1(\executedebouncer/Mcount_countstill4 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_4_rstpot_771 )
+  );
+  FDC   \executedebouncer/countstill_4  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_4_rstpot_771 ),
+    .Q(\executedebouncer/countstill [4])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_3_rstpot  (
+    .I0(\executedebouncer/countstill [3]),
+    .I1(\executedebouncer/Mcount_countstill3 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_3_rstpot_772 )
+  );
+  FDC   \executedebouncer/countstill_3  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_3_rstpot_772 ),
+    .Q(\executedebouncer/countstill [3])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_2_rstpot  (
+    .I0(\executedebouncer/countstill [2]),
+    .I1(\executedebouncer/Mcount_countstill2 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_2_rstpot_773 )
+  );
+  FDC   \executedebouncer/countstill_2  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_2_rstpot_773 ),
+    .Q(\executedebouncer/countstill [2])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_1_rstpot  (
+    .I0(\executedebouncer/countstill [1]),
+    .I1(\executedebouncer/Mcount_countstill1 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_1_rstpot_774 )
+  );
+  FDC   \executedebouncer/countstill_1  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_1_rstpot_774 ),
+    .Q(\executedebouncer/countstill [1])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_0_rstpot  (
+    .I0(\executedebouncer/countstill [0]),
+    .I1(\executedebouncer/Mcount_countstill ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_0_rstpot_775 )
+  );
+  FDC   \executedebouncer/countstill_0  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_0_rstpot_775 ),
+    .Q(\executedebouncer/countstill [0])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_12_rstpot  (
+    .I0(\readdebouncer/countstill [12]),
+    .I1(\readdebouncer/Mcount_countstill12 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_12_rstpot_776 )
+  );
+  FDC   \readdebouncer/countstill_12  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_12_rstpot_776 ),
+    .Q(\readdebouncer/countstill [12])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_12_rstpot  (
+    .I0(\executedebouncer/countstill [12]),
+    .I1(\executedebouncer/Mcount_countstill12 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_12_rstpot_777 )
+  );
+  FDC   \executedebouncer/countstill_12  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_12_rstpot_777 ),
+    .Q(\executedebouncer/countstill [12])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_13_rstpot  (
+    .I0(\readdebouncer/countstill [13]),
+    .I1(\readdebouncer/Mcount_countstill13 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_13_rstpot_778 )
+  );
+  FDC   \readdebouncer/countstill_13  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_13_rstpot_778 ),
+    .Q(\readdebouncer/countstill [13])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_13_rstpot  (
+    .I0(\executedebouncer/countstill [13]),
+    .I1(\executedebouncer/Mcount_countstill13 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_13_rstpot_779 )
+  );
+  FDC   \executedebouncer/countstill_13  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_13_rstpot_779 ),
+    .Q(\executedebouncer/countstill [13])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_14_rstpot  (
+    .I0(\readdebouncer/countstill [14]),
+    .I1(\readdebouncer/Mcount_countstill14 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_14_rstpot_780 )
+  );
+  FDC   \readdebouncer/countstill_14  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_14_rstpot_780 ),
+    .Q(\readdebouncer/countstill [14])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_14_rstpot  (
+    .I0(\executedebouncer/countstill [14]),
+    .I1(\executedebouncer/Mcount_countstill14 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_14_rstpot_781 )
+  );
+  FDC   \executedebouncer/countstill_14  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_14_rstpot_781 ),
+    .Q(\executedebouncer/countstill [14])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_15_rstpot  (
+    .I0(\readdebouncer/countstill [15]),
+    .I1(\readdebouncer/Mcount_countstill15 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_15_rstpot_782 )
+  );
+  FDC   \readdebouncer/countstill_15  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_15_rstpot_782 ),
+    .Q(\readdebouncer/countstill [15])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_15_rstpot  (
+    .I0(\executedebouncer/countstill [15]),
+    .I1(\executedebouncer/Mcount_countstill15 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_15_rstpot_783 )
+  );
+  FDC   \executedebouncer/countstill_15  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_15_rstpot_783 ),
+    .Q(\executedebouncer/countstill [15])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_16_rstpot  (
+    .I0(\readdebouncer/countstill [16]),
+    .I1(\readdebouncer/Mcount_countstill16 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_16_rstpot_784 )
+  );
+  FDC   \readdebouncer/countstill_16  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_16_rstpot_784 ),
+    .Q(\readdebouncer/countstill [16])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_16_rstpot  (
+    .I0(\executedebouncer/countstill [16]),
+    .I1(\executedebouncer/Mcount_countstill16 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_16_rstpot_785 )
+  );
+  FDC   \executedebouncer/countstill_16  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_16_rstpot_785 ),
+    .Q(\executedebouncer/countstill [16])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_17_rstpot  (
+    .I0(\readdebouncer/countstill [17]),
+    .I1(\readdebouncer/Mcount_countstill17 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_17_rstpot_786 )
+  );
+  FDC   \readdebouncer/countstill_17  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_17_rstpot_786 ),
+    .Q(\readdebouncer/countstill [17])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_17_rstpot  (
+    .I0(\executedebouncer/countstill [17]),
+    .I1(\executedebouncer/Mcount_countstill17 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_17_rstpot_787 )
+  );
+  FDC   \executedebouncer/countstill_17  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_17_rstpot_787 ),
+    .Q(\executedebouncer/countstill [17])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \readdebouncer/countstill_18_rstpot  (
+    .I0(\readdebouncer/countstill [18]),
+    .I1(\readdebouncer/Mcount_countstill18 ),
+    .I2(\readdebouncer/_n0066_inv1_805 ),
+    .O(\readdebouncer/countstill_18_rstpot_788 )
+  );
+  FDC   \readdebouncer/countstill_18  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\readdebouncer/countstill_18_rstpot_788 ),
+    .Q(\readdebouncer/countstill [18])
+  );
+  LUT3 #(
+    .INIT ( 8'hCA ))
+  \executedebouncer/countstill_18_rstpot  (
+    .I0(\executedebouncer/countstill [18]),
+    .I1(\executedebouncer/Mcount_countstill18 ),
+    .I2(\executedebouncer/_n0066_inv1_806 ),
+    .O(\executedebouncer/countstill_18_rstpot_789 )
+  );
+  FDC   \executedebouncer/countstill_18  (
+    .C(clk_BUFGP_9),
+    .CLR(\LED/reset_n_inv ),
+    .D(\executedebouncer/countstill_18_rstpot_789 ),
+    .Q(\executedebouncer/countstill [18])
+  );
+  LUT2 #(
+    .INIT ( 4'h8 ))
+  \readdebouncer/_n00666_SW0  (
+    .I0(\readdebouncer/countstill [20]),
+    .I1(\readdebouncer/countstill [19]),
+    .O(N4)
   );
   LUT6 #(
-    .INIT ( 64'hF7FFFFFFFFFFFFFF ))
+    .INIT ( 64'hEAAAAAAAAAAAAAAA ))
+  \readdebouncer/still_rstpot  (
+    .I0(\readdebouncer/still_287 ),
+    .I1(N4),
+    .I2(\readdebouncer/_n00663_652 ),
+    .I3(\readdebouncer/_n00664_653 ),
+    .I4(\readdebouncer/_n00665_654 ),
+    .I5(\readdebouncer/_n00662_651 ),
+    .O(\readdebouncer/still_rstpot_746 )
+  );
+  LUT2 #(
+    .INIT ( 4'h8 ))
+  \executedebouncer/_n00666_SW0  (
+    .I0(\executedebouncer/countstill [20]),
+    .I1(\executedebouncer/countstill [19]),
+    .O(N6)
+  );
+  LUT6 #(
+    .INIT ( 64'hEAAAAAAAAAAAAAAA ))
+  \executedebouncer/still_rstpot  (
+    .I0(\executedebouncer/still_498 ),
+    .I1(N6),
+    .I2(\executedebouncer/_n00663_661 ),
+    .I3(\executedebouncer/_n00664_662 ),
+    .I4(\executedebouncer/_n00665_663 ),
+    .I5(\executedebouncer/_n00662_660 ),
+    .O(\executedebouncer/still_rstpot_749 )
+  );
+  LUT3 #(
+    .INIT ( 8'hF7 ))
+  \readdebouncer/_n00662_SW0  (
+    .I0(\readdebouncer/countstill [20]),
+    .I1(\readdebouncer/countstill [19]),
+    .I2(\readdebouncer/countstill [18]),
+    .O(N8)
+  );
+  LUT6 #(
+    .INIT ( 64'hEFFFFFFFFFFFFFFF ))
   \readdebouncer/_n0066_inv1  (
-    .I0(\readdebouncer/countstill [25]),
-    .I1(\readdebouncer/_n00662_672 ),
-    .I2(N4),
-    .I3(\readdebouncer/_n00661_671 ),
-    .I4(\readdebouncer/_n00663_673 ),
-    .I5(\readdebouncer/_n00664_674 ),
+    .I0(\readdebouncer/countstill [24]),
+    .I1(N8),
+    .I2(\readdebouncer/_n00663_652 ),
+    .I3(\readdebouncer/_n00664_653 ),
+    .I4(\readdebouncer/_n00665_654 ),
+    .I5(\readdebouncer/_n00661_650 ),
     .O(\readdebouncer/_n0066_inv )
   );
+  LUT3 #(
+    .INIT ( 8'hF7 ))
+  \executedebouncer/_n00662_SW0  (
+    .I0(\executedebouncer/countstill [20]),
+    .I1(\executedebouncer/countstill [19]),
+    .I2(\executedebouncer/countstill [18]),
+    .O(N10)
+  );
   LUT6 #(
-    .INIT ( 64'hF7FFFFFFFFFFFFFF ))
+    .INIT ( 64'hEFFFFFFFFFFFFFFF ))
   \executedebouncer/_n0066_inv1  (
-    .I0(\executedebouncer/countstill [25]),
-    .I1(\executedebouncer/_n00662_680 ),
-    .I2(N6),
-    .I3(\executedebouncer/_n00661_679 ),
-    .I4(\executedebouncer/_n00663_681 ),
-    .I5(\executedebouncer/_n00664_682 ),
+    .I0(\executedebouncer/countstill [24]),
+    .I1(N10),
+    .I2(\executedebouncer/_n00663_661 ),
+    .I3(\executedebouncer/_n00664_662 ),
+    .I4(\executedebouncer/_n00665_663 ),
+    .I5(\executedebouncer/_n00661_659 ),
     .O(\executedebouncer/_n0066_inv )
   );
+  LUT3 #(
+    .INIT ( 8'h8A ))
+  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW0  (
+    .I0(readin_IBUF_8),
+    .I1(\readdebouncer/pushed_286 ),
+    .I2(\readdebouncer/still_287 ),
+    .O(N12)
+  );
   LUT5 #(
-    .INIT ( 32'h08888888 ))
-  \clkdiv1/counter_300hz_0_rstpot  (
-    .I0(Result[0]),
-    .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
-    .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_0_rstpot_769 )
+    .INIT ( 32'hAA02AAAA ))
+  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW1  (
+    .I0(readin_IBUF_8),
+    .I1(\readdebouncer/countpushed [18]),
+    .I2(\readdebouncer/countpushed [24]),
+    .I3(\readdebouncer/pushed_286 ),
+    .I4(\readdebouncer/still_287 ),
+    .O(N13)
+  );
+  LUT6 #(
+    .INIT ( 64'h3555555555555555 ))
+  \readdebouncer/_n0063_inv1  (
+    .I0(N12),
+    .I1(N13),
+    .I2(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_649 ),
+    .I3(\readdebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
+    .I4(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_647 ),
+    .I5(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_648 ),
+    .O(\readdebouncer/_n0063_inv )
+  );
+  LUT3 #(
+    .INIT ( 8'h8A ))
+  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW0  (
+    .I0(executein_IBUF_7),
+    .I1(\executedebouncer/pushed_497 ),
+    .I2(\executedebouncer/still_498 ),
+    .O(N15)
+  );
+  LUT5 #(
+    .INIT ( 32'hAA02AAAA ))
+  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW1  (
+    .I0(executein_IBUF_7),
+    .I1(\executedebouncer/countpushed [18]),
+    .I2(\executedebouncer/countpushed [24]),
+    .I3(\executedebouncer/pushed_497 ),
+    .I4(\executedebouncer/still_498 ),
+    .O(N16)
+  );
+  LUT6 #(
+    .INIT ( 64'h3555555555555555 ))
+  \executedebouncer/_n0063_inv1  (
+    .I0(N15),
+    .I1(N16),
+    .I2(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_658 ),
+    .I3(\executedebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
+    .I4(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_656 ),
+    .I5(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_657 ),
+    .O(\executedebouncer/_n0063_inv )
+  );
+  LUT3 #(
+    .INIT ( 8'hF7 ))
+  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW2  (
+    .I0(\readdebouncer/pushed_286 ),
+    .I1(readin_IBUF_8),
+    .I2(\readdebouncer/still_287 ),
+    .O(N18)
+  );
+  LUT5 #(
+    .INIT ( 32'hAAFDFFFF ))
+  \readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW3  (
+    .I0(\readdebouncer/still_287 ),
+    .I1(\readdebouncer/countpushed [18]),
+    .I2(\readdebouncer/countpushed [24]),
+    .I3(\readdebouncer/pushed_286 ),
+    .I4(readin_IBUF_8),
+    .O(N19)
+  );
+  LUT6 #(
+    .INIT ( 64'h15555555D5555555 ))
+  \readdebouncer/pushed_rstpot  (
+    .I0(N18),
+    .I1(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_648 ),
+    .I2(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_647 ),
+    .I3(\readdebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
+    .I4(\readdebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_649 ),
+    .I5(N19),
+    .O(\readdebouncer/pushed_rstpot_745 )
+  );
+  LUT3 #(
+    .INIT ( 8'hF7 ))
+  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW2  (
+    .I0(\executedebouncer/pushed_497 ),
+    .I1(executein_IBUF_7),
+    .I2(\executedebouncer/still_498 ),
+    .O(N21)
+  );
+  LUT5 #(
+    .INIT ( 32'hAAFDFFFF ))
+  \executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>5_SW3  (
+    .I0(\executedebouncer/still_498 ),
+    .I1(\executedebouncer/countpushed [18]),
+    .I2(\executedebouncer/countpushed [24]),
+    .I3(\executedebouncer/pushed_497 ),
+    .I4(executein_IBUF_7),
+    .O(N22)
+  );
+  LUT6 #(
+    .INIT ( 64'h15555555D5555555 ))
+  \executedebouncer/pushed_rstpot  (
+    .I0(N21),
+    .I1(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>2_657 ),
+    .I2(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>1_656 ),
+    .I3(\executedebouncer/GND_2_o_GND_2_o_equal_4_o [25]),
+    .I4(\executedebouncer/GND_2_o_GND_2_o_equal_4_o<25>3_658 ),
+    .I5(N22),
+    .O(\executedebouncer/pushed_rstpot_748 )
   );
   LUT5 #(
     .INIT ( 32'h00000008 ))
@@ -4798,6 +5076,105 @@ module topmodule (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countpushed [1]),
     .O(\executedebouncer/Mcount_countpushed_lut [1])
+  );
+  LUT4 #(
+    .INIT ( 16'hAA80 ))
+  \readdebouncer/clean_rstpot  (
+    .I0(readin_IBUF_8),
+    .I1(\readdebouncer/pushed_286 ),
+    .I2(\readdebouncer/still_287 ),
+    .I3(\readdebouncer/clean_26 ),
+    .O(\readdebouncer/clean_rstpot_747 )
+  );
+  LUT4 #(
+    .INIT ( 16'hAA80 ))
+  \executedebouncer/clean_rstpot  (
+    .I0(executein_IBUF_7),
+    .I1(\executedebouncer/pushed_497 ),
+    .I2(\executedebouncer/still_498 ),
+    .I3(\executedebouncer/clean_25 ),
+    .O(\executedebouncer/clean_rstpot_750 )
+  );
+  LUT5 #(
+    .INIT ( 32'h28888888 ))
+  \clkdiv1/clk_300hz_rstpot1  (
+    .I0(reset_n_IBUF_10),
+    .I1(\clkdiv1/clk_300hz_27 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
+    .O(\clkdiv1/clk_300hz_rstpot1_751 )
+  );
+  LUT6 #(
+    .INIT ( 64'h0141000001410410 ))
+  \LED/Mmux_currentdigit<0>228  (
+    .I0(\lifo/result [5]),
+    .I1(\lifo/result [3]),
+    .I2(\lifo/result [4]),
+    .I3(\lifo/result [2]),
+    .I4(\lifo/result [1]),
+    .I5(\LED/counter [0]),
+    .O(\LED/Mmux_currentdigit<0>228_686 )
+  );
+  LUT6 #(
+    .INIT ( 64'hFFFFFFFFAABAAAAA ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT36_SW0  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT32 ),
+    .I1(B[2]),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT33_629 ),
+    .I3(\decoder1/Mram_opcodeout1 ),
+    .I4(opcodein[2]),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT3 ),
+    .O(N24)
+  );
+  LUT6 #(
+    .INIT ( 64'hFFFFFFFF88882888 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT36  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ),
+    .I1(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<2> ),
+    .I2(A_1_IBUF_1),
+    .I3(B[0]),
+    .I4(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<1> ),
+    .I5(N24),
+    .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<2> )
+  );
+  LUT5 #(
+    .INIT ( 32'hEEFEEEEE ))
+  \LED/Mmux_currentdigit<0>229_SW0  (
+    .I0(\LED/Mmux_currentdigit<0>228_686 ),
+    .I1(\LED/Mmux_currentdigit<0>224_684 ),
+    .I2(\lifo/result [2]),
+    .I3(\lifo/result [3]),
+    .I4(\LED/Mmux_currentdigit<0>225_685 ),
+    .O(N26)
+  );
+  LUT6 #(
+    .INIT ( 64'hAAAA888088808880 ))
+  \LED/Mmux_currentdigit<0>229  (
+    .I0(reset_n_IBUF_10),
+    .I1(\LED/Mmux_currentdigit<0>214 ),
+    .I2(\LED/Mmux_currentdigit<0>223_683 ),
+    .I3(N26),
+    .I4(\LED/counter [1]),
+    .I5(\LED/counter [0]),
+    .O(\LED/currentdigit [1])
+  );
+  LUT4 #(
+    .INIT ( 16'hB4D2 ))
+  \lifo/Mcount_top_xor<2>11  (
+    .I0(\readdebouncer/clean_26 ),
+    .I1(\lifo/top [0]),
+    .I2(\lifo/top [2]),
+    .I3(\lifo/top [1]),
+    .O(\lifo/Result [2])
+  );
+  LUT3 #(
+    .INIT ( 8'h96 ))
+  \lifo/Mcount_top_xor<1>11  (
+    .I0(\readdebouncer/clean_26 ),
+    .I1(\lifo/top [0]),
+    .I2(\lifo/top [1]),
+    .O(\lifo/Result [1])
   );
   LUT2 #(
     .INIT ( 4'h8 ))
@@ -4868,84 +5245,6 @@ module topmodule (
     .I0(executein_IBUF_7),
     .I1(\executedebouncer/countpushed [6]),
     .O(\executedebouncer/Mcount_countpushed_lut [6])
-  );
-  LUT4 #(
-    .INIT ( 16'hAA80 ))
-  \readdebouncer/clean_rstpot  (
-    .I0(readin_IBUF_8),
-    .I1(\readdebouncer/pushed_288 ),
-    .I2(\readdebouncer/still_289 ),
-    .I3(\readdebouncer/clean_26 ),
-    .O(\readdebouncer/clean_rstpot_753 )
-  );
-  LUT4 #(
-    .INIT ( 16'hAA80 ))
-  \executedebouncer/clean_rstpot  (
-    .I0(executein_IBUF_7),
-    .I1(\executedebouncer/pushed_501 ),
-    .I2(\executedebouncer/still_502 ),
-    .I3(\executedebouncer/clean_25 ),
-    .O(\executedebouncer/clean_rstpot_755 )
-  );
-  LUT5 #(
-    .INIT ( 32'h28888888 ))
-  \clkdiv1/clk_300hz_rstpot1  (
-    .I0(reset_n_IBUF_10),
-    .I1(\clkdiv1/clk_300hz_27 ),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
-    .O(\clkdiv1/clk_300hz_rstpot1_756 )
-  );
-  LUT6 #(
-    .INIT ( 64'hE8EAE8E860626060 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13  (
-    .I0(A_0_IBUF_2),
-    .I1(B[0]),
-    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13_108 ),
-    .I3(B[1]),
-    .I4(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT1 ),
-    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15 )
-  );
-  LUT6 #(
-    .INIT ( 64'hFFFFFFFFAABAAAAA ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT36_SW0  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT32 ),
-    .I1(B[2]),
-    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT33_651 ),
-    .I3(\decoder1/Mram_opcodeout1 ),
-    .I4(opcodein[2]),
-    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT3 ),
-    .O(N20)
-  );
-  LUT6 #(
-    .INIT ( 64'hFFFFFFFF88882888 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT36  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 ),
-    .I1(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<2> ),
-    .I2(A_1_IBUF_1),
-    .I3(B[0]),
-    .I4(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<1> ),
-    .I5(N20),
-    .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<2> )
-  );
-  LUT4 #(
-    .INIT ( 16'hB4D2 ))
-  \lifo/Mcount_top_xor<2>11  (
-    .I0(\readdebouncer/clean_26 ),
-    .I1(\lifo/top [0]),
-    .I2(\lifo/top [2]),
-    .I3(\lifo/top [1]),
-    .O(\lifo/Result [2])
-  );
-  LUT3 #(
-    .INIT ( 8'h96 ))
-  \lifo/Mcount_top_xor<1>11  (
-    .I0(\readdebouncer/clean_26 ),
-    .I1(\lifo/top [0]),
-    .I2(\lifo/top [1]),
-    .O(\lifo/Result [1])
   );
   LUT2 #(
     .INIT ( 4'h8 ))
@@ -5214,17 +5513,6 @@ module topmodule (
     .O(\executedebouncer/Mcount_countpushed_lut [25])
   );
   LUT6 #(
-    .INIT ( 64'h77E46664826E8246 ))
-  \LED/result[5]_PWR_9_o_mod_23/Mmux_a[0]_a[5]_MUX_325_o131  (
-    .I0(\lifo/result [5]),
-    .I1(\lifo/result [3]),
-    .I2(\LED/Msub_result[5]_unary_minus_19_OUT_cy<1> ),
-    .I3(\lifo/result [4]),
-    .I4(\LED/result[5]_PWR_9_o_mod_23/Mmux_a[0]_a[5]_MUX_325_o132 ),
-    .I5(\lifo/result [2]),
-    .O(\LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_lut<3> )
-  );
-  LUT6 #(
     .INIT ( 64'h4642060244400400 ))
   \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT5_SW0  (
     .I0(B[2]),
@@ -5254,16 +5542,16 @@ module topmodule (
     .I2(B[1]),
     .I3(opcodein[0]),
     .I4(opcodein[1]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22_657 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22_635 )
   );
   LUT4 #(
     .INIT ( 16'h0220 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT17  (
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT14  (
     .I0(opcodein[2]),
     .I1(B[2]),
     .I2(opcodein[0]),
     .I3(opcodein[1]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT19_665 )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16_643 )
   );
   LUT6 #(
     .INIT ( 64'h8777788878887888 ))
@@ -5276,34 +5564,55 @@ module topmodule (
     .I5(B[1]),
     .O(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<2> )
   );
-  LUT4 #(
-    .INIT ( 16'h9995 ))
-  \LED/result[5]_PWR_9_o_mod_23/Mmux_a[0]_a[5]_MUX_325_o1321  (
-    .I0(\lifo/result [2]),
-    .I1(\lifo/result [5]),
-    .I2(\lifo/result [0]),
-    .I3(\lifo/result [1]),
-    .O(\LED/result[5]_PWR_9_o_mod_23/Mmux_a[0]_a[5]_MUX_325_o132 )
+  LUT5 #(
+    .INIT ( 32'h08646464 ))
+  \LED/Mram_segments111  (
+    .I0(\LED/currentdigit [1]),
+    .I1(\LED/Mram_segments41_616 ),
+    .I2(\LED/currentdigit [0]),
+    .I3(reset_n_IBUF_10),
+    .I4(\LED/Mmux_currentdigit<0>262_675 ),
+    .O(display_1_OBUF_46)
   );
-  LUT6 #(
-    .INIT ( 64'h1000101010101010 ))
-  \LED/Mmux_currentdigit<2>11  (
-    .I0(\LED/counter [1]),
-    .I1(\LED/counter [0]),
-    .I2(\LED/lowdigit [2]),
-    .I3(\lifo/opcodeselout [0]),
-    .I4(\lifo/opcodeselout [2]),
-    .I5(\lifo/opcodeselout [1]),
-    .O(\LED/currentdigit [2])
+  LUT5 #(
+    .INIT ( 32'hFF778007 ))
+  \LED/Mram_segments31  (
+    .I0(reset_n_IBUF_10),
+    .I1(\LED/Mmux_currentdigit<0>262_675 ),
+    .I2(\LED/currentdigit [1]),
+    .I3(\LED/Mram_segments41_616 ),
+    .I4(\LED/currentdigit [0]),
+    .O(display_3_OBUF_44)
   );
-  LUT4 #(
-    .INIT ( 16'h8778 ))
-  \LED/result[5]_PWR_9_o_mod_23/Mmux_o21  (
-    .I0(\lifo/result [0]),
-    .I1(\lifo/result [5]),
-    .I2(\lifo/result [1]),
-    .I3(\LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o_623 ),
-    .O(\LED/result[5]_PWR_9_o_mod_23_OUT<1> )
+  LUT5 #(
+    .INIT ( 32'h8088F088 ))
+  \LED/Mram_segments51  (
+    .I0(reset_n_IBUF_10),
+    .I1(\LED/Mmux_currentdigit<0>262_675 ),
+    .I2(\LED/currentdigit [1]),
+    .I3(\LED/Mram_segments41_616 ),
+    .I4(\LED/currentdigit [0]),
+    .O(display_5_OBUF_42)
+  );
+  LUT5 #(
+    .INIT ( 32'h88E8E8E8 ))
+  \LED/Mram_segments21  (
+    .I0(\LED/currentdigit [1]),
+    .I1(\LED/Mram_segments41_616 ),
+    .I2(\LED/currentdigit [0]),
+    .I3(reset_n_IBUF_10),
+    .I4(\LED/Mmux_currentdigit<0>262_675 ),
+    .O(display_2_OBUF_45)
+  );
+  LUT5 #(
+    .INIT ( 32'hDD141414 ))
+  \LED/Mram_segments61  (
+    .I0(\LED/Mram_segments41_616 ),
+    .I1(\LED/currentdigit [1]),
+    .I2(\LED/currentdigit [0]),
+    .I3(reset_n_IBUF_10),
+    .I4(\LED/Mmux_currentdigit<0>262_675 ),
+    .O(display_6_OBUF_41)
   );
   LUT6 #(
     .INIT ( 64'h8090100010008090 ))
@@ -5317,6 +5626,17 @@ module topmodule (
     .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT3 )
   );
   LUT6 #(
+    .INIT ( 64'hE8EAE8E860626060 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12  (
+    .I0(A_0_IBUF_2),
+    .I1(B[0]),
+    .I2(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13_108 ),
+    .I3(B[1]),
+    .I4(N28),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT14_641 )
+  );
+  LUT6 #(
     .INIT ( 64'h8888A00080008000 ))
   \alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<2>11  (
     .I0(A_0_IBUF_2),
@@ -5326,28 +5646,6 @@ module topmodule (
     .I4(A_2_IBUF_0),
     .I5(B[0]),
     .O(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<2> )
-  );
-  LUT6 #(
-    .INIT ( 64'h5CA3A35CD82727D8 ))
-  \LED/result[5]_PWR_9_o_mod_23/Mmux_o31  (
-    .I0(\lifo/result [1]),
-    .I1(\lifo/result [5]),
-    .I2(\LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o_623 ),
-    .I3(\lifo/result [2]),
-    .I4(\LED/result[5]_PWR_9_o_mod_23/BUS_0006_INV_134_o ),
-    .I5(\lifo/result [0]),
-    .O(\LED/result[5]_PWR_9_o_mod_23_OUT<2> )
-  );
-  LUT6 #(
-    .INIT ( 64'h82AAAAAAAA282828 ))
-  \LED/result[5]_PWR_9_o_mod_23/BUS_0007_INV_141_o_SW0  (
-    .I0(\LED/result[5]_PWR_9_o_mod_23/Madd_a[5]_GND_11_o_add_13_OUT_Madd_lut<3> ),
-    .I1(\lifo/result [2]),
-    .I2(\LED/result[5]_PWR_9_o_mod_23/BUS_0006_INV_134_o ),
-    .I3(\lifo/result [0]),
-    .I4(\lifo/result [5]),
-    .I5(\lifo/result [1]),
-    .O(N2)
   );
   LUT3 #(
     .INIT ( 8'h20 ))
@@ -5363,55 +5661,7 @@ module topmodule (
     .I0(opcodein[0]),
     .I1(opcodein[2]),
     .I2(opcodein[1]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12 )
-  );
-  LUT3 #(
-    .INIT ( 8'h20 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT111  (
-    .I0(opcodein[0]),
-    .I1(opcodein[1]),
-    .I2(opcodein[2]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT11 )
-  );
-  LUT6 #(
-    .INIT ( 64'h2626266664646464 ))
-  \LED/result[5]_PWR_9_o_mod_23/BUS_0006_INV_134_o1  (
-    .I0(\lifo/result [4]),
-    .I1(\lifo/result [5]),
-    .I2(\lifo/result [2]),
-    .I3(\lifo/result [1]),
-    .I4(\lifo/result [0]),
-    .I5(\lifo/result [3]),
-    .O(\LED/result[5]_PWR_9_o_mod_23/BUS_0006_INV_134_o )
-  );
-  LUT4 #(
-    .INIT ( 16'hD4DD ))
-  \alu1/Msub_GND_5_o_GND_5_o_sub_3_OUT_cy<1>11  (
-    .I0(B[1]),
-    .I1(A_1_IBUF_1),
-    .I2(A_0_IBUF_2),
-    .I3(B[0]),
-    .O(\alu1/Msub_GND_5_o_GND_5_o_sub_3_OUT_cy [1])
-  );
-  LUT5 #(
-    .INIT ( 32'h82282828 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13_108 ),
-    .I1(A_1_IBUF_1),
-    .I2(B[1]),
-    .I3(A_0_IBUF_2),
-    .I4(B[0]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT21_656 )
-  );
-  LUT5 #(
-    .INIT ( 32'hD8887888 ))
-  \alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<3>1  (
-    .I0(A_1_IBUF_1),
-    .I1(B[2]),
-    .I2(A_2_IBUF_0),
-    .I3(B[1]),
-    .I4(B[0]),
-    .O(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<3> )
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 )
   );
   LUT5 #(
     .INIT ( 32'h28888888 ))
@@ -5424,52 +5674,114 @@ module topmodule (
     .O(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<4> )
   );
   LUT6 #(
+    .INIT ( 64'hFFFFFFFF82141482 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16  (
+    .I0(opcodein[2]),
+    .I1(opcodein[0]),
+    .I2(opcodein[1]),
+    .I3(A_0_IBUF_2),
+    .I4(B[0]),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT17_644 ),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT18 )
+  );
+  LUT5 #(
+    .INIT ( 32'h95008015 ))
+  \LED/Mram_segments71  (
+    .I0(\LED/currentdigit [1]),
+    .I1(reset_n_IBUF_10),
+    .I2(\LED/Mmux_currentdigit<0>262_675 ),
+    .I3(\LED/Mram_segments41_616 ),
+    .I4(\LED/currentdigit [0]),
+    .O(display_7_OBUF_40)
+  );
+  LUT5 #(
+    .INIT ( 32'h87708007 ))
+  \LED/Mram_segments42  (
+    .I0(reset_n_IBUF_10),
+    .I1(\LED/Mmux_currentdigit<0>262_675 ),
+    .I2(\LED/currentdigit [1]),
+    .I3(\LED/Mram_segments41_616 ),
+    .I4(\LED/currentdigit [0]),
+    .O(display_4_OBUF_43)
+  );
+  LUT4 #(
+    .INIT ( 16'h8AEF ))
+  \alu1/Msub_GND_5_o_GND_5_o_sub_3_OUT_cy<1>11  (
+    .I0(A_1_IBUF_1),
+    .I1(A_0_IBUF_2),
+    .I2(B[0]),
+    .I3(B[1]),
+    .O(\alu1/Msub_GND_5_o_GND_5_o_sub_3_OUT_cy [1])
+  );
+  LUT5 #(
+    .INIT ( 32'h82282828 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT22  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT13_108 ),
+    .I1(A_1_IBUF_1),
+    .I2(B[1]),
+    .I3(A_0_IBUF_2),
+    .I4(B[0]),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT21_634 )
+  );
+  LUT5 #(
+    .INIT ( 32'hD8887888 ))
+  \alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<3>1  (
+    .I0(A_1_IBUF_1),
+    .I1(B[2]),
+    .I2(A_2_IBUF_0),
+    .I3(B[1]),
+    .I4(B[0]),
+    .O(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<3> )
+  );
+  LUT3 #(
+    .INIT ( 8'h20 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT111  (
+    .I0(opcodein[0]),
+    .I1(opcodein[1]),
+    .I2(opcodein[2]),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT11 )
+  );
+  LUT4 #(
+    .INIT ( 16'h0020 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_SW0  (
+    .I0(opcodein[2]),
+    .I1(B[2]),
+    .I2(opcodein[0]),
+    .I3(opcodein[1]),
+    .O(N28)
+  );
+  LUT6 #(
     .INIT ( 64'hEEE8E888E888E888 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41  (
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42  (
     .I0(A_2_IBUF_0),
     .I1(B[2]),
     .I2(A_1_IBUF_1),
     .I3(B[1]),
     .I4(A_0_IBUF_2),
     .I5(B[0]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT4 )
-  );
-  LUT4 #(
-    .INIT ( 16'h0080 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42  (
-    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT4 ),
-    .I1(opcodein[0]),
-    .I2(opcodein[1]),
-    .I3(opcodein[2]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41_653 )
-  );
-  LUT4 #(
-    .INIT ( 16'h0020 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43  (
-    .I0(opcodein[0]),
-    .I1(opcodein[1]),
-    .I2(opcodein[2]),
-    .I3(B[2]),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT1 )
-  );
-  LUT3 #(
-    .INIT ( 8'hA7 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_SW0  (
-    .I0(B[2]),
-    .I1(A_1_IBUF_1),
-    .I2(opcodein[2]),
-    .O(N22)
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT41_631 )
   );
   LUT6 #(
-    .INIT ( 64'h0000000000008000 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62  (
-    .I0(B[1]),
-    .I1(A_2_IBUF_0),
-    .I2(B[0]),
-    .I3(opcodein[0]),
-    .I4(opcodein[1]),
-    .I5(N22),
-    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT61 )
+    .INIT ( 64'hAAAAAAAEAAAEAAAA ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT44  (
+    .I0(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43_632 ),
+    .I1(opcodein[0]),
+    .I2(opcodein[2]),
+    .I3(opcodein[1]),
+    .I4(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<2> ),
+    .I5(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_lut<3> ),
+    .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<3> )
+  );
+  LUT6 #(
+    .INIT ( 64'h2888888800000000 ))
+  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT63  (
+    .I0(A_2_IBUF_0),
+    .I1(B[2]),
+    .I2(B[1]),
+    .I3(B[0]),
+    .I4(A_1_IBUF_1),
+    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT12_109 ),
+    .O(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT62_639 )
   );
   LUT6 #(
     .INIT ( 64'hA888800000800000 ))
@@ -5482,105 +5794,132 @@ module topmodule (
     .I5(A_0_IBUF_2),
     .O(\alu1/Mmult_a[2]_b[2]_MuLt_3_OUT_Madd1_cy<3> )
   );
+  LUT6 #(
+    .INIT ( 64'hEFFFFFFFFFFFFFFF ))
+  \readdebouncer/_n0066_inv1_1  (
+    .I0(\readdebouncer/countstill [24]),
+    .I1(N8),
+    .I2(\readdebouncer/_n00663_652 ),
+    .I3(\readdebouncer/_n00664_653 ),
+    .I4(\readdebouncer/_n00665_654 ),
+    .I5(\readdebouncer/_n00661_650 ),
+    .O(\readdebouncer/_n0066_inv1_805 )
+  );
+  LUT6 #(
+    .INIT ( 64'hEFFFFFFFFFFFFFFF ))
+  \executedebouncer/_n0066_inv1_1  (
+    .I0(\executedebouncer/countstill [24]),
+    .I1(N10),
+    .I2(\executedebouncer/_n00663_661 ),
+    .I3(\executedebouncer/_n00664_662 ),
+    .I4(\executedebouncer/_n00665_663 ),
+    .I5(\executedebouncer/_n00661_659 ),
+    .O(\executedebouncer/_n0066_inv1_806 )
+  );
   FDCE   \lifo/top_0_1  (
     .C(clk_BUFGP_9),
     .CE(\lifo/_n0129_inv ),
     .CLR(\LED/reset_n_inv ),
     .D(\lifo/Result [0]),
-    .Q(\lifo/top_0_1_772 )
+    .Q(\lifo/top_0_1_807 )
   );
   LUT4 #(
     .INIT ( 16'h5155 ))
   \lifo/_n0120_inv1_rstpot  (
     .I0(\readdebouncer/clean_26 ),
-    .I1(\lifo/top_0_1_772 ),
+    .I1(\lifo/top_0_1_807 ),
     .I2(\lifo/top [1]),
     .I3(\lifo/top [2]),
-    .O(\lifo/_n0120_inv1_rstpot_773 )
+    .O(\lifo/_n0120_inv1_rstpot_808 )
   );
   FD   \clkdiv1/counter_300hz_2  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_2_rstpot_819 ),
+    .D(\clkdiv1/counter_300hz_2_rstpot_854 ),
     .Q(\clkdiv1/counter_300hz [2])
+  );
+  FD   \clkdiv1/counter_300hz_0  (
+    .C(clk_BUFGP_9),
+    .D(\clkdiv1/counter_300hz_0_rstpot_855 ),
+    .Q(\clkdiv1/counter_300hz [0])
   );
   FD   \clkdiv1/counter_300hz_1  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_1_rstpot_820 ),
+    .D(\clkdiv1/counter_300hz_1_rstpot_856 ),
     .Q(\clkdiv1/counter_300hz [1])
   );
   FD   \clkdiv1/counter_300hz_5  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_5_rstpot_821 ),
+    .D(\clkdiv1/counter_300hz_5_rstpot_857 ),
     .Q(\clkdiv1/counter_300hz [5])
   );
   FD   \clkdiv1/counter_300hz_3  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_3_rstpot_822 ),
+    .D(\clkdiv1/counter_300hz_3_rstpot_858 ),
     .Q(\clkdiv1/counter_300hz [3])
   );
   FD   \clkdiv1/counter_300hz_4  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_4_rstpot_823 ),
+    .D(\clkdiv1/counter_300hz_4_rstpot_859 ),
     .Q(\clkdiv1/counter_300hz [4])
   );
   FD   \clkdiv1/counter_300hz_8  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_8_rstpot_824 ),
+    .D(\clkdiv1/counter_300hz_8_rstpot_860 ),
     .Q(\clkdiv1/counter_300hz [8])
   );
   FD   \clkdiv1/counter_300hz_6  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_6_rstpot_825 ),
+    .D(\clkdiv1/counter_300hz_6_rstpot_861 ),
     .Q(\clkdiv1/counter_300hz [6])
   );
   FD   \clkdiv1/counter_300hz_7  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_7_rstpot_826 ),
+    .D(\clkdiv1/counter_300hz_7_rstpot_862 ),
     .Q(\clkdiv1/counter_300hz [7])
   );
   FD   \clkdiv1/counter_300hz_11  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_11_rstpot_827 ),
+    .D(\clkdiv1/counter_300hz_11_rstpot_863 ),
     .Q(\clkdiv1/counter_300hz [11])
   );
   FD   \clkdiv1/counter_300hz_9  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_9_rstpot_828 ),
+    .D(\clkdiv1/counter_300hz_9_rstpot_864 ),
     .Q(\clkdiv1/counter_300hz [9])
   );
   FD   \clkdiv1/counter_300hz_10  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_10_rstpot_829 ),
+    .D(\clkdiv1/counter_300hz_10_rstpot_865 ),
     .Q(\clkdiv1/counter_300hz [10])
   );
   FD   \clkdiv1/counter_300hz_14  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_14_rstpot_830 ),
+    .D(\clkdiv1/counter_300hz_14_rstpot_866 ),
     .Q(\clkdiv1/counter_300hz [14])
   );
   FD   \clkdiv1/counter_300hz_12  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_12_rstpot_831 ),
+    .D(\clkdiv1/counter_300hz_12_rstpot_867 ),
     .Q(\clkdiv1/counter_300hz [12])
   );
   FD   \clkdiv1/counter_300hz_13  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_13_rstpot_832 ),
+    .D(\clkdiv1/counter_300hz_13_rstpot_868 ),
     .Q(\clkdiv1/counter_300hz [13])
   );
   FD   \clkdiv1/counter_300hz_17  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_17_rstpot_833 ),
+    .D(\clkdiv1/counter_300hz_17_rstpot_869 ),
     .Q(\clkdiv1/counter_300hz [17])
   );
   FD   \clkdiv1/counter_300hz_15  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_15_rstpot_834 ),
+    .D(\clkdiv1/counter_300hz_15_rstpot_870 ),
     .Q(\clkdiv1/counter_300hz [15])
   );
   FD   \clkdiv1/counter_300hz_16  (
     .C(clk_BUFGP_9),
-    .D(\clkdiv1/counter_300hz_16_rstpot_835 ),
+    .D(\clkdiv1/counter_300hz_16_rstpot_871 ),
     .Q(\clkdiv1/counter_300hz [16])
   );
   LUT6 #(
@@ -5591,8 +5930,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Fmem_0_24_dpot_798 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Fmem_0_24_dpot_833 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5602,8 +5941,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Fmem_0_25_dpot_799 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Fmem_0_25_dpot_834 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5613,8 +5952,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Fmem_0_26_dpot_800 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Fmem_0_26_dpot_835 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5624,8 +5963,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Fmem_0_27_dpot_801 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Fmem_0_27_dpot_836 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5635,8 +5974,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Fmem_0_28_dpot_802 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Fmem_0_28_dpot_837 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5646,8 +5985,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Fmem_0_29_dpot_803 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Fmem_0_29_dpot_838 )
   );
   LUT6 #(
     .INIT ( 64'hCCCACCCCCCCCCCCC ))
@@ -5657,8 +5996,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_3_dpot_807 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_3_dpot_842 )
   );
   LUT6 #(
     .INIT ( 64'hCCCACCCCCCCCCCCC ))
@@ -5668,8 +6007,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_4_dpot_808 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_4_dpot_843 )
   );
   LUT6 #(
     .INIT ( 64'hCCCACCCCCCCCCCCC ))
@@ -5679,8 +6018,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_5_dpot_809 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_5_dpot_844 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCACCCCCCCCCC ))
@@ -5690,8 +6029,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_6_dpot_810 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_6_dpot_845 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCACCCCCCCCCC ))
@@ -5701,8 +6040,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_7_dpot_811 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_7_dpot_846 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCACCCCCCCCCC ))
@@ -5712,8 +6051,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_8_dpot_812 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_8_dpot_847 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5723,8 +6062,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_12_dpot_816 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_12_dpot_851 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5734,8 +6073,8 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_13_dpot_817 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_13_dpot_852 )
   );
   LUT6 #(
     .INIT ( 64'hCCCCCCACCCCCCCCC ))
@@ -5745,178 +6084,188 @@ module topmodule (
     .I2(\lifo/top [2]),
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
-    .I5(\lifo/_n0120_inv1_rstpot_773 ),
-    .O(\lifo/Opmem_0_14_dpot_818 )
+    .I5(\lifo/_n0120_inv1_rstpot_808 ),
+    .O(\lifo/Opmem_0_14_dpot_853 )
+  );
+  LUT5 #(
+    .INIT ( 32'h08888888 ))
+  \clkdiv1/counter_300hz_0_rstpot  (
+    .I0(Result[0]),
+    .I1(reset_n_IBUF_10),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
+    .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
+    .O(\clkdiv1/counter_300hz_0_rstpot_855 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_1_rstpot  (
     .I0(Result[1]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_1_rstpot_820 )
+    .O(\clkdiv1/counter_300hz_1_rstpot_856 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_2_rstpot  (
     .I0(Result[2]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_2_rstpot_819 )
+    .O(\clkdiv1/counter_300hz_2_rstpot_854 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_3_rstpot  (
     .I0(Result[3]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_3_rstpot_822 )
+    .O(\clkdiv1/counter_300hz_3_rstpot_858 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_4_rstpot  (
     .I0(Result[4]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_4_rstpot_823 )
+    .O(\clkdiv1/counter_300hz_4_rstpot_859 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_5_rstpot  (
     .I0(Result[5]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_5_rstpot_821 )
+    .O(\clkdiv1/counter_300hz_5_rstpot_857 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_6_rstpot  (
     .I0(Result[6]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_6_rstpot_825 )
+    .O(\clkdiv1/counter_300hz_6_rstpot_861 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_7_rstpot  (
     .I0(Result[7]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_7_rstpot_826 )
+    .O(\clkdiv1/counter_300hz_7_rstpot_862 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_8_rstpot  (
     .I0(Result[8]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_8_rstpot_824 )
+    .O(\clkdiv1/counter_300hz_8_rstpot_860 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_9_rstpot  (
     .I0(Result[9]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_9_rstpot_828 )
+    .O(\clkdiv1/counter_300hz_9_rstpot_864 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_10_rstpot  (
     .I0(Result[10]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_10_rstpot_829 )
+    .O(\clkdiv1/counter_300hz_10_rstpot_865 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_11_rstpot  (
     .I0(Result[11]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_11_rstpot_827 )
+    .O(\clkdiv1/counter_300hz_11_rstpot_863 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_12_rstpot  (
     .I0(Result[12]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_12_rstpot_831 )
+    .O(\clkdiv1/counter_300hz_12_rstpot_867 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_13_rstpot  (
     .I0(Result[13]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_13_rstpot_832 )
+    .O(\clkdiv1/counter_300hz_13_rstpot_868 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_14_rstpot  (
     .I0(Result[14]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_14_rstpot_830 )
+    .O(\clkdiv1/counter_300hz_14_rstpot_866 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_15_rstpot  (
     .I0(Result[15]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_15_rstpot_834 )
+    .O(\clkdiv1/counter_300hz_15_rstpot_870 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_16_rstpot  (
     .I0(Result[16]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_16_rstpot_835 )
+    .O(\clkdiv1/counter_300hz_16_rstpot_871 )
   );
   LUT5 #(
     .INIT ( 32'h08888888 ))
   \clkdiv1/counter_300hz_17_rstpot  (
     .I0(Result[17]),
     .I1(reset_n_IBUF_10),
-    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_647 ),
-    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_648 ),
+    .I2(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1_625 ),
+    .I3(\clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2_626 ),
     .I4(\clkdiv1/GND_3_o_GND_3_o_equal_5_o [17]),
-    .O(\clkdiv1/counter_300hz_17_rstpot_833 )
+    .O(\clkdiv1/counter_300hz_17_rstpot_869 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5927,7 +6276,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [0]),
-    .O(\lifo/Fmem_0_18_dpot_792 )
+    .O(\lifo/Fmem_0_18_dpot_827 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5938,7 +6287,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [1]),
-    .O(\lifo/Fmem_0_19_dpot_793 )
+    .O(\lifo/Fmem_0_19_dpot_828 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5949,7 +6298,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [2]),
-    .O(\lifo/Fmem_0_20_dpot_794 )
+    .O(\lifo/Fmem_0_20_dpot_829 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5960,7 +6309,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [3]),
-    .O(\lifo/Fmem_0_21_dpot_795 )
+    .O(\lifo/Fmem_0_21_dpot_830 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5971,7 +6320,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [4]),
-    .O(\lifo/Fmem_0_22_dpot_796 )
+    .O(\lifo/Fmem_0_22_dpot_831 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5982,7 +6331,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [5]),
-    .O(\lifo/Fmem_0_23_dpot_797 )
+    .O(\lifo/Fmem_0_23_dpot_832 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -5993,7 +6342,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/opcodesel [0]),
-    .O(\lifo/Opmem_0_9_dpot_813 )
+    .O(\lifo/Opmem_0_9_dpot_848 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -6004,7 +6353,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/opcodesel [1]),
-    .O(\lifo/Opmem_0_10_dpot_814 )
+    .O(\lifo/Opmem_0_10_dpot_849 )
   );
   LUT6 #(
     .INIT ( 64'hAABAAAAAAA8AAAAA ))
@@ -6015,7 +6364,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [0]),
     .I5(\alu1/opcodesel [2]),
-    .O(\lifo/Opmem_0_11_dpot_815 )
+    .O(\lifo/Opmem_0_11_dpot_850 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6026,7 +6375,7 @@ module topmodule (
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [0]),
-    .O(\lifo/Fmem_0_6_dpot_780 )
+    .O(\lifo/Fmem_0_6_dpot_815 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6037,7 +6386,7 @@ module topmodule (
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [1]),
-    .O(\lifo/Fmem_0_7_dpot_781 )
+    .O(\lifo/Fmem_0_7_dpot_816 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6048,7 +6397,7 @@ module topmodule (
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [2]),
-    .O(\lifo/Fmem_0_8_dpot_782 )
+    .O(\lifo/Fmem_0_8_dpot_817 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6059,7 +6408,7 @@ module topmodule (
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [3]),
-    .O(\lifo/Fmem_0_9_dpot_783 )
+    .O(\lifo/Fmem_0_9_dpot_818 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6070,7 +6419,7 @@ module topmodule (
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [4]),
-    .O(\lifo/Fmem_0_10_dpot_784 )
+    .O(\lifo/Fmem_0_10_dpot_819 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6081,7 +6430,7 @@ module topmodule (
     .I3(\lifo/top [1]),
     .I4(\lifo/top [0]),
     .I5(\alu1/f [5]),
-    .O(\lifo/Fmem_0_11_dpot_785 )
+    .O(\lifo/Fmem_0_11_dpot_820 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6092,7 +6441,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [1]),
     .I5(\alu1/f [0]),
-    .O(\lifo/Fmem_0_12_dpot_786 )
+    .O(\lifo/Fmem_0_12_dpot_821 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6103,7 +6452,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [1]),
     .I5(\alu1/f [1]),
-    .O(\lifo/Fmem_0_13_dpot_787 )
+    .O(\lifo/Fmem_0_13_dpot_822 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6114,7 +6463,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [1]),
     .I5(\alu1/f [2]),
-    .O(\lifo/Fmem_0_14_dpot_788 )
+    .O(\lifo/Fmem_0_14_dpot_823 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6125,7 +6474,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [1]),
     .I5(\alu1/f [3]),
-    .O(\lifo/Fmem_0_15_dpot_789 )
+    .O(\lifo/Fmem_0_15_dpot_824 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6136,7 +6485,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [1]),
     .I5(\alu1/f [4]),
-    .O(\lifo/Fmem_0_16_dpot_790 )
+    .O(\lifo/Fmem_0_16_dpot_825 )
   );
   LUT6 #(
     .INIT ( 64'hAAABAAAAAAA8AAAA ))
@@ -6147,7 +6496,7 @@ module topmodule (
     .I3(\lifo/top [2]),
     .I4(\lifo/top [1]),
     .I5(\alu1/f [5]),
-    .O(\lifo/Fmem_0_17_dpot_791 )
+    .O(\lifo/Fmem_0_17_dpot_826 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6158,7 +6507,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/f [0]),
-    .O(\lifo/Fmem_0_0_dpot_774 )
+    .O(\lifo/Fmem_0_0_dpot_809 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6169,7 +6518,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/f [1]),
-    .O(\lifo/Fmem_0_1_dpot_775 )
+    .O(\lifo/Fmem_0_1_dpot_810 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6180,7 +6529,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/f [2]),
-    .O(\lifo/Fmem_0_2_dpot_776 )
+    .O(\lifo/Fmem_0_2_dpot_811 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6191,7 +6540,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/f [3]),
-    .O(\lifo/Fmem_0_3_dpot_777 )
+    .O(\lifo/Fmem_0_3_dpot_812 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6202,7 +6551,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/f [4]),
-    .O(\lifo/Fmem_0_4_dpot_778 )
+    .O(\lifo/Fmem_0_4_dpot_813 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6213,7 +6562,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/f [5]),
-    .O(\lifo/Fmem_0_5_dpot_779 )
+    .O(\lifo/Fmem_0_5_dpot_814 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6224,7 +6573,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/opcodesel [0]),
-    .O(\lifo/Opmem_0_0_dpot_804 )
+    .O(\lifo/Opmem_0_0_dpot_839 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6235,7 +6584,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/opcodesel [1]),
-    .O(\lifo/Opmem_0_1_dpot_805 )
+    .O(\lifo/Opmem_0_1_dpot_840 )
   );
   LUT6 #(
     .INIT ( 64'hAAAAAAABAAAAAAA8 ))
@@ -6246,35 +6595,7 @@ module topmodule (
     .I3(\lifo/top [0]),
     .I4(\readdebouncer/clean_26 ),
     .I5(\alu1/opcodesel [2]),
-    .O(\lifo/Opmem_0_2_dpot_806 )
-  );
-  MUXF7   \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT19  (
-    .I0(N24),
-    .I1(N25),
-    .S(opcodein[2]),
-    .O(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<0> )
-  );
-  LUT6 #(
-    .INIT ( 64'hFFFFFFFF44545444 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT19_F  (
-    .I0(\decoder1/Mram_opcodeout ),
-    .I1(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT110 ),
-    .I2(\decoder1/Mram_opcodeout1 ),
-    .I3(A_0_IBUF_2),
-    .I4(B[0]),
-    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15 ),
-    .O(N24)
-  );
-  LUT6 #(
-    .INIT ( 64'hFFFFDD8CFFFF5504 ))
-  \alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT19_G  (
-    .I0(\decoder1/Mram_opcodeout ),
-    .I1(\decoder1/Mram_opcodeout1 ),
-    .I2(\alu1/Madd_n0036[3:0]_lut<0> ),
-    .I3(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT110 ),
-    .I4(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT15 ),
-    .I5(\alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT16 ),
-    .O(N25)
+    .O(\lifo/Opmem_0_2_dpot_841 )
   );
   BUFGP   clk_BUFGP (
     .I(clk),
@@ -6307,47 +6628,47 @@ module topmodule (
   FD   \alu1/opcodesel_2_1  (
     .C(\executedebouncer/clean_25 ),
     .D(opcodein[2]),
-    .Q(\alu1/opcodesel_2_1_838 )
+    .Q(\alu1/opcodesel_2_1_872 )
   );
   FD   \alu1/opcodesel_1_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\decoder1/Mram_opcodeout1 ),
-    .Q(\alu1/opcodesel_1_1_839 )
+    .Q(\alu1/opcodesel_1_1_873 )
   );
   FD   \alu1/opcodesel_0_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\decoder1/Mram_opcodeout ),
-    .Q(\alu1/opcodesel_0_1_840 )
+    .Q(\alu1/opcodesel_0_1_874 )
   );
   FD   \alu1/f_5_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<5> ),
-    .Q(\alu1/f_5_1_841 )
+    .Q(\alu1/f_5_1_875 )
   );
   FD   \alu1/f_4_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<4> ),
-    .Q(\alu1/f_4_1_842 )
+    .Q(\alu1/f_4_1_876 )
   );
   FD   \alu1/f_3_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<3> ),
-    .Q(\alu1/f_3_1_843 )
+    .Q(\alu1/f_3_1_877 )
   );
   FD   \alu1/f_2_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<2> ),
-    .Q(\alu1/f_2_1_844 )
+    .Q(\alu1/f_2_1_878 )
   );
   FD   \alu1/f_1_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<1> ),
-    .Q(\alu1/f_1_1_845 )
+    .Q(\alu1/f_1_1_879 )
   );
   FD   \alu1/f_0_1  (
     .C(\executedebouncer/clean_25 ),
     .D(\alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<0> ),
-    .Q(\alu1/f_0_1_846 )
+    .Q(\alu1/f_0_1_880 )
   );
 endmodule
 
