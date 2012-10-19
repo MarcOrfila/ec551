@@ -22,36 +22,30 @@ module display(
     input [5:0] result,
 	 input clk_in,
 	 input reset_n,
-	 output [3:0] ctl,
-    output [7:0] segments //segments[0] is the point
-	 , input [2:0] opcodesel
+	 output reg [3:0] ctl,
+    output reg [7:0] segments //segments[0] is the point
+	 , input [2:0] opcodesel//if opcodesel is not 110(xnor) it displays decimal, else binary
     );
 
 	reg [3:0] highdigit;
 	reg [3:0] lowdigit;
-	reg [3:0] currentdigit;
 	reg [3:0] sign;
+	
+	reg [3:0] currentdigit;
 	reg [5:0] absresult;
 	
-	reg [2:0] tempctl;
-	reg [6:0] tempsegments;
+	
 	reg [1:0]counter;
 	
 	
-	assign ctl[3]=0;	 //ground
-	assign ctl[0]=tempctl[0];
-	assign ctl[1]=tempctl[1];
-	assign ctl[2]=tempctl[2];
 	
-	assign segments[7:1]=tempsegments;
-	assign segments[0]=1;
 	
 	
 	always@(posedge clk_in or negedge reset_n) begin  //divide the period
-			if(~reset_n)counter=0;
+			if(~reset_n)counter<=0;
 			else begin
-				if(counter==2)counter=0;
-				else counter=counter+1;
+				if(counter==2)counter<=0;
+				else counter<=counter+1;
 			end
 	end
 	
@@ -59,64 +53,68 @@ module display(
 		case(counter) 
 		0: 
 		begin
-		tempctl[1]=0;tempctl[2]=0;tempctl[0]=1;
+		ctl[3]=0;ctl[1]=0;ctl[2]=0;ctl[0]=1;
 		currentdigit=(opcodesel==3'b110)?{3'b000,result[0]}:lowdigit;
 		end
 		
 		1: 
 		begin
-		tempctl[0]=0;tempctl[2]=0;tempctl[1]=1;
+		ctl[3]=0;ctl[0]=0;ctl[2]=0;ctl[1]=1;
 		currentdigit=(opcodesel==3'b110)?{3'b000,result[1]}:highdigit;
 		end
 		
 		2:
 		begin
-		tempctl[0]=0;tempctl[1]=0;tempctl[2]=1;
+		ctl[0]=0;ctl[1]=0;ctl[2]=1;ctl[3]=0;
 		currentdigit=(opcodesel==3'b110)?{3'b000,result[2]}:sign;
 		end
 		default:
 		begin
-		tempctl[0]=0;tempctl[1]=0;tempctl[2]=0;
+		ctl[0]=0;ctl[1]=0;ctl[2]=0;ctl[3]=0;
 		currentdigit=10;
 		end
 		endcase
 	end
 	
 	always@(posedge clk_in or negedge reset_n) begin
-		if(~reset_n) begin
-			sign=10;
-		end
-		else begin
-		if(result[5]==0)sign=10;
-		else sign=11;
-		end
+		if(~reset_n) 					sign<=10;
+		else 
+		if(result[5]==0)				sign<=10;
+		else 								sign<=11;
+		
 	end
 
-	always@(posedge clk_in) begin
-		begin
-			if(result[5]==1)absresult=-result;else absresult=result;
-			highdigit=absresult/10;
-			if(highdigit==0)highdigit=10;else highdigit=highdigit;
-			lowdigit=absresult%10;
+	always@(posedge clk_in or negedge reset_n) begin
+		if(!reset_n)begin				absresult<=0;highdigit<=0;lowdigit<=0;end
+		else	begin
+			if(result[5]==1)			absresult<=-result;
+			else 							absresult<=result;
+			
+			highdigit<=absresult/10;
+											
+			if(highdigit==0)			highdigit<=10;
+			else 	begin end
+			
+			lowdigit<=absresult%10;
 		end
 	end
 
 
 	always@(currentdigit) begin //decode
 		case(currentdigit)
-			0: tempsegments=7'b0000001;
-			1: tempsegments=7'b1001111;
-			2: tempsegments=7'b0010010;
-			3: tempsegments=7'b0000110;
-			4: tempsegments=7'b1001100;
-			5: tempsegments=7'b0100100;
-			6: tempsegments=7'b0100000;
-			7: tempsegments=7'b0001111;
-			8: tempsegments=7'b0000000;
-			9: tempsegments=7'b0000100;
-			10:tempsegments=1111111;
-			11:tempsegments=7'b1111110;
-			default: tempsegments=7'b0110000;//error
+			0: segments=8'b00000011;
+			1: segments=8'b10011111;
+			2: segments=8'b00100101;
+			3: segments=8'b00001101;
+			4: segments=8'b10011001;
+			5: segments=8'b01001001;
+			6: segments=8'b01000001;
+			7: segments=8'b00011111;
+			8: segments=8'b00000001;
+			9: segments=8'b00001001;
+			10:segments=8'b11111111;
+			11:segments=8'b11111101;
+			default: segments=8'b01100001;//error
 		endcase
 	end
 endmodule
