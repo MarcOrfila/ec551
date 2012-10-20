@@ -1,0 +1,495 @@
+Release 13.3 - xst O.76xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> 
+Reading design: lifo2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "lifo2.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "lifo2"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : lifo2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" into library work
+Parsing module <lifo2>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <lifo2>.
+WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 52: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 53: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 55: Result of 32-bit expression is truncated to fit in 3-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <lifo2>.
+    Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v".
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <Fmem>, simulation mismatch.
+    Found 6x6-bit single-port RAM <Mram_Fmem> for signal <Fmem>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <Opmem>, simulation mismatch.
+    Found 6x3-bit single-port RAM <Mram_Opmem> for signal <Opmem>.
+    Found 6-bit register for signal <resultout>.
+    Found 3-bit register for signal <opcodeselout>.
+    Found 3-bit register for signal <top>.
+    Found 3-bit adder for signal <next_top[2]_GND_1_o_add_9_OUT> created at line 52.
+    Found 3-bit subtractor for signal <GND_1_o_GND_1_o_sub_18_OUT<2:0>> created at line 55.
+WARNING:Xst:737 - Found 1-bit latch for signal <next_top<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <next_top<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <next_top<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   3 Latch(s).
+	inferred  23 Multiplexer(s).
+Unit <lifo2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 6x3-bit single-port RAM                               : 1
+ 6x6-bit single-port RAM                               : 1
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 3-bit subtractor                                      : 1
+# Registers                                            : 3
+ 3-bit register                                        : 2
+ 6-bit register                                        : 1
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Multiplexers                                         : 23
+ 1-bit 2-to-1 multiplexer                              : 23
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <lifo2>.
+INFO:Xst:3217 - HDL ADVISOR - Register <opcodeselout> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_Opmem> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 6-word x 3-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <VCC>           | high     |
+    |     addrA          | connected to signal <top>           |          |
+    |     diA            | connected to signal <opcodeselin>   |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <resultout> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_Fmem> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 6-word x 6-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <push>          | high     |
+    |     addrA          | connected to signal <top>           |          |
+    |     diA            | connected to signal <resultin>      |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <lifo2> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 6x3-bit single-port distributed RAM                   : 1
+ 6x6-bit single-port distributed RAM                   : 1
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 3-bit subtractor                                      : 1
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Multiplexers                                         : 23
+ 1-bit 2-to-1 multiplexer                              : 23
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2016 - Found a loop when searching source clock on port 'Mmux_top[2]_PWR_3_o_Mux_22_o1:O'
+Last warning will be issued only once.
+
+Optimizing unit <lifo2> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block lifo2, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : lifo2.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 12
+#      GND                         : 1
+#      INV                         : 1
+#      LUT3                        : 3
+#      LUT4                        : 2
+#      LUT5                        : 2
+#      LUT6                        : 2
+#      VCC                         : 1
+# FlipFlops/Latches                : 15
+#      FDC                         : 3
+#      FDCE                        : 9
+#      LDC                         : 3
+# RAMS                             : 9
+#      RAM16X1S                    : 9
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 12
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              15  out of  18224     0%  
+ Number of Slice LUTs:                   19  out of   9112     0%  
+    Number used as Logic:                10  out of   9112     0%  
+    Number used as Memory:                9  out of   2176     0%  
+       Number used as RAM:                9
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     21
+   Number with an unused Flip Flop:       6  out of     21    28%  
+   Number with an unused LUT:             2  out of     21     9%  
+   Number of fully used LUT-FF pairs:    13  out of     21    61%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    232    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------+------------------------+-------+
+Clock Signal                                             | Clock buffer(FF name)  | Load  |
+---------------------------------------------------------+------------------------+-------+
+top[2]_PWR_3_o_Mux_22_o(Mmux_top[2]_PWR_3_o_Mux_22_o11:O)| NONE(*)(next_top_2)    | 3     |
+clk                                                      | BUFGP                  | 21    |
+---------------------------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.525ns (Maximum Frequency: 396.110MHz)
+   Minimum input arrival time before clock: 3.664ns
+   Maximum output required time after clock: 5.223ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'top[2]_PWR_3_o_Mux_22_o'
+  Clock period: 1.766ns (frequency: 566.396MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               1.766ns (Levels of Logic = 1)
+  Source:            next_top_0 (LATCH)
+  Destination:       next_top_1 (LATCH)
+  Source Clock:      top[2]_PWR_3_o_Mux_22_o falling
+  Destination Clock: top[2]_PWR_3_o_Mux_22_o falling
+
+  Data Path: next_top_0 to next_top_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              4   0.498   1.028  next_top_0 (next_top_0)
+     LUT6:I1->O            1   0.203   0.000  Mmux_top[2]_GND_1_o_Mux_23_o1 (top[2]_GND_1_o_Mux_23_o)
+     LDC:D                     0.037          next_top_1
+    ----------------------------------------
+    Total                      1.766ns (0.738ns logic, 1.028ns route)
+                                       (41.8% logic, 58.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.525ns (frequency: 396.110MHz)
+  Total number of paths / destination ports: 63 / 36
+-------------------------------------------------------------------------
+Delay:               2.525ns (Levels of Logic = 1)
+  Source:            top_0 (FF)
+  Destination:       resultout_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: top_0 to resultout_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             25   0.447   1.192  top_0 (top_0)
+     RAM16X1S:A0->O        1   0.205   0.579  Mram_Fmem1 (_n0063<0>)
+     FDCE:D                    0.102          resultout_0
+    ----------------------------------------
+    Total                      2.525ns (0.754ns logic, 1.771ns route)
+                                       (29.9% logic, 70.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'top[2]_PWR_3_o_Mux_22_o'
+  Total number of paths / destination ports: 11 / 5
+-------------------------------------------------------------------------
+Offset:              3.664ns (Levels of Logic = 3)
+  Source:            pop (PAD)
+  Destination:       next_top_2 (LATCH)
+  Destination Clock: top[2]_PWR_3_o_Mux_22_o falling
+
+  Data Path: pop to next_top_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.222   1.037  pop_IBUF (pop_IBUF)
+     LUT5:I3->O            2   0.203   0.961  Mmux_top[2]_GND_1_o_Mux_21_o121 (Mmux_top[2]_GND_1_o_Mux_21_o12)
+     LUT6:I1->O            1   0.203   0.000  Mmux_top[2]_GND_1_o_Mux_21_o1 (top[2]_GND_1_o_Mux_21_o)
+     LDC:D                     0.037          next_top_2
+    ----------------------------------------
+    Total                      3.664ns (1.665ns logic, 1.999ns route)
+                                       (45.4% logic, 54.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 36 / 36
+-------------------------------------------------------------------------
+Offset:              3.418ns (Levels of Logic = 2)
+  Source:            reset_n (PAD)
+  Destination:       top_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset_n to top_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  reset_n_IBUF (reset_n_IBUF)
+     INV:I->O             15   0.206   0.981  reset_n_inv1_INV_0 (reset_n_inv)
+     FDCE:CLR                  0.430          opcodeselout_0
+    ----------------------------------------
+    Total                      3.418ns (1.858ns logic, 1.560ns route)
+                                       (54.4% logic, 45.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 15 / 11
+-------------------------------------------------------------------------
+Offset:              5.223ns (Levels of Logic = 2)
+  Source:            top_2 (FF)
+  Destination:       full (PAD)
+  Source Clock:      clk rising
+
+  Data Path: top_2 to full
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             25   0.447   1.421  top_2 (top_2)
+     LUT3:I0->O            1   0.205   0.579  Mmux_top[2]_GND_1_o_Mux_21_o1221 (full_OBUF)
+     OBUF:I->O                 2.571          full_OBUF (full)
+    ----------------------------------------
+    Total                      5.223ns (3.223ns logic, 2.000ns route)
+                                       (61.7% logic, 38.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+-----------------------+---------+---------+---------+---------+
+                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------+---------+---------+---------+---------+
+clk                    |    2.525|         |         |         |
+top[2]_PWR_3_o_Mux_22_o|         |    1.283|         |         |
+-----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock top[2]_PWR_3_o_Mux_22_o
+-----------------------+---------+---------+---------+---------+
+                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------+---------+---------+---------+---------+
+clk                    |         |         |    3.388|         |
+top[2]_PWR_3_o_Mux_22_o|         |         |    1.766|         |
+-----------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 11.55 secs
+ 
+--> 
+
+
+Total memory usage is 127244 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

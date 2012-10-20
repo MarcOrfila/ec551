@@ -36,51 +36,42 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-executein   |    5.167(R)|      SLOW  |   -0.326(R)|      SLOW  |clk_BUFGP         |   0.000|
-readin      |    5.819(R)|      SLOW  |   -0.609(R)|      SLOW  |clk_BUFGP         |   0.000|
-reset_n     |    7.076(R)|      SLOW  |   -0.855(R)|      SLOW  |clk_BUFGP         |   0.000|
+reset_n     |    4.373(R)|      SLOW  |   -2.418(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
-
-Clock clk to Pad
-------------------+-----------------+------------+-----------------+------------+------------------+--------+
-                  |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination       |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-------------------+-----------------+------------+-----------------+------------+------------------+--------+
-display<1>        |        11.848(R)|      SLOW  |         5.952(R)|      FAST  |clk_BUFGP         |   0.000|
-display<2>        |        11.565(R)|      SLOW  |         5.968(R)|      FAST  |clk_BUFGP         |   0.000|
-display<3>        |        11.215(R)|      SLOW  |         5.801(R)|      FAST  |clk_BUFGP         |   0.000|
-display<4>        |        11.695(R)|      SLOW  |         5.856(R)|      FAST  |clk_BUFGP         |   0.000|
-display<5>        |        11.592(R)|      SLOW  |         5.736(R)|      FAST  |clk_BUFGP         |   0.000|
-display<6>        |        11.649(R)|      SLOW  |         5.768(R)|      FAST  |clk_BUFGP         |   0.000|
-display<7>        |        11.495(R)|      SLOW  |         5.922(R)|      FAST  |clk_BUFGP         |   0.000|
-opcodetbLIFOLED<0>|         7.976(R)|      SLOW  |         4.323(R)|      FAST  |clk_BUFGP         |   0.000|
-opcodetbLIFOLED<1>|         8.495(R)|      SLOW  |         4.679(R)|      FAST  |clk_BUFGP         |   0.000|
-opcodetbLIFOLED<2>|         8.479(R)|      SLOW  |         4.651(R)|      FAST  |clk_BUFGP         |   0.000|
-resulttbLIFOLED<0>|         9.137(R)|      SLOW  |         5.062(R)|      FAST  |clk_BUFGP         |   0.000|
-resulttbLIFOLED<1>|         9.173(R)|      SLOW  |         5.082(R)|      FAST  |clk_BUFGP         |   0.000|
-resulttbLIFOLED<2>|         9.489(R)|      SLOW  |         5.282(R)|      FAST  |clk_BUFGP         |   0.000|
-resulttbLIFOLED<3>|         9.187(R)|      SLOW  |         5.088(R)|      FAST  |clk_BUFGP         |   0.000|
-resulttbLIFOLED<4>|         8.928(R)|      SLOW  |         4.933(R)|      FAST  |clk_BUFGP         |   0.000|
-resulttbLIFOLED<5>|         8.959(R)|      SLOW  |         4.919(R)|      FAST  |clk_BUFGP         |   0.000|
-------------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.458|         |         |         |
+clk            |    2.763|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+reset_n        |display<1>     |   10.840|
+reset_n        |display<2>     |   11.248|
+reset_n        |display<3>     |   11.177|
+reset_n        |display<4>     |   11.000|
+reset_n        |display<5>     |   11.195|
+reset_n        |display<6>     |   10.853|
+reset_n        |display<7>     |   10.547|
+reset_n        |displayctl<0>  |    9.810|
+reset_n        |displayctl<1>  |    9.398|
+reset_n        |displayctl<2>  |    9.448|
+---------------+---------------+---------+
 
-Analysis completed Tue Oct 16 15:22:22 2012 
+
+Analysis completed Sat Oct 20 14:03:35 2012 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 143 MB
+Peak Memory Usage: 142 MB
 
 
 

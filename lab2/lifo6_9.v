@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module lifo6_9(
     input reset_n,
-    input write,
-    input read,
+    input push,
+    input pop,
 	 input clk,
     input [5:0] F,
 	 input [2:0] opcodeselin,
@@ -29,61 +29,39 @@ module lifo6_9(
 	 output reg [2:0] opcodeselout,
     output  full,
     output  empty
-	
+
     );
+	parameter depth = 6;
 
-	reg [5:0] Fmem [5:0];
-	reg [2:0] Opmem [5:0];
-	reg [2:0]top;//top pointer
-
-
+	reg [depth-1:0] Fmem [depth-1:0];
+	reg [depth-1:0] Opmem [depth-1:0];
+	reg [2:0]top,next_top;//top pointer
 	
-	assign full=(!reset_n)?0:((top==5)?1:0);
-	assign empty=(!reset_n)?1:((top==0)?1:0);
+
+  wire writing = push && (top < depth || pop);
+  wire reading = pop && top > 0;
+  assign full=next_top==depth;
+  assign empty=next_top==0;
+  
+  wire [2:0] ptr = writing ? top [2:0] : (top [2:0])-1'b1;   
+  
+  always @(*)
+    if (!reset_n)					      next_top = 0;
+    else if (writing && !reading)   next_top = top+1;
+    else if (reading && !writing)   next_top = top-1;
+    else								      next_top = next_top;
+		
+  always @(posedge clk)
+    top <= next_top;
 	
-	always@(posedge clk or negedge reset_n)begin
-		if(!reset_n)begin
-			Fmem[0]<=0;
-			Fmem[1]<=0;
-			Fmem[2]<=0;
-			Fmem[3]<=0;
-			Fmem[4]<=0;
-			Fmem[5]<=0;
-			Opmem[0]<=0;
-			Opmem[1]<=0;
-			Opmem[2]<=0;
-			Opmem[3]<=0;
-			Opmem[4]<=0;
-			Opmem[5]<=0;
-			top<=0;
-			end 
-		else begin
-			if(read)begin
-				if(top==0)begin
-					
-					result<=0;
-					opcodeselout<=0;
-					end 
-				else begin
-					result<=Fmem[top];
-					opcodeselout<=Opmem[top];
-					top<=top-1;
-					end 
-			end
-			else begin
-				if(write)begin
-					if(top==5)begin
-						end 
-					else begin
-						top<=top+1;
-						Fmem[top]<=F;
-						Opmem[top]<=opcodeselin;
-						
-						end
-				end
-				else begin end
-			end
-			
-		end	
-	end
+  always @(posedge clk)begin
+    if(writing)begin			Fmem[ptr]<=F; 			Opmem[ptr]<=opcodeselin;	end
+	 else	begin					Fmem[ptr]<=Fmem[ptr];Opmem[ptr]<=opcodeselin;	end
+  end
+   
+  always @(posedge clk or negedge reset_n)begin
+	if(!reset_n)	 begin	result<=0; 				opcodeselout<=0; 			 end
+	else if(reading)begin	result<=Fmem[ptr];	opcodeselout<=Opmem[ptr];end
+	else 				 begin	result<=result;	opcodeselout<=opcodeselout;end
+  end
 endmodule

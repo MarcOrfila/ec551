@@ -26,8 +26,8 @@ module lifotb;
 
 	// Inputs
 	reg reset_n;
-	reg write;
-	reg read;
+	reg push;
+	reg pop;
 	reg [5:0] F;
 	reg [2:0] opcodeselin;
 
@@ -41,8 +41,8 @@ module lifotb;
 	// Instantiate the Unit Under Test (UUT)
 	lifo6_9 uut (
 		.reset_n(reset_n), 
-		.write(write), 
-		.read(read), 
+		.push(push), 
+		.pop(), 
 		.F(F), 
 		.opcodeselin(opcodeselin), 
 		.result(result), 
@@ -54,10 +54,10 @@ module lifotb;
 	initial begin
 		// Initialize Inputs
 		reset_n = 0;
-		write = 0;
+		
 				F = 0;
 		opcodeselin = 0;
-
+		
 		// Wait 100 ns for global reset to finish
 		#100;
         
@@ -65,24 +65,26 @@ module lifotb;
 		reset_n=1;
 	end
 	initial begin
+	push=0;
+	#100;
 		forever begin
 		#5;
-			write=1;
+			push=1;
 		#5;
-			write=0;
+			push=0;
 			#58;
 		end
 	
 	end
    
 initial begin
-read=0;
+pop=0;
 #100;
 forever begin
 		#5;
-			read=1;
+			pop=1;
 		#5;
-			read=0;
+			pop=0;
 			#79;
 		end
 end

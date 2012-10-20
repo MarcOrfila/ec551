@@ -10,9 +10,9 @@ module debounce (reset_n, clk, noisy, clean);
    input reset_n, clk, noisy;
    output clean;
 
-   parameter NDELAY = 50000000;
+   parameter NDELAY = 150;
 
-   reg [25:0] countstill,countpushed;
+   reg [7:0] countstill,countpushed;
    reg still, pushed,clean;
 
 

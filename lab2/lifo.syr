@@ -1,0 +1,452 @@
+Release 13.3 - xst O.76xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> 
+Reading design: lifo.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "lifo.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "lifo"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : lifo
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" into library work
+Parsing module <lifo>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <lifo>.
+WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 28: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 29: Result of 32-bit expression is truncated to fit in 3-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <lifo>.
+    Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v".
+        depth = 6
+        resultwidth = 6
+        opcodewidth = 3
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <Rmem>, simulation mismatch.
+    Found 6x6-bit single-port RAM <Mram_Rmem> for signal <Rmem>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <Omem>, simulation mismatch.
+    Found 6x3-bit single-port RAM <Mram_Omem> for signal <Omem>.
+    Found 1-bit register for signal <full>.
+    Found 1-bit register for signal <empty>.
+    Found 6-bit register for signal <Rmem_rd>.
+    Found 3-bit register for signal <Omem_rd>.
+    Found 6-bit register for signal <resulttos_shadow>.
+    Found 3-bit register for signal <opcodeseltos_shadow>.
+    Found 1-bit register for signal <use_Rmem_rd>.
+    Found 1-bit register for signal <use_Omem_rd>.
+    Found 3-bit register for signal <count>.
+    Found 4-bit subtractor for signal <n0055[3:0]> created at line 29.
+    Found 3-bit adder for signal <count[2]_GND_1_o_add_4_OUT> created at line 28.
+    Found 3-bit comparator greater for signal <count[2]_PWR_1_o_LessThan_1_o> created at line 21
+    Found 3-bit comparator greater for signal <GND_1_o_count[2]_LessThan_2_o> created at line 22
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <lifo> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 6x3-bit single-port RAM                               : 1
+ 6x6-bit single-port RAM                               : 1
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 9
+ 1-bit register                                        : 4
+ 3-bit register                                        : 3
+ 6-bit register                                        : 2
+# Comparators                                          : 2
+ 3-bit comparator greater                              : 2
+# Multiplexers                                         : 6
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 1
+ 6-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <lifo>.
+INFO:Xst:3231 - The small RAM <Mram_Rmem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 6-word x 6-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <n0050>         |          |
+    |     diA            | connected to signal <resulttos>     |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_Omem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 6-word x 3-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <n0050>         |          |
+    |     diA            | connected to signal <opcodeseltos>  |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <lifo> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 6x3-bit single-port distributed RAM                   : 1
+ 6x6-bit single-port distributed RAM                   : 1
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+# Comparators                                          : 2
+ 3-bit comparator greater                              : 2
+# Multiplexers                                         : 6
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 1
+ 6-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <use_Rmem_rd> in Unit <lifo> is equivalent to the following FF/Latch, which will be removed : <use_Omem_rd> 
+
+Optimizing unit <lifo> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block lifo, actual ratio is 0.
+FlipFlop count_1 has been replicated 1 time(s)
+FlipFlop count_2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : lifo.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 31
+#      GND                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 9
+#      LUT4                        : 2
+#      LUT5                        : 3
+#      LUT6                        : 15
+# FlipFlops/Latches                : 26
+#      FD                          : 17
+#      FDE                         : 9
+# RAMS                             : 9
+#      RAM16X1S                    : 9
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 12
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              26  out of  18224     0%  
+ Number of Slice LUTs:                   39  out of   9112     0%  
+    Number used as Logic:                30  out of   9112     0%  
+    Number used as Memory:                9  out of   2176     0%  
+       Number used as RAM:                9
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     39
+   Number with an unused Flip Flop:      13  out of     39    33%  
+   Number with an unused LUT:             0  out of     39     0%  
+   Number of fully used LUT-FF pairs:    26  out of     39    66%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    232    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 35    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.637ns (Maximum Frequency: 274.978MHz)
+   Minimum input arrival time before clock: 4.776ns
+   Maximum output required time after clock: 4.924ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.637ns (frequency: 274.978MHz)
+  Total number of paths / destination ports: 304 / 80
+-------------------------------------------------------------------------
+Delay:               3.637ns (Levels of Logic = 2)
+  Source:            count_1 (FF)
+  Destination:       Omem_rd_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: count_1 to Omem_rd_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              18   0.447   1.050  count_1 (count_1)
+     LUT5:I4->O           18   0.205   1.049  Mmux_n005021 (n0050<1>)
+     RAM16X1S:A1->O        1   0.205   0.579  Mram_Rmem3 (_n0072<2>)
+     FDE:D                     0.102          Rmem_rd_2
+    ----------------------------------------
+    Total                      3.637ns (0.959ns logic, 2.678ns route)
+                                       (26.4% logic, 73.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 168 / 71
+-------------------------------------------------------------------------
+Offset:              4.776ns (Levels of Logic = 3)
+  Source:            pop (PAD)
+  Destination:       Omem_rd_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: pop to Omem_rd_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            19   1.222   1.416  pop_IBUF (pop_IBUF)
+     LUT5:I0->O           18   0.203   1.049  Mmux_n005021 (n0050<1>)
+     RAM16X1S:A1->O        1   0.205   0.579  Mram_Rmem3 (_n0072<2>)
+     FDE:D                     0.102          Rmem_rd_2
+    ----------------------------------------
+    Total                      4.776ns (1.732ns logic, 3.044ns route)
+                                       (36.3% logic, 63.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 29 / 11
+-------------------------------------------------------------------------
+Offset:              4.924ns (Levels of Logic = 2)
+  Source:            use_Rmem_rd (FF)
+  Destination:       resulttos<5> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: use_Rmem_rd to resulttos<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              10   0.447   1.085  use_Rmem_rd (use_Rmem_rd)
+     LUT3:I0->O            2   0.205   0.616  Mmux_resulttos61 (resulttos_5_OBUF)
+     OBUF:I->O                 2.571          resulttos_5_OBUF (resulttos<5>)
+    ----------------------------------------
+    Total                      4.924ns (3.223ns logic, 1.701ns route)
+                                       (65.5% logic, 34.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.637|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 12.24 secs
+ 
+--> 
+
+
+Total memory usage is 127272 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

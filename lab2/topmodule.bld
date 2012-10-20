@@ -5,7 +5,7 @@ Command Line: /share/Study/Xilinx/13.3/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild
 -intstyle ise -dd _ngo -nt timestamp -uc topucf.ucf -p xc6slx16-csg324-3
 topmodule.ngc topmodule.ngd
 
-Reading NGO file "/home/hpw/Documents/EC551/lab2/topmodule.ngc" ...
+Reading NGO file "/home/hpw/Documents/EC551/LAB2/lab2/topmodule.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,7 +27,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 107392 kilobytes
+Total memory usage is 106876 kilobytes
 
 Writing NGD file "topmodule.ngd" ...
 Total REAL time to NGDBUILD completion:  7 sec

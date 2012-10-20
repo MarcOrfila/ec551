@@ -27,7 +27,9 @@ module topmodule(
 	 input clk,
 	 input reset_n,
     output [7:0] display,
-	 output [3:0] displayctl	
+	 output [3:0] displayctl,
+	 output full,
+	 output empty
     );
 	reg [2:0] opcodein,B;
 	wire [2:0] opcodeDECODERALU,opcodeselALULIFO,opcodeselLIFOLED;
@@ -57,19 +59,19 @@ module topmodule(
 	
 	
 	debounce executedebouncer(
-	.clk(clk),
+	.clk(clk_300hz),
 	.reset_n(reset_n),
 	.noisy(executein),
 	.clean(execute)
 		);
-/*		
+		
 	debounce readdebouncer(
-	.clk(clk),
+	.clk(clk_300hz),
 	.reset_n(reset_n),
 	.noisy(readin),
 	.clean(read)
 		);
-	*/	
+		
 	clkdiv clkdiv1(
 		.clk(clk),
 		.reset_n(reset_n),
@@ -87,29 +89,29 @@ module topmodule(
 		.a(A),
 		.b(B),
 		.execute(execute),
+		
 		.f(F),
 		.opcodesel(opcodeselALULIFO),
 		.write(write)
 		);
 
-/*
-	lifo6_9 lifo(
+
+	lifo lifo1(
 	  .reset_n(reset_n),
-     .write(write),
-     .read(read),
-     .F(F),
+     .push(write),
+     .pop(read),
+	  .clk(clk_300hz),
 	  .opcodeselin(opcodeselALULIFO),
-	  .clk(clk),
-     .result(resultLIFOLED),
-	  .opcodeselout(opcodeselLIFOLED),
-     .full(),
-     .empty(),	
+     .resultin(F),
+	  .resulttos(resultLIFOLED),
+	  .opcodeseltos(opcodeselLIFOLED),
+     .full(full),
+     .empty(empty)
 	);
-*/
-	display LED(
-		
-		.result(F),
-		.opcodesel(opcodeselALULIFO),
+
+	display LED(	
+		.result(resultLIFOLED),
+		.opcodesel(opcodeselLIFOLED),
 		.reset_n(reset_n),
 		.clk_in(clk_300hz),
 		

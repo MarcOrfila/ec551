@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2012-10-19T10:44:25</DateModified>
+  <DateModified>2012-10-20T13:47:50</DateModified>
   <ModuleName>topmodule</ModuleName>
-  <SummaryTimeStamp>2012-10-13T09:47:15</SummaryTimeStamp>
+  <SummaryTimeStamp>2012-10-20T13:32:17</SummaryTimeStamp>
   <SavedFilePath>/home/hpw/Documents/EC551/LAB2/lab2/iseconfig/topmodule.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/hpw/Documents/EC551/LAB2/lab2/</ImplementationReportsDirectory>
-  <DateInitialized>2012-10-04T14:49:54</DateInitialized>
+  <DateInitialized>2012-10-20T13:42:47</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
