@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2012-10-20T13:47:50</DateModified>
+  <DateModified>2012-10-22T15:38:37</DateModified>
   <ModuleName>topmodule</ModuleName>
-  <SummaryTimeStamp>2012-10-20T13:32:17</SummaryTimeStamp>
+  <SummaryTimeStamp>2012-10-22T15:10:51</SummaryTimeStamp>
   <SavedFilePath>/home/hpw/Documents/EC551/LAB2/lab2/iseconfig/topmodule.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/hpw/Documents/EC551/LAB2/lab2/</ImplementationReportsDirectory>
   <DateInitialized>2012-10-20T13:42:47</DateInitialized>

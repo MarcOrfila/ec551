@@ -4,15 +4,15 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> 
 Reading design: topmodule.prj
@@ -108,7 +108,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" into library work
+Analyzing Verilog file "/home/hpw/Documents/EC551/LAB2/lab2/lifo.v" into library work
 Parsing module <lifo>.
 Analyzing Verilog file "/home/hpw/Documents/EC551/LAB2/lab2/display.v" into library work
 Parsing module <display>.
@@ -129,22 +129,21 @@ Parsing module <topmodule>.
 
 Elaborating module <topmodule>.
 
+Elaborating module <clkdiv>.
+
 Elaborating module <debounce>.
 WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.v" Line 33: Result of 9-bit expression is truncated to fit in 8-bit target.
 WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.v" Line 45: Result of 9-bit expression is truncated to fit in 8-bit target.
-
-Elaborating module <clkdiv>.
 
 Elaborating module <decoder>.
 
 Elaborating module <ALU>.
 
 Elaborating module <lifo>.
-WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 28: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v" Line 29: Result of 32-bit expression is truncated to fit in 3-bit target.
 
 Elaborating module <display>.
-WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 58: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 83: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:91 - "/home/hpw/Documents/EC551/LAB2/lab2/display.v" Line 93: Signal <opcodesel> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -158,6 +157,16 @@ Synthesizing Unit <topmodule>.
 	inferred   6 D-type flip-flop(s).
 Unit <topmodule> synthesized.
 
+Synthesizing Unit <clkdiv>.
+    Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/clkdiv.v".
+    Found 1-bit register for signal <clk_300hz>.
+    Found 18-bit register for signal <counter_300hz>.
+    Found 18-bit adder for signal <counter_300hz[17]_GND_2_o_add_2_OUT> created at line 31.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  19 D-type flip-flop(s).
+Unit <clkdiv> synthesized.
+
 Synthesizing Unit <debounce>.
     Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/debouncer.v".
         NDELAY = 150
@@ -166,23 +175,13 @@ Synthesizing Unit <debounce>.
     Found 1-bit register for signal <clean>.
     Found 1-bit register for signal <still>.
     Found 1-bit register for signal <pushed>.
-    Found 8-bit adder for signal <countpushed[7]_GND_2_o_add_4_OUT> created at line 33.
-    Found 8-bit adder for signal <countstill[7]_GND_2_o_add_9_OUT> created at line 45.
+    Found 8-bit adder for signal <countpushed[7]_GND_3_o_add_4_OUT> created at line 33.
+    Found 8-bit adder for signal <countstill[7]_GND_3_o_add_9_OUT> created at line 45.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  19 D-type flip-flop(s).
 	inferred   3 Multiplexer(s).
 Unit <debounce> synthesized.
-
-Synthesizing Unit <clkdiv>.
-    Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/clkdiv.v".
-    Found 1-bit register for signal <clk_300hz>.
-    Found 18-bit register for signal <counter_300hz>.
-    Found 18-bit adder for signal <counter_300hz[17]_GND_3_o_add_2_OUT> created at line 31.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  19 D-type flip-flop(s).
-Unit <clkdiv> synthesized.
 
 Synthesizing Unit <decoder>.
     Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/decoder.v".
@@ -201,69 +200,56 @@ Synthesizing Unit <ALU>.
         XNOR = 3'b110
         SGT = 3'b111
         NOTHING = 3'b000
-    Found 6-bit register for signal <f>.
-    Found 3-bit register for signal <opcodesel>.
-    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_3_OUT> created at line 46.
-    Found 4-bit adder for signal <n0036[3:0]> created at line 45.
-    Found 3x3-bit multiplier for signal <a[2]_b[2]_MuLt_3_OUT> created at line 47.
-    Found 6-bit shifter logical right for signal <GND_5_o_b[2]_shift_right_4_OUT> created at line 48
-    Found 6-bit shifter logical left for signal <GND_5_o_b[2]_shift_left_5_OUT> created at line 49
-    Found 6-bit 8-to-1 multiplexer for signal <opcodein[2]_GND_5_o_wide_mux_9_OUT> created at line 44.
-    Found 3-bit comparator greater for signal <b[2]_a[2]_LessThan_8_o> created at line 51
+    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_2_OUT> created at line 45.
+    Found 4-bit adder for signal <n0033[3:0]> created at line 44.
+    Found 3x3-bit multiplier for signal <a[2]_b[2]_MuLt_2_OUT> created at line 46.
+    Found 6-bit shifter logical right for signal <GND_5_o_b[2]_shift_right_3_OUT> created at line 47
+    Found 6-bit shifter logical left for signal <GND_5_o_b[2]_shift_left_4_OUT> created at line 48
+    Found 6-bit 8-to-1 multiplexer for signal <f> created at line 43.
+    Found 3-bit comparator greater for signal <b[2]_a[2]_LessThan_7_o> created at line 50
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred   9 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 	inferred   1 Multiplexer(s).
 	inferred   2 Combinational logic shifter(s).
 Unit <ALU> synthesized.
 
 Synthesizing Unit <lifo>.
-    Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/lifo2.v".
-        depth = 6
-        resultwidth = 6
-        opcodewidth = 3
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <Rmem>, simulation mismatch.
-    Found 6x6-bit single-port RAM <Mram_Rmem> for signal <Rmem>.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <Omem>, simulation mismatch.
-    Found 6x3-bit single-port RAM <Mram_Omem> for signal <Omem>.
-    Found 1-bit register for signal <full>.
-    Found 1-bit register for signal <empty>.
-    Found 6-bit register for signal <Rmem_rd>.
-    Found 3-bit register for signal <Omem_rd>.
-    Found 6-bit register for signal <resulttos_shadow>.
-    Found 3-bit register for signal <opcodeseltos_shadow>.
-    Found 1-bit register for signal <use_mem_read>.
-    Found 3-bit register for signal <count>.
-    Found 4-bit subtractor for signal <n0051[3:0]> created at line 29.
-    Found 3-bit adder for signal <count[2]_GND_7_o_add_4_OUT> created at line 28.
-    Found 3-bit comparator greater for signal <count[2]_PWR_7_o_LessThan_1_o> created at line 21
-    Found 3-bit comparator greater for signal <GND_7_o_count[2]_LessThan_2_o> created at line 22
+    Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/lifo.v".
+    Found 36-bit register for signal <n0066[35:0]>.
+    Found 18-bit register for signal <n0067[17:0]>.
+    Found 6-bit register for signal <data_out>.
+    Found 3-bit register for signal <pointer>.
+    Found 1-bit register for signal <flag>.
+    Found 1-bit register for signal <readflag>.
+    Found 3-bit register for signal <opcodedata_out>.
+    Found 3-bit subtractor for signal <pointer[2]_GND_7_o_sub_29_OUT> created at line 104.
+    Found 3-bit adder for signal <pointer[2]_GND_7_o_add_20_OUT> created at line 97.
+    Found 6-bit 6-to-1 multiplexer for signal <GND_7_o_X_6_o_wide_mux_25_OUT> created at line 102.
+    Found 3-bit 6-to-1 multiplexer for signal <GND_7_o_X_6_o_wide_mux_27_OUT> created at line 103.
     Summary:
-	inferred   2 RAM(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred  24 D-type flip-flop(s).
-	inferred   2 Comparator(s).
-	inferred   6 Multiplexer(s).
+	inferred  68 D-type flip-flop(s).
+	inferred  16 Multiplexer(s).
 Unit <lifo> synthesized.
 
 Synthesizing Unit <display>.
     Related source file is "/home/hpw/Documents/EC551/LAB2/lab2/display.v".
+WARNING:Xst:647 - Input <result<3:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 2-bit register for signal <counter>.
-    Found 6-bit subtractor for signal <result[5]_unary_minus_6_OUT> created at line 55.
-    Found 2-bit adder for signal <counter[1]_GND_8_o_add_1_OUT> created at line 48.
-    Found 4x4-bit Read Only RAM for signal <counter[1]_GND_8_o_wide_mux_18_OUT>
+    Found 4-bit register for signal <ctl>.
+    Found 4-bit register for signal <currentdigit>.
+    Found 6-bit subtractor for signal <result[5]_unary_minus_19_OUT> created at line 80.
+    Found 2-bit adder for signal <counter[1]_GND_8_o_add_1_OUT> created at line 45.
+    Found 4x4-bit Read Only RAM for signal <counter[1]_PWR_10_o_wide_mux_9_OUT>
     Found 16x8-bit Read Only RAM for signal <segments>
-    Found 1-bit 4-to-1 multiplexer for signal <counter[1]_PWR_8_o_wide_mux_19_OUT[3]> created at line 63.
-    Found 1-bit 3-to-1 multiplexer for signal <counter[1]_PWR_8_o_wide_mux_19_OUT[2]> created at line 63.
-    Found 1-bit 4-to-1 multiplexer for signal <counter[1]_PWR_8_o_wide_mux_19_OUT[1]> created at line 63.
-    Found 1-bit 4-to-1 multiplexer for signal <counter[1]_PWR_8_o_wide_mux_19_OUT[0]> created at line 63.
+    Found 4-bit 4-to-1 multiplexer for signal <counter[1]_PWR_10_o_wide_mux_10_OUT> created at line 47.
     Summary:
 	inferred   2 RAM(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred   2 D-type flip-flop(s).
-	inferred  25 Multiplexer(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
 Unit <display> synthesized.
 
 Synthesizing Unit <div_6u_4u>.
@@ -313,11 +299,9 @@ Unit <mod_6u_4u> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 3
  16x8-bit single-port Read Only RAM                    : 1
  4x4-bit single-port Read Only RAM                     : 1
- 6x3-bit single-port RAM                               : 1
- 6x6-bit single-port RAM                               : 1
  8x3-bit single-port Read Only RAM                     : 1
 # Multipliers                                          : 1
  3x3-bit multiplier                                    : 1
@@ -325,37 +309,41 @@ Macro Statistics
  10-bit adder                                          : 2
  18-bit adder                                          : 1
  2-bit adder                                           : 1
- 3-bit adder                                           : 1
+ 3-bit addsub                                          : 1
+ 3-bit subtractor                                      : 1
  4-bit adder                                           : 1
- 4-bit subtractor                                      : 2
+ 4-bit subtractor                                      : 1
  6-bit adder                                           : 5
  6-bit subtractor                                      : 1
  7-bit adder                                           : 2
  8-bit adder                                           : 6
  9-bit adder                                           : 2
-# Registers                                            : 25
- 1-bit register                                        : 10
- 18-bit register                                       : 1
+# Registers                                            : 24
+ 1-bit register                                        : 9
+ 18-bit register                                       : 2
  2-bit register                                        : 1
- 3-bit register                                        : 6
- 6-bit register                                        : 3
+ 3-bit register                                        : 4
+ 36-bit register                                       : 1
+ 4-bit register                                        : 2
+ 6-bit register                                        : 1
  8-bit register                                        : 4
-# Comparators                                          : 17
+# Comparators                                          : 15
  10-bit comparator lessequal                           : 2
- 3-bit comparator greater                              : 3
+ 3-bit comparator greater                              : 1
  6-bit comparator lessequal                            : 6
  7-bit comparator lessequal                            : 2
  8-bit comparator lessequal                            : 2
  9-bit comparator lessequal                            : 2
-# Multiplexers                                         : 96
- 1-bit 2-to-1 multiplexer                              : 74
- 1-bit 3-to-1 multiplexer                              : 1
- 1-bit 4-to-1 multiplexer                              : 3
+# Multiplexers                                         : 89
+ 1-bit 2-to-1 multiplexer                              : 58
  2-bit 2-to-1 multiplexer                              : 1
- 3-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 6
+ 3-bit 6-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 2
- 6-bit 2-to-1 multiplexer                              : 5
+ 4-bit 2-to-1 multiplexer                              : 5
+ 4-bit 4-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 10
+ 6-bit 6-to-1 multiplexer                              : 1
  6-bit 8-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 4
 # Logic shifters                                       : 2
@@ -365,6 +353,7 @@ Macro Statistics
  6-bit xor2                                            : 1
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
@@ -396,18 +385,7 @@ Unit <decoder> synthesized (advanced).
 
 Synthesizing (advanced) Unit <display>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_counter[1]_GND_8_o_wide_mux_18_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 4-word x 4-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <counter>       |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segments> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3231 - The small RAM <Mram_segments> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -418,74 +396,60 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segments> will be implemented on LUT
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <segments>      |          |
     -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_counter[1]_PWR_10_o_wide_mux_9_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <counter>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <display> synthesized (advanced).
 
 Synthesizing (advanced) Unit <lifo>.
-INFO:Xst:3231 - The small RAM <Mram_Rmem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 6-word x 6-bit                      |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to internal node          | high     |
-    |     addrA          | connected to signal <n0046>         |          |
-    |     diA            | connected to signal <resulttos>     |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3231 - The small RAM <Mram_Omem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 6-word x 3-bit                      |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to internal node          | high     |
-    |     addrA          | connected to signal <n0046>         |          |
-    |     diA            | connected to signal <opcodeseltos>  |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
+The following registers are absorbed into counter <pointer>: 1 register on signal <pointer>.
 Unit <lifo> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
+# RAMs                                                 : 3
  16x8-bit single-port distributed Read Only RAM        : 1
  4x4-bit single-port distributed Read Only RAM         : 1
- 6x3-bit single-port distributed RAM                   : 1
- 6x6-bit single-port distributed RAM                   : 1
  8x3-bit single-port distributed Read Only RAM         : 1
 # Multipliers                                          : 1
  3x3-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 18
- 3-bit adder                                           : 1
+# Adders/Subtractors                                   : 17
+ 3-bit subtractor                                      : 1
  4-bit adder                                           : 2
- 4-bit subtractor                                      : 2
+ 4-bit subtractor                                      : 1
  6-bit adder                                           : 12
  6-bit subtractor                                      : 1
-# Counters                                             : 6
+# Counters                                             : 7
  18-bit up counter                                     : 1
  2-bit up counter                                      : 1
+ 3-bit updown counter                                  : 1
  8-bit up counter                                      : 4
-# Registers                                            : 46
- Flip-Flops                                            : 46
-# Comparators                                          : 17
+# Registers                                            : 86
+ Flip-Flops                                            : 86
+# Comparators                                          : 15
  10-bit comparator lessequal                           : 2
- 3-bit comparator greater                              : 3
+ 3-bit comparator greater                              : 1
  6-bit comparator lessequal                            : 6
  7-bit comparator lessequal                            : 2
  8-bit comparator lessequal                            : 2
  9-bit comparator lessequal                            : 2
-# Multiplexers                                         : 91
- 1-bit 2-to-1 multiplexer                              : 74
- 1-bit 3-to-1 multiplexer                              : 1
- 1-bit 4-to-1 multiplexer                              : 3
- 3-bit 2-to-1 multiplexer                              : 4
+# Multiplexers                                         : 133
+ 1-bit 2-to-1 multiplexer                              : 112
+ 1-bit 6-to-1 multiplexer                              : 9
  32-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 2
- 6-bit 2-to-1 multiplexer                              : 5
+ 4-bit 2-to-1 multiplexer                              : 5
+ 4-bit 4-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 4
  6-bit 8-to-1 multiplexer                              : 1
 # Logic shifters                                       : 2
  6-bit shifter logical left                            : 1
@@ -498,6 +462,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <ctl_0> (without init value) has a constant value of 1 in block <display>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <topmodule> ...
 
@@ -511,8 +476,14 @@ Optimizing unit <display> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block topmodule, actual ratio is 2.
-FlipFlop executedebouncer/clean has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block topmodule, actual ratio is 3.
+FlipFlop B_0 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop B_0 connected to a primary input has been replicated
+FlipFlop lifo2/pointer_0 has been replicated 2 time(s)
+FlipFlop lifo2/pointer_1 has been replicated 1 time(s)
+FlipFlop lifo2/pointer_2 has been replicated 1 time(s)
+FlipFlop opcodein_2 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop opcodein_2 connected to a primary input has been replicated
 
 Final Macro Processing ...
 
@@ -520,8 +491,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 99
- Flip-Flops                                            : 99
+# Registers                                            : 146
+ Flip-Flops                                            : 146
 
 =========================================================================
 
@@ -544,31 +515,31 @@ Top Level Output File Name         : topmodule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 287
+# BELS                             : 387
 #      GND                         : 1
-#      INV                         : 5
+#      INV                         : 6
 #      LUT1                        : 17
-#      LUT2                        : 25
-#      LUT3                        : 33
-#      LUT4                        : 12
-#      LUT5                        : 42
-#      LUT6                        : 56
+#      LUT2                        : 32
+#      LUT3                        : 36
+#      LUT4                        : 34
+#      LUT5                        : 62
+#      LUT6                        : 100
 #      MUXCY                       : 45
+#      MUXF7                       : 3
 #      VCC                         : 1
 #      XORCY                       : 50
-# FlipFlops/Latches                : 99
-#      FD                          : 34
-#      FDC                         : 9
-#      FDCE                        : 38
-#      FDE                         : 18
-# RAMS                             : 9
-#      RAM16X1S                    : 9
+# FlipFlops/Latches                : 146
+#      FDC                         : 10
+#      FDCE                        : 107
+#      FDE                         : 10
+#      FDR                         : 18
+#      FDRE                        : 1
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 24
-#      IBUF                        : 10
-#      OBUF                        : 14
+# IO Buffers                       : 28
+#      IBUF                        : 12
+#      OBUF                        : 16
 
 Device utilization summary:
 ---------------------------
@@ -577,22 +548,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              99  out of  18224     0%  
- Number of Slice LUTs:                  199  out of   9112     2%  
-    Number used as Logic:               190  out of   9112     2%  
-    Number used as Memory:                9  out of   2176     0%  
-       Number used as RAM:                9
+ Number of Slice Registers:             146  out of  18224     0%  
+ Number of Slice LUTs:                  287  out of   9112     3%  
+    Number used as Logic:               287  out of   9112     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    203
-   Number with an unused Flip Flop:     104  out of    203    51%  
-   Number with an unused LUT:             4  out of    203     1%  
-   Number of fully used LUT-FF pairs:    95  out of    203    46%  
-   Number of unique control sets:        12
+ Number of LUT Flip Flop pairs used:    295
+   Number with an unused Flip Flop:     149  out of    295    50%  
+   Number with an unused LUT:             8  out of    295     2%  
+   Number of fully used LUT-FF pairs:   138  out of    295    46%  
+   Number of unique control sets:        14
 
 IO Utilization: 
- Number of IOs:                          25
- Number of bonded IOBs:                  25  out of    232    10%  
+ Number of IOs:                          29
+ Number of bonded IOBs:                  29  out of    232    12%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -618,11 +587,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clkdiv1/clk_300hz                  | BUFG                   | 80    |
-executedebouncer/clean             | NONE(alu1/f_5)         | 9     |
+clkdiv1/clk_300hz                  | BUFG                   | 127   |
 clk                                | BUFGP                  | 19    |
 -----------------------------------+------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -632,109 +599,91 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.715ns (Maximum Frequency: 269.175MHz)
-   Minimum input arrival time before clock: 6.320ns
-   Maximum output required time after clock: 9.829ns
-   Maximum combinational path delay: 7.651ns
+   Minimum period: 4.996ns (Maximum Frequency: 200.172MHz)
+   Minimum input arrival time before clock: 5.981ns
+   Maximum output required time after clock: 5.837ns
+   Maximum combinational path delay: 5.642ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clkdiv1/clk_300hz'
-  Clock period: 3.715ns (frequency: 269.175MHz)
-  Total number of paths / destination ports: 922 / 151
--------------------------------------------------------------------------
-Delay:               3.715ns (Levels of Logic = 2)
-  Source:            lifo1/count_2 (FF)
-  Destination:       lifo1/Omem_rd_2 (FF)
-  Source Clock:      clkdiv1/clk_300hz rising
-  Destination Clock: clkdiv1/clk_300hz rising
-
-  Data Path: lifo1/count_2 to lifo1/Omem_rd_2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              11   0.447   1.130  lifo1/count_2 (lifo1/count_2)
-     LUT4:I0->O           18   0.203   1.049  lifo1/Mmux_n004631 (lifo1/n0046<2>)
-     RAM16X1S:A2->O        1   0.205   0.579  lifo1/Mram_Rmem3 (lifo1/_n0068<2>)
-     FDE:D                     0.102          lifo1/Rmem_rd_2
-    ----------------------------------------
-    Total                      3.715ns (0.957ns logic, 2.758ns route)
-                                       (25.8% logic, 74.2% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.238ns (frequency: 308.809MHz)
-  Total number of paths / destination ports: 514 / 19
+  Clock period: 4.160ns (frequency: 240.362MHz)
+  Total number of paths / destination ports: 514 / 38
 -------------------------------------------------------------------------
-Delay:               3.238ns (Levels of Logic = 2)
+Delay:               4.160ns (Levels of Logic = 2)
   Source:            clkdiv1/counter_300hz_0 (FF)
-  Destination:       clkdiv1/counter_300hz_0 (FF)
+  Destination:       clkdiv1/counter_300hz_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: clkdiv1/counter_300hz_0 to clkdiv1/counter_300hz_0
+  Data Path: clkdiv1/counter_300hz_0 to clkdiv1/counter_300hz_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.981  clkdiv1/counter_300hz_0 (clkdiv1/counter_300hz_0)
-     LUT6:I0->O           19   0.203   1.300  clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>2 (clkdiv1/GND_3_o_GND_3_o_equal_5_o<17>1)
-     LUT5:I2->O            1   0.205   0.000  clkdiv1/counter_300hz_0_rstpot (clkdiv1/counter_300hz_0_rstpot)
-     FD:D                      0.102          clkdiv1/counter_300hz_0
+     FDR:C->Q              2   0.447   0.981  clkdiv1/counter_300hz_0 (clkdiv1/counter_300hz_0)
+     LUT6:I0->O            2   0.203   0.845  clkdiv1/GND_2_o_GND_2_o_equal_5_o<17>2 (clkdiv1/GND_2_o_GND_2_o_equal_5_o<17>1)
+     LUT4:I1->O           18   0.205   1.049  clkdiv1/Mcount_counter_300hz_val1 (clkdiv1/Mcount_counter_300hz_val)
+     FDR:R                     0.430          clkdiv1/counter_300hz_0
     ----------------------------------------
-    Total                      3.238ns (0.957ns logic, 2.281ns route)
-                                       (29.6% logic, 70.4% route)
+    Total                      4.160ns (1.285ns logic, 2.875ns route)
+                                       (30.9% logic, 69.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clkdiv1/clk_300hz'
+  Clock period: 4.996ns (frequency: 200.172MHz)
+  Total number of paths / destination ports: 2916 / 221
+-------------------------------------------------------------------------
+Delay:               4.996ns (Levels of Logic = 4)
+  Source:            opcodein_2 (FF)
+  Destination:       lifo2/lifo_5_35 (FF)
+  Source Clock:      clkdiv1/clk_300hz rising
+  Destination Clock: clkdiv1/clk_300hz rising
+
+  Data Path: opcodein_2 to lifo2/lifo_5_35
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            21   0.447   1.114  opcodein_2 (opcodein_2)
+     LUT3:I2->O           11   0.205   0.883  decoder1/Mram_opcodeout12 (decoder1/Mram_opcodeout)
+     LUT6:I5->O           18   0.205   1.050  alu1/Mmux_f421 (alu1/Mmux_f42)
+     LUT6:I5->O            1   0.205   0.580  alu1/Mmux_f64_SW0 (N36)
+     LUT6:I5->O            1   0.205   0.000  lifo2/mux2911 (lifo2/lifo[1][5]_data[5]_mux_11_OUT<5>)
+     FDCE:D                    0.102          lifo2/lifo_5_29
+    ----------------------------------------
+    Total                      4.996ns (1.369ns logic, 3.627ns route)
+                                       (27.4% logic, 72.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clkdiv1/clk_300hz'
-  Total number of paths / destination ports: 280 / 136
+  Total number of paths / destination ports: 892 / 335
 -------------------------------------------------------------------------
-Offset:              4.753ns (Levels of Logic = 2)
-  Source:            reset_n (PAD)
-  Destination:       opcodein_0 (FF)
+Offset:              5.981ns (Levels of Logic = 5)
+  Source:            A<0> (PAD)
+  Destination:       lifo2/lifo_5_35 (FF)
   Destination Clock: clkdiv1/clk_300hz rising
 
-  Data Path: reset_n to opcodein_0
+  Data Path: A<0> to lifo2/lifo_5_35
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            39   1.222   1.391  reset_n_IBUF (reset_n_IBUF)
-     INV:I->O             47   0.206   1.504  clkdiv1/reset_n_inv1_INV_0 (LED/reset_n_inv)
-     FDC:CLR                   0.430          LED/counter_0
+     IBUF:I->O            23   1.222   1.401  A_0_IBUF (A_0_IBUF)
+     LUT4:I0->O            1   0.203   0.808  alu1/Msub_GND_5_o_GND_5_o_sub_2_OUT_cy<1>11 (alu1/Msub_GND_5_o_GND_5_o_sub_2_OUT_cy<1>)
+     LUT6:I3->O           18   0.205   1.050  alu1/Mmux_f421 (alu1/Mmux_f42)
+     LUT6:I5->O            1   0.205   0.580  alu1/Mmux_f64_SW0 (N36)
+     LUT6:I5->O            1   0.205   0.000  lifo2/mux2911 (lifo2/lifo[1][5]_data[5]_mux_11_OUT<5>)
+     FDCE:D                    0.102          lifo2/lifo_5_29
     ----------------------------------------
-    Total                      4.753ns (1.858ns logic, 2.895ns route)
-                                       (39.1% logic, 60.9% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'executedebouncer/clean'
-  Total number of paths / destination ports: 73 / 6
--------------------------------------------------------------------------
-Offset:              6.320ns (Levels of Logic = 5)
-  Source:            A<1> (PAD)
-  Destination:       alu1/f_3 (FF)
-  Destination Clock: executedebouncer/clean rising
-
-  Data Path: A<1> to alu1/f_3
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            21   1.222   1.361  A_1_IBUF (A_1_IBUF)
-     LUT4:I0->O            2   0.203   0.864  alu1/Msub_GND_5_o_GND_5_o_sub_3_OUT_cy<1>11 (alu1/Msub_GND_5_o_GND_5_o_sub_3_OUT_cy<1>)
-     LUT6:I2->O            3   0.203   1.015  alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT421 (alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT42)
-     LUT6:I0->O            1   0.203   0.944  alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43 (alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT43)
-     LUT6:I0->O            1   0.203   0.000  alu1/Mmux_opcodein[2]_GND_5_o_wide_mux_9_OUT44 (alu1/opcodein[2]_GND_5_o_wide_mux_9_OUT<3>)
-     FD:D                      0.102          alu1/f_3
-    ----------------------------------------
-    Total                      6.320ns (2.136ns logic, 4.184ns route)
-                                       (33.8% logic, 66.2% route)
+    Total                      5.981ns (2.142ns logic, 3.839ns route)
+                                       (35.8% logic, 64.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 19 / 19
 -------------------------------------------------------------------------
-Offset:              3.263ns (Levels of Logic = 2)
+Offset:              4.809ns (Levels of Logic = 2)
   Source:            reset_n (PAD)
   Destination:       clkdiv1/clk_300hz (FF)
   Destination Clock: clk rising
@@ -743,56 +692,51 @@ Offset:              3.263ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            39   1.222   1.736  reset_n_IBUF (reset_n_IBUF)
-     LUT5:I0->O            1   0.203   0.000  clkdiv1/clk_300hz_rstpot1 (clkdiv1/clk_300hz_rstpot1)
-     FD:D                      0.102          clkdiv1/clk_300hz
+     IBUF:I->O            17   1.222   1.027  reset_n_IBUF (reset_n_IBUF)
+     INV:I->O            118   0.206   1.924  clkdiv1/reset_n_inv1_INV_0 (LED/reset_n_inv)
+     FDRE:R                    0.430          clkdiv1/clk_300hz
     ----------------------------------------
-    Total                      3.263ns (1.527ns logic, 1.736ns route)
-                                       (46.8% logic, 53.2% route)
+    Total                      4.809ns (1.858ns logic, 2.951ns route)
+                                       (38.6% logic, 61.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clkdiv1/clk_300hz'
-  Total number of paths / destination ports: 1786 / 12
+  Total number of paths / destination ports: 39 / 14
 -------------------------------------------------------------------------
-Offset:              9.829ns (Levels of Logic = 6)
-  Source:            lifo1/use_mem_read (FF)
-  Destination:       display<7> (PAD)
+Offset:              5.837ns (Levels of Logic = 2)
+  Source:            lifo2/pointer_2 (FF)
+  Destination:       empty (PAD)
   Source Clock:      clkdiv1/clk_300hz rising
 
-  Data Path: lifo1/use_mem_read to display<7>
+  Data Path: lifo2/pointer_2 to empty
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              12   0.447   1.137  lifo1/use_mem_read (lifo1/use_mem_read)
-     LUT3:I0->O           11   0.205   1.227  lifo1/Mmux_resulttos41 (resultLIFOLED<3>)
-     LUT6:I1->O            1   0.203   0.924  LED/Mmux_currentdigit<0>228 (LED/Mmux_currentdigit<0>228)
-     LUT5:I0->O            1   0.203   0.808  LED/Mmux_currentdigit<0>229_SW0 (N26)
-     LUT6:I3->O            7   0.205   1.118  LED/Mmux_currentdigit<0>229 (LED/currentdigit<1>)
-     LUT5:I0->O            1   0.203   0.579  LED/Mram_segments111 (display_1_OBUF)
-     OBUF:I->O                 2.571          display_1_OBUF (display<1>)
+     FDCE:C->Q            81   0.447   1.999  lifo2/pointer_2 (lifo2/pointer_2)
+     LUT4:I0->O            2   0.203   0.616  lifo2/Mmux_empty11 (empty_OBUF)
+     OBUF:I->O                 2.571          empty_OBUF (empty)
     ----------------------------------------
-    Total                      9.829ns (4.037ns logic, 5.792ns route)
-                                       (41.1% logic, 58.9% route)
+    Total                      5.837ns (3.221ns logic, 2.616ns route)
+                                       (55.2% logic, 44.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 31 / 10
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Delay:               7.651ns (Levels of Logic = 4)
+Delay:               5.642ns (Levels of Logic = 3)
   Source:            reset_n (PAD)
-  Destination:       display<7> (PAD)
+  Destination:       empty (PAD)
 
-  Data Path: reset_n to display<7>
+  Data Path: reset_n to empty
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            39   1.222   1.756  reset_n_IBUF (reset_n_IBUF)
-     LUT6:I0->O            7   0.203   1.118  LED/Mmux_currentdigit<0>229 (LED/currentdigit<1>)
-     LUT5:I0->O            1   0.203   0.579  LED/Mram_segments111 (display_1_OBUF)
-     OBUF:I->O                 2.571          display_1_OBUF (display<1>)
+     IBUF:I->O            17   1.222   1.028  reset_n_IBUF (reset_n_IBUF)
+     LUT4:I3->O            2   0.205   0.616  lifo2/Mmux_empty11 (empty_OBUF)
+     OBUF:I->O                 2.571          empty_OBUF (empty)
     ----------------------------------------
-    Total                      7.651ns (4.199ns logic, 3.452ns route)
-                                       (54.9% logic, 45.1% route)
+    Total                      5.642ns (3.998ns logic, 1.644ns route)
+                                       (70.9% logic, 29.1% route)
 
 =========================================================================
 
@@ -804,38 +748,29 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.238|         |         |         |
+clk            |    4.160|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clkdiv1/clk_300hz
-----------------------+---------+---------+---------+---------+
-                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------+---------+---------+---------+---------+
-clkdiv1/clk_300hz     |    3.715|         |         |         |
-executedebouncer/clean|    1.128|         |         |         |
-----------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock executedebouncer/clean
 -----------------+---------+---------+---------+---------+
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clkdiv1/clk_300hz|    5.664|         |         |         |
+clkdiv1/clk_300hz|    4.996|         |         |         |
 -----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 15.29 secs
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 16.47 secs
  
 --> 
 
 
-Total memory usage is 128280 kilobytes
+Total memory usage is 128668 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

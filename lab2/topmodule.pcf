@@ -1,30 +1,36 @@
 //! **************************************************************************
-// Written by: Map O.76xd on Sat Oct 20 14:02:58 2012
+// Written by: Map O.76xd on Mon Oct 22 17:08:30 2012
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "Bopcode<0>" LOCATE = SITE "V9" LEVEL 1;
-COMP "Bopcode<1>" LOCATE = SITE "M8" LEVEL 1;
-COMP "Bopcode<2>" LOCATE = SITE "N8" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "A<0>" LOCATE = SITE "U8" LEVEL 1;
+COMP "A<1>" LOCATE = SITE "V8" LEVEL 1;
+COMP "A<2>" LOCATE = SITE "T5" LEVEL 1;
+COMP "flag" LOCATE = SITE "V16" LEVEL 1;
+COMP "full" LOCATE = SITE "T11" LEVEL 1;
+COMP "mode" LOCATE = SITE "T9" LEVEL 1;
 COMP "displayctl<0>" LOCATE = SITE "P17" LEVEL 1;
 COMP "displayctl<1>" LOCATE = SITE "P18" LEVEL 1;
 COMP "displayctl<2>" LOCATE = SITE "N15" LEVEL 1;
-COMP "display<0>" LOCATE = SITE "M13" LEVEL 1;
 COMP "displayctl<3>" LOCATE = SITE "N16" LEVEL 1;
+COMP "empty" LOCATE = SITE "U16" LEVEL 1;
+COMP "reset_n" LOCATE = SITE "T10" LEVEL 1;
+COMP "writein" LOCATE = SITE "B8" LEVEL 1;
+COMP "flag_reset" LOCATE = SITE "C4" LEVEL 1;
+COMP "display<0>" LOCATE = SITE "M13" LEVEL 1;
 COMP "display<1>" LOCATE = SITE "L14" LEVEL 1;
 COMP "display<2>" LOCATE = SITE "N14" LEVEL 1;
-COMP "readin" LOCATE = SITE "D9" LEVEL 1;
 COMP "display<3>" LOCATE = SITE "M14" LEVEL 1;
 COMP "display<4>" LOCATE = SITE "U18" LEVEL 1;
 COMP "display<5>" LOCATE = SITE "U17" LEVEL 1;
 COMP "display<6>" LOCATE = SITE "T18" LEVEL 1;
-COMP "mode" LOCATE = SITE "T9" LEVEL 1;
-COMP "reset_n" LOCATE = SITE "T10" LEVEL 1;
 COMP "display<7>" LOCATE = SITE "T17" LEVEL 1;
-COMP "A<0>" LOCATE = SITE "U8" LEVEL 1;
-COMP "A<1>" LOCATE = SITE "V8" LEVEL 1;
-COMP "clk" LOCATE = SITE "V10" LEVEL 1;
-COMP "A<2>" LOCATE = SITE "T5" LEVEL 1;
-COMP "executein" LOCATE = SITE "B8" LEVEL 1;
+COMP "readin" LOCATE = SITE "D9" LEVEL 1;
+COMP "readflag" LOCATE = SITE "R11" LEVEL 1;
+COMP "read_flag_reset" LOCATE = SITE "C9" LEVEL 1;
+COMP "Bopcode<0>" LOCATE = SITE "V9" LEVEL 1;
+COMP "Bopcode<1>" LOCATE = SITE "M8" LEVEL 1;
+COMP "Bopcode<2>" LOCATE = SITE "N8" LEVEL 1;
 SCHEMATIC END;
 

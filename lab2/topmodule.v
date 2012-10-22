@@ -22,28 +22,27 @@ module topmodule(
     input [2:0] A,
     input [2:0] Bopcode,
     input mode,				//mode 1:input from Bopcode goes to B. mode 2: input from Bcode goes to opcode. 
-	 input executein,
+	 input writein,
 	 input readin,
 	 input clk,
 	 input reset_n,
+	 input flag_reset,
+	 input read_flag_reset,
     output [7:0] display,
 	 output [3:0] displayctl,
 	 output full,
-	 output empty
+	 output empty,
+	 output flag,
+	 output readflag
+	 
     );
 	reg [2:0] opcodein,B;
 	wire [2:0] opcodeDECODERALU,opcodeselALULIFO,opcodeselLIFOLED;
 	wire clk_300hz;
 	wire [5:0] F;
-	wire write;
 	wire [5:0] resultLIFOLED;
-	wire execute,read;
-	/*
-	assign resulttbLIFOLED=resultLIFOLED;
-	assign opcodetbLIFOLED=opcodeselLIFOLED;
-	assign opcodetbALULIFO=opcodeselALULIFO;
-	assign FtbALULIFO=F;
-*/
+	wire write,read;
+	
 
 // input B and opcode	
 	always@(posedge clk_300hz or negedge reset_n)begin
@@ -55,14 +54,20 @@ module topmodule(
 		else B<=Bopcode;
 	end
 			
+		
+	clkdiv clkdiv1(
+		.clk(clk),
+		.reset_n(reset_n),
+		.clk_300hz(clk_300hz)
+		);
 	
 	
 	
-	debounce executedebouncer(
+	debounce writedebouncer(
 	.clk(clk_300hz),
 	.reset_n(reset_n),
-	.noisy(executein),
-	.clean(execute)
+	.noisy(writein),
+	.clean(write)
 		);
 		
 	debounce readdebouncer(
@@ -70,12 +75,6 @@ module topmodule(
 	.reset_n(reset_n),
 	.noisy(readin),
 	.clean(read)
-		);
-		
-	clkdiv clkdiv1(
-		.clk(clk),
-		.reset_n(reset_n),
-		.clk_300hz(clk_300hz)
 		);
 // begins
 
@@ -88,19 +87,21 @@ module topmodule(
 		.opcodein(opcodeDECODERALU),
 		.a(A),
 		.b(B),
-		.execute(execute),
 		
 		.f(F),
-		.opcodesel(opcodeselALULIFO),
-		.write(write)
+		.opcodesel(opcodeselALULIFO)
 		);
 
-
-	lifo lifo1(
+/*
+	lifoph lifo1(
 	  .reset_n(reset_n),
      .push(write),
      .pop(read),
 	  .clk(clk_300hz),
+	  .flag_reset(flag_reset),
+	  .read_flag_reset(read_flag_reset),
+	  .flag(flag),
+	  .readflag(readflag),
 	  .opcodeselin(opcodeselALULIFO),
      .resultin(F),
 	  .resulttos(resultLIFOLED),
@@ -108,6 +109,28 @@ module topmodule(
      .full(full),
      .empty(empty)
 	);
+*/
+///*
+ lifo lifo2(
+     .clk(clk_300hz),
+    .data(F),
+	 .opcodedata(opcodeselALULIFO),
+    .data_out(resultLIFOLED),
+	 .opcodedata_out(opcodeselLIFOLED),
+    .reset(reset_n),
+	 .pop(read),
+	 .flag_reset(flag_reset),
+	 .flag(flag),
+	 .read_flag_reset(read_flag_reset),
+	 .readflag(readflag),
+	 .calculate(write),
+    .full(full),
+    .empty(empty)
+    );
+//*/
+
+
+
 
 	display LED(	
 		.result(resultLIFOLED),

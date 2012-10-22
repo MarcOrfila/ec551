@@ -36,7 +36,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-reset_n     |    4.373(R)|      SLOW  |   -2.418(R)|      FAST  |clk_BUFGP         |   0.000|
+reset_n     |    5.053(R)|      SLOW  |   -2.293(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -44,27 +44,19 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.763|         |         |         |
+clk            |    3.656|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-reset_n        |display<1>     |   10.840|
-reset_n        |display<2>     |   11.248|
-reset_n        |display<3>     |   11.177|
-reset_n        |display<4>     |   11.000|
-reset_n        |display<5>     |   11.195|
-reset_n        |display<6>     |   10.853|
-reset_n        |display<7>     |   10.547|
-reset_n        |displayctl<0>  |    9.810|
-reset_n        |displayctl<1>  |    9.398|
-reset_n        |displayctl<2>  |    9.448|
+reset_n        |empty          |    9.401|
+reset_n        |full           |    8.986|
 ---------------+---------------+---------+
 
 
-Analysis completed Sat Oct 20 14:03:35 2012 
+Analysis completed Mon Oct 22 17:09:07 2012 
 --------------------------------------------------------------------------------
 
 Trace Settings:

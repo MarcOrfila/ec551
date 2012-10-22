@@ -23,7 +23,7 @@ module display(
 	 input clk_in,
 	 input reset_n,
 	 input [2:0] opcodesel,//if opcodesel is not 110(xnor) it displays decimal, else binary
-	 output reg [3:0] ctl,
+	 output reg[3:0] ctl,
     output reg [7:0] segments //segments[0] is the point
 	 
     );
@@ -35,10 +35,7 @@ module display(
 	reg [3:0] currentdigit;
 	reg [5:0] absresult;
 	
-	
 	reg [1:0]counter;
-	
-	
 	
 	
 	always@(posedge clk_in or negedge reset_n) begin  //divide the period
@@ -46,57 +43,55 @@ module display(
 			else begin
 				if(counter==2)counter<=2'b00;
 				else counter<=counter+1'b1;
-			end
+
+		case(counter) 
+		0: 
+		begin
+		ctl[3:0]<=4'b0111;
+		currentdigit<=(opcodesel==3'b110)?{3'b000,result[0]}:lowdigit;
+		end
+		
+		1: 
+		begin
+		ctl[3:0]<=4'b1011;
+		currentdigit<=(opcodesel==3'b110)?{3'b000,result[1]}:highdigit;
+		end
+		
+		2:
+		begin
+		ctl[3:0]<=4'b1101;
+		currentdigit<=(opcodesel==3'b110)?{3'b000,result[2]}:sign;
+		end
+
+		default:
+		begin
+		ctl[3:0]<=4'b1111;
+		currentdigit<=10;
+		end
+		endcase
+
+
+		end
 	end
 	
-always@(reset_n,counter,opcodesel,result,lowdigit,highdigit,sign) begin // assign the period to the 3 LEDs
-	if(!reset_n)begin				absresult=0;highdigit=0;lowdigit=0;currentdigit=0;ctl[3:0]=4'b0000;end
-	else	begin
-			if(result[5]==1)		absresult[5:0]=-result[5:0];
+always@(*) begin // assign the period to the 3 LEDs
+	
+	
+			if(result[5]==1&&opcodesel==3'b010)		absresult[5:0]=-result[5:0];
 			else 						absresult[5:0]=result[5:0];
 			
 		highdigit=(absresult/10==0)?10:absresult/10;			
 		lowdigit=absresult%10;
 	
-		ctl[3]=1'b0;
-		
-		case(counter) 
-		0: 
-		begin
-		ctl[1]=0;ctl[2]=0;ctl[0]=1;
-		currentdigit=(opcodesel==3'b110)?{3'b000,result[0]}:lowdigit;
-		end
-		
-		1: 
-		begin
-		ctl[0]=0;ctl[2]=0;ctl[1]=1;
-		currentdigit=(opcodesel==3'b110)?{3'b000,result[1]}:highdigit;
-		end
-		
-		2:
-		begin
-		ctl[0]=0;ctl[1]=0;ctl[2]=1;
-		currentdigit=(opcodesel==3'b110)?{3'b000,result[2]}:sign;
-		end
-		3:
-		begin
-		ctl[0]=0;ctl[1]=0;ctl[2]=0;
-		currentdigit=10;
-		end
+end
 
-		default:
-		begin
-		ctl[0]=0;ctl[1]=0;ctl[2]=0;
-		currentdigit=10;
-		end
-		endcase
-	end
-end	
+
+
 	always@(result,reset_n) begin
 		if(!reset_n) 					sign=10;
 		else 
-		if(result[5]==0)				sign=10;
-		else 								sign=11;
+		if(result[5]==1&&opcodesel==3'b010)				sign=11;
+		else 								sign=10;
 		
 	end
 

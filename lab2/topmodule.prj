@@ -1,4 +1,4 @@
-verilog work "lifo2.v"
+verilog work "lifo.v"
 verilog work "display.v"
 verilog work "decoder.v"
 verilog work "debouncer.v"
