@@ -1,3 +1,0 @@
-verilog work "display.v"
-verilog work "displaytb.v"
-verilog work "/share/Study/Xilinx/13.3/ISE_DS/ISE//verilog/src/glbl.v"

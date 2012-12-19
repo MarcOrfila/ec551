@@ -1,7 +1,0 @@
-verilog work "lifo.v"
-verilog work "display.v"
-verilog work "decoder.v"
-verilog work "debouncer.v"
-verilog work "clkdiv.v"
-verilog work "ALU.v"
-verilog work "topmodule.v"

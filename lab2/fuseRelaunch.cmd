@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/hpw/Documents/EC551/LAB2/lab2/lifotb_isim_beh.exe" -prj "/home/hpw/Documents/EC551/LAB2/lab2/lifotb_beh.prj" "work.lifotb" "work.glbl" 
